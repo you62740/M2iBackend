@@ -1,0 +1,39 @@
+{
+	"wagons":[
+		{"id":0, "numero":1, "type":"oil"},
+		{"id":1, "numero":2, "type":"wine"},
+		{"id":2, "numero":3, "type":"chemical"},
+		{"id":3, "numero":4, "type":"cereales"}
+	],
+	"products":[
+		{"id":0, "reference":"azerty", "label":"gazoil"},
+		{"id":1, "reference":"ytreza", "label":"rose"},
+		{"id":2, "reference":"qsdfgh", "label":"chlore"}
+	],
+	"clients":[
+		{
+			"id":0, 
+			"reference":"total_1234", 
+			"raison":"total", 
+			"passwd":"money", 
+			"login":"pdgtotal"
+		},
+		{
+			"id":1, 
+			"reference":"monsanto_1234", 
+			"raison":"monsanto", 
+			"passwd":"malefique", 
+			"login":"pdgmonsanto"
+		},
+		{
+			"id":2, 
+			"reference":"bandol_1234", 
+			"raison":"bandol", 
+			"passwd":"grorouge", 
+			"login":"pdgbandol"
+		}
+	],
+	"contrats":[
+		{"id":0, "client_id":0, "wagon_id":1, "product_id":2}
+	]
+}

@@ -1,0 +1,37 @@
+*** créer un petit site de news ****
+
+- Le site devra pouvoir afficher des articles issus d'une base de données
+- Tous les articles ont un thème, et peuvent être triés par ce thème. 
+- Il faudra prévoir un espace administrateur sur le site , accessible uniquement aux utilisateurs 
+  de type rédacteur ( contenus dans une table spécifique donc ). 
+  
+- Dans cet espace administrateur, prévoir un espace ( un formulaire ) ou l'on peut rédiger, supprimer, modifier un ou plusieurs articles.
+
+ATTENTION: je vais passer dans les groupes et essayer d'attaquer vos sites avec les attaques que l'on a vu, 
+si vous voulez conserver votre joooolli site intact, faites gaffe ;) 
+
+
+Pour toute question, voir avec johann, il a un clavier coloré qui sait tout.
+
+***************************************************************************************************************
+***************************************************************************************************************
+*******************************************************EXERCICE PLUS SIMPLE************************************
+***************************************************************************************************************
+***************************************************************************************************************
+
+ ... UNIQUEMENT POUR MES 3 PETITS PROTEGES !!!
+ ( les autres z'aviez qu'à avouer votre faiblesse avant, pas la peine de couiner maintenant mouhahaha ! ).
+
+
+
+- Il faut créer seulement la table qui contient tout les articles
+- Puis créer le formulaire qui permet de les insérer 
+- Et enfin les afficher tous en dessous
+
+Pas de gestion utilisateur à faire, pas de tri par thème, pas de protection contre les attaques à prévoir juste 
+de l'ajout/affichage d'articles. 
+
+
+ENJOY !
+
+

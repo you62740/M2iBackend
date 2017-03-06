@@ -1,0 +1,186 @@
+{
+	"map":{
+		"tileset" : "Farm",
+		"ground" : 
+		[
+			[35, 34, 34, 34, 34, 34, 34, 19, 20, 21, 34, 34, 34, 19, 20, 20, 20, 21, 34, 35],
+			
+			[36, 1, 0, 33, 0, 0, 0, 22, 23, 24, 1, 0, 0, 22, 23, 23, 23, 24, 1, 36],
+			[36, 1, 0, 0, 0, 0, 0, 30, 27, 31, 1, 0, 0, 30, 27, 29, 27, 31, 1, 36],
+			[36, 1, 0, 0, 0, 0, 0, 25, 28, 26, 1, 0, 0, 25, 32, 28, 32, 26, 1, 36],
+			
+			[36, 5, 2, 2, 2, 2, 2, 2, 9, 2, 2, 2, 2, 2, 2, 2, 2, 2, 4, 36],
+			
+			[36, 38, 16, 11, 11, 11, 11, 15, 3, 16, 11, 11, 11, 11, 11, 11, 11, 15, 3, 36],
+			[36, 38, 13, 10, 10, 10, 10, 14, 3, 13, 10, 10, 10, 10, 10, 10, 10, 14, 3, 36],
+			[36, 38, 13, 10, 10, 10, 10, 14, 3, 13, 10, 10, 10, 10, 10, 10, 10, 14, 3, 36],
+			[36, 38, 13, 10, 10, 10, 10, 14, 3, 13, 10, 10, 10, 10, 10, 10, 10, 14, 3, 36],
+			[36, 38, 13, 10, 10, 10, 10, 14, 3, 13, 10, 10, 10, 10, 10, 10, 10, 14, 3, 36],
+			[36, 38, 13, 10, 10, 10, 10, 14, 3, 13, 10, 10, 10, 10, 10, 10, 10, 14, 3, 36],
+			[36, 38, 13, 10, 10, 10, 10, 14, 3, 13, 10, 10, 10, 10, 10, 10, 10, 14, 3, 36],
+			[36, 38, 18, 12, 12, 12, 12, 17, 3, 18, 12, 12, 12, 12, 12, 12, 12, 17, 3, 36],
+			
+			[36, 7, 2, 2, 2, 2, 2, 2, 8, 2, 2, 2, 2, 2, 2, 2, 2, 2, 6, 36],
+			[37, 1, 0, 0, 0, 0, 0, 0, 3,0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 37]
+		],
+		"waypoints":
+		[
+			{"name":"ToWorldMap",	"x":14,	"y":8},
+			{"name":"ToFarm",		"x":4,	"y":8},
+			{"name":"ToGrange",		"x":4,	"y":15}
+		],
+		"tabCorrespondance": 
+		[
+			{"id": 0, "name": "grass_center",					"imgUrl": "images/tilesets/Grass/Grass.png",                    "walkable": true},
+            {"id": 1, "name": "grass_shadow", 					"imgUrl": "images/tilesets/Grass/ShadowLeft.png",               "walkable":true},
+			
+			{"id": 2, "name": "dirt_road_horizontal", 			"imgUrl": "images/tilesets/Road/Horizontal.png", 				"walkable": true},
+			{"id": 3, "name": "dirt_road_vertical", 			"imgUrl": "images/tilesets/Road/Vertical.png", 				    "walkable": true},
+			{"id": 4, "name": "dirt_road_corner_topRight", 		"imgUrl": "images/tilesets/Road/TopRightCorner.png", 			"walkable": true},
+			{"id": 5, "name": "dirt_road_corner_topLeft", 		"imgUrl": "images/tilesets/Road/ShadowTopLeftCorner.png", 		"walkable": true},
+			{"id": 6, "name": "dirt_road_corner_bottomRight",	"imgUrl": "images/tilesets/Road/BottomRightCorner.png", 		"walkable": true},
+			{"id": 7, "name": "dirt_road_corner_bottomLeft", 	"imgUrl": "images/tilesets/Road/ShadowBottomLeftCorner.png", 	"walkable": true},
+			{"id": 8, "name": "dirt_road_cross", 				"imgUrl": "images/tilesets/Road/Crossroads.png", 				"walkable": true},
+			{"id": 9, "name": "dirt_road_T", 					"imgUrl": "images/tilesets/Road/HorizontalTopCrossroads.png", 	"walkable": true},
+			
+			{"id": 10, "name": "weath_center",					"imgUrl": "images/tilesets/WheatFields/Middle.png", 			"walkable": true},
+			{"id": 11, "name": "weath_border_top",				"imgUrl": "images/tilesets/WheatFields/Top.png", 				"walkable": true},
+			{"id": 12, "name": "weath_border_bottom",			"imgUrl": "images/tilesets/WheatFields/Bottom.png", 			"walkable": true},
+			{"id": 13, "name": "weath_border_left",				"imgUrl": "images/tilesets/WheatFields/Left.png", 				"walkable": true},
+			{"id": 14, "name": "weath_border_right",			"imgUrl": "images/tilesets/WheatFields/Right.png", 			    "walkable": true},	
+			{"id": 15, "name": "weath_corner_topRight",			"imgUrl": "images/tilesets/WheatFields/TopRightCorner.png", 	"walkable": true},
+			{"id": 16, "name": "weath_corner_topLeft",			"imgUrl": "images/tilesets/WheatFields/TopLeftCorner.png", 	    "walkable": true},
+			{"id": 17, "name": "weath_corner_bottomRight",		"imgUrl": "images/tilesets/WheatFields/BottomRightCorner.png",  "walkable": true},
+			{"id": 18, "name": "weath_corner_bottomLeft",		"imgUrl": "images/tilesets/WheatFields/BottomLeftCorner.png", 	"walkable": true},
+			
+			{"id": 19, "name": "roof_left",						"imgUrl": "images/tilesets/farm/farm-roof1.png", 				"walkable": false},
+			{"id": 20, "name": "roof_top",						"imgUrl": "images/tilesets/farm/farm-roof2.png", 				"walkable": false},
+			{"id": 21, "name": "roof_right",					"imgUrl": "images/tilesets/farm/farm-roof3.png", 				"walkable": false},
+			{"id": 22, "name": "roof_corner_left",				"imgUrl": "images/tilesets/farm/farm-roof4.png",				"walkable": false},
+			{"id": 23, "name": "roof_front",					"imgUrl": "images/tilesets/farm/farm-roof5.png", 				"walkable": false},
+			{"id": 24, "name": "roof_corner_right",				"imgUrl": "images/tilesets/farm/farm-roof6.png", 				"walkable": false},
+			
+			{"id": 25, "name": "wall_left",						"imgUrl": "images/tilesets/farm/farm-wall-left-bottom.png", 	"walkable": false},
+			{"id": 26, "name": "wall_right",					"imgUrl": "images/tilesets/farm/farm-wall-right-bottom.png", 	"walkable": false},
+			{"id": 27, "name": "wall_window",					"imgUrl": "images/tilesets/farm/farm_7.png", 					"walkable": false},
+			{"id": 28, "name": "wall_door",						"imgUrl": "images/tilesets/farm/farm-door.png", 				"walkable": false},
+			{"id": 29, "name": "wall_top",						"imgUrl": "images/tilesets/farm/farm-wall-mid-top.png", 		"walkable": false},			
+			{"id": 30, "name": "wall_top_left",					"imgUrl": "images/tilesets/farm/farm-wall-left-top.png", 		"walkable": false},
+			{"id": 31, "name": "wall_top_right",				"imgUrl": "images/tilesets/farm/farm-wall-right-top.png", 		"walkable": false},
+			{"id": 32, "name": "wall_bottom",					"imgUrl": "images/tilesets/farm/farm_8.png", 					"walkable": false},
+			{"id": 33, "name": "tree_cut",						"imgUrl": "images/tilesets/treeCut.png", 						"walkable": false},
+			{"id": 34, "name": "bush_top",						"imgUrl": "images/tilesets/Hedge/HedgeTop.png", 				"walkable": false},
+			{"id": 35, "name": "bush_corner",					"imgUrl": "images/tilesets/Hedge/HedgeCorner.png",				"walkable": false},
+			{"id": 36, "name": "bush",							"imgUrl": "images/tilesets/Hedge/Hedge.png", 					"walkable": false},
+			{"id": 37, "name": "bush_bottom",					"imgUrl": "images/tilesets/Hedge/HedgeBottom.png", 			    "walkable": false},
+			{"id": 38, "name": "dirt_road_shadow",				"imgUrl": "images/tilesets/Road/ShadowVertical.png", 			"walkable": true}
+		]
+	},
+	
+	"weapons":[
+		{
+			"nom":"Hache",
+			"type":"arme",
+			"price":100,
+			"weight":10,
+			"power":25
+		},
+		{
+			"nom":"Epée",
+			"type":"arme",
+			"price":200,
+			"weight":5,
+			"power":18
+		}
+	],
+	
+	"sticks":[
+		{
+			"nom":"Baguette de feu",
+			"type":"baguette",
+			"price":100,
+			"weight":10,
+			"power":25,
+			"consoMana":20
+		},
+		{
+			"nom":"Baguette de glace",
+			"type":"baguette",
+			"price":1000,
+			"weight":10,
+			"power":250,
+			"consoMana":2
+		}
+	],	
+	
+	"characters":[
+		{
+			"frameTime"		: 100,
+			"animations" 	: {
+				"walk_bottom"	:["bottom_0", "bottom_1", "bottom_2"],
+				"walk_up"		:["up_0", "up_1", "up_2"],
+				"walk_left"		:["left_0", "left_1", "left_2"],
+				"walk_right"	:["right_0", "right_1", "right_2"],
+				"turn"			:["right_1", "bottom_1", "left_1", "up_1"]
+			},	 
+			"states"		: {
+				
+				"bottom_0"	: {"x": 0	, "y": 0	, "width": 32, "height": 32},
+				"bottom_1"	: {"x": 32	, "y": 0	, "width": 32, "height": 32},
+				"bottom_2"	: {"x": 64	, "y": 0	, "width": 32, "height": 32},
+				"left_0"	: {"x": 0	, "y": 32	, "width": 32, "height": 32},
+				"left_1"	: {"x": 32	, "y": 32	, "width": 32, "height": 32},
+				"left_2"	: {"x": 64	, "y": 32	, "width": 32, "height": 32},
+				"right_0"	: {"x": 0	, "y": 64	, "width": 32, "height": 32},
+				"right_1"	: {"x": 32	, "y": 64	, "width": 32, "height": 32},
+				"right_2"	: {"x": 64	, "y": 64	, "width": 32, "height": 32},
+				"up_0"		: {"x": 0	, "y": 96	, "width": 32, "height": 32},
+				"up_1"		: {"x": 32	, "y": 96	, "width": 32, "height": 32},
+				"up_2"		: {"x": 64	, "y": 96	, "width": 32, "height": 32}
+			},		
+			"type"		: "_warrior_"			,	
+			"nom"		: "Robocop"				,
+			"metier"	: "Justicier"				,
+			"anim"		: "walk_bottom"			,
+			"img"		: "images/charsets/roux.png"	,
+			"pv"		: 100					,
+			"defMagic"	: 100					,
+			"defPhy"	: 100					,
+			"degats"	: 5	
+		},
+		{
+			"frameTime"		: 100,
+			"animations" 	: {
+				"walk_bottom"	:["bottom_0", "bottom_1", "bottom_2"],
+				"walk_up"		:["up_0", "up_1", "up_2"],
+				"walk_left"		:["left_0", "left_1", "left_2"],
+				"walk_right"	:["right_0", "right_1", "right_2"],
+				"turn"			:["right_1", "bottom_1", "left_1", "up_1"]
+			},	 
+			"states"		: {
+				
+				"bottom_0"	: {"x": 0	, "y": 0	, "width": 32, "height": 32},
+				"bottom_1"	: {"x": 32	, "y": 0	, "width": 32, "height": 32},
+				"bottom_2"	: {"x": 64	, "y": 0	, "width": 32, "height": 32},
+				"left_0"	: {"x": 0	, "y": 32	, "width": 32, "height": 32},
+				"left_1"	: {"x": 32	, "y": 32	, "width": 32, "height": 32},
+				"left_2"	: {"x": 64	, "y": 32	, "width": 32, "height": 32},
+				"right_0"	: {"x": 0	, "y": 64	, "width": 32, "height": 32},
+				"right_1"	: {"x": 32	, "y": 64	, "width": 32, "height": 32},
+				"right_2"	: {"x": 64	, "y": 64	, "width": 32, "height": 32},
+				"up_0"		: {"x": 0	, "y": 96	, "width": 32, "height": 32},
+				"up_1"		: {"x": 32	, "y": 96	, "width": 32, "height": 32},
+				"up_2"		: {"x": 64	, "y": 96	, "width": 32, "height": 32}
+			},		
+			"type"		: "_wizzard_"			,	
+			"nom"		: "Severus"				,
+			"metier"	: "Teachers of the years"				,
+			"anim"		: "walk_bottom"			,
+			"img"		: "images/charsets/vieux.png"	,
+			"pv"		: 100					,
+			"defMagic"	: 100					,
+			"defPhy"	: 100					,
+			"degats"	: 5	
+		}
+	]
+}

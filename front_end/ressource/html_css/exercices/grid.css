@@ -1,0 +1,26 @@
+.row 
+{
+	width : 100%;
+	margin-left: 2%;
+}
+
+.row > div 
+{ 
+	float: left;
+	margin : 1px 1px;
+	background-color: grey;
+	height: 100px;
+}
+
+.w-1 { width : 8%; }
+.w-2 { width : 16%; }
+.w-3 { width : 24%; }
+.w-4 { width : 32%; }
+.w-5 { width : 40%; }
+.w-6 { width : 48%; }
+.w-7 { width : 56%; }
+.w-8 { width : 64%; }
+.w-9 { width : 72%; }
+.w-10 { width : 80%; }
+.w-11 { width : 88%; }
+.w-12 { width : 96%; }

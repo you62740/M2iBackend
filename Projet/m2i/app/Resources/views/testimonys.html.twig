@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>Message</title>
+	<link href="{{ asset('./css/main.css') }}" type="text/css" rel="stylesheet" />
+</head>
+<body>
+	<div align="right"><a href="{{ path('m2iprojet_admin_route')}}" title="retour">
+	<img src="{{ asset('./images/retour.jpg') }}" width="40px" height="40px" style="border-radius:20px;border: black solid 1px"></a></div> 
+	{% for current_testimony in testimonys_list %}
+		<li>
+			{% if current_testimony['context']=='t' %}
+				<b>témoignage</b>
+			{% else %}
+				<b>forum</b>
+			{% endif %}
+			<br/>
+			{{ current_testimony['msg'] }}
+			<br/>
+			<label><b>Date de création : </b>{{ current_testimony['creationDate']|date("d/m/Y h:m") }}</label>
+			<label><b>Date de Modification : </b>{{ current_testimony['modificationDate']|date("d/m/Y h:m") }}</label>
+			<br/>
+			<label><b>Auteur : </b>{{ current_testimony['firstname'] }} {{ current_testimony['lastname'] }}
+			<p align="right"><a href="{{ path('m2iprojet_admin_testimony_modif_route', { 'testimony_id': current_testimony['id'] })}}" title="Modifier">
+			<img src="{{ asset('./images/modifier.jpg') }}" width="40px" height="40px" style="border-radius:20px;border: black solid 1px"></a> 
+			<a href="{{ path('m2iprojet_admin_testimony_suppr_route', { 'testimony_id': current_testimony['id'] })}}" title="Supprimer">
+			<img src="{{ asset('./images/trash.jpg') }}" width="40px" height="40px" style="border-radius:20px;border: black solid 1px"></a></p> 
+		</li>
+		<br/>
+	{% endfor %}
+
+	
+	<h3>Ajouter un message : </h3>
+	
+	{{ form_start(form) }}
+	{{ form_widget(form) }}
+	{{ form_end(form) }}	
+</body>
+</html>

@@ -1,0 +1,21 @@
+#header {
+  background-image: url(entete-big.jpg);
+}
+
+#article, #aside {
+  float:      left;
+  width:      70%;
+  padding:    6em 0;
+}
+#aside {
+  width:      30%;
+}
+
+
+@media only screen and (min-width: 950px) {
+
+  #container {
+    width:          950px;
+    margin:       0 auto;
+  }
+}

@@ -1,0 +1,15 @@
+CACHE MANIFEST
+# Manifest Version No : 13
+
+CACHE:
+cache.html
+cache.css
+image1.png
+image2.png
+image3.png
+
+NETWORK:
+*
+
+FALLBACK:
+image1.png image2.png image3.png

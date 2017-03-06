@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+    
+    <head>
+        <meta charset="utf-8">
+        <title>MAXIME BOUDREAU</title>
+        <link rel="stylesheet" type="text/css" href="css/items.css">
+        <link rel="stylesheet" type="text/css" href="fonts/stylesheet.css">
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0">
+        
+        
+    </head>
+    
+    <body>
+        
+        <div id="container">                       
+            
+            <header class="row">
+                    <div class="title col mob-12 tab-12 dsk-12">  
+                        <h1>Items</h1> 
+                    </div>  
+            </header>
+
+            <nav class="row">
+                <div class="button col dsk-4 mob-4 tab-4">Armes</div>
+                <div class="button1 col dsk-4 mob-4 tab-4">Sorts</div>
+                <div class="button2 col dsk-4 mob-4 tab-4">Objets</div>
+            </nav>
+
+            <section class="row">    
+
+                <div class="weapons col dsk-8 mob-11  tab-12">
+                    <div class="items col mob-4 tab-2 dsk-2"><img src="images/inventory/woodSword.png" alt=""/></div>
+                    <div class="items col mob-4 tab-2 dsk-2"><img src="images/inventory/dagger.png" alt=""/></div>
+                    <div class="items col mob-4 tab-2 dsk-2"><img src="images/inventory/sword.png" alt=""/></div>
+                    <div class="items col mob-4 tab-2 dsk-2"><img src="images/inventory/axe.png" alt=""/></div>
+                    <div class="items col mob-4 tab-2 dsk-2"><img src="images/inventory/hammer.png" alt=""/></div>
+                    <div class="items col mob-4 tab-2 dsk-2"><img src="images/inventory/axeDouble.png" alt=""/></div>
+                    <div class="items col mob-4 tab-2 dsk-2"><img src="images/inventory/bow.png" alt=""/></div>
+                    <div class="items col mob-4 tab-2 dsk-2"><img src="images/inventory/armor.png" alt=""/></div>
+                    <div class="items col mob-4 tab-2 dsk-2"><img src="images/inventory/helmet.png" alt=""/></div>
+                    <div class="items col mob-4 tab-2 dsk-2"><img src="images/inventory/woodSword.png" alt=""/></div>
+                    <div class="items col mob-4 tab-2 dsk-2"><img src="images/inventory/dagger.png" alt=""/></div>
+                    <div class="items col mob-4 tab-2 dsk-2"><img src="images/inventory/sword.png" alt=""/></div>
+                </div>
+                
+                <div class="spells col dsk-8 mob-11  tab-12">
+                    <div class="items col mob-4 tab-2 dsk-2"><img src="images/inventory/axeDouble.png" alt=""/></div>
+                    <div class="items col mob-4 tab-2 dsk-2"><img src="images/inventory/bow.png" alt=""/></div>
+                    <div class="items col mob-4 tab-2 dsk-2"><img src="images/inventory/armor.png" alt=""/></div>
+                    <div class="items col mob-4 tab-2 dsk-2"><img src="images/inventory/helmet.png" alt=""/></div>
+                    <div class="items col mob-4 tab-2 dsk-2"><img src="images/inventory/woodSword.png" alt=""/></div>
+                    <div class="items col mob-4 tab-2 dsk-2"><img src="images/inventory/dagger.png" alt=""/></div>
+                    <div class="items col mob-4 tab-2 dsk-2"><img src="images/inventory/sword.png" alt=""/></div>
+                    <div class="items col mob-4 tab-2 dsk-2"><img src="images/inventory/axe.png" alt=""/></div>
+                    <div class="items col mob-4 tab-2 dsk-2"><img src="images/inventory/hammer.png" alt=""/></div>
+                    <div class="items col mob-4 tab-2 dsk-2"><img src="images/inventory/axeDouble.png" alt=""/></div>
+                    <div class="items col mob-4 tab-2 dsk-2"><img src="images/inventory/bow.png" alt=""/></div>
+                    <div class="items col mob-4 tab-2 dsk-2"><img src="images/inventory/armor.png" alt=""/></div>
+                </div>
+                
+                <div class="objects col dsk-8 mob-11  tab-12">
+                    <div class="items col mob-4 tab-2 dsk-2"><img src="images/inventory/sword.png" alt=""/></div>
+                    <div class="items col mob-4 tab-2 dsk-2"><img src="images/inventory/axe.png" alt=""/></div>
+                    <div class="items col mob-4 tab-2 dsk-2"><img src="images/inventory/hammer.png" alt=""/></div>
+                    <div class="items col mob-4 tab-2 dsk-2"><img src="images/inventory/axeDouble.png" alt=""/></div>
+                    <div class="items col mob-4 tab-2 dsk-2"><img src="images/inventory/woodSword.png" alt=""/></div>
+                    <div class="items col mob-4 tab-2 dsk-2"><img src="images/inventory/dagger.png" alt=""/></div>
+                    <div class="items col mob-4 tab-2 dsk-2"><img src="images/inventory/bow.png" alt=""/></div>
+                    <div class="items col mob-4 tab-2 dsk-2"><img src="images/inventory/armor.png" alt=""/></div>
+                    <div class="items col mob-4 tab-2 dsk-2"><img src="images/inventory/helmet.png" alt=""/></div>
+                    <div class="items col mob-4 tab-2 dsk-2"><img src="images/inventory/sword.png" alt=""/></div>
+                    <div class="items col mob-4 tab-2 dsk-2"><img src="images/inventory/axe.png" alt=""/></div>
+                    <div class="items col mob-4 tab-2 dsk-2"><img src="images/inventory/hammer.png" alt=""/></div>
+                </div>
+                
+            </section>
+        
+            
+        </div>
+        
+        <script>
+        
+        
+    
+document.querySelector('.button').onclick = function() {
+
+document.querySelector('.spells').style.display="none";
+document.querySelector('.objects').style.display="none";
+if (window.getComputedStyle(document.querySelector('.weapons')).display=='none'){
+document.querySelector('.weapons').style.display="flex";
+} else {
+document.querySelector('.weapons').style.display="none";
+}
+}
+
+document.querySelector('.button1').onclick = function() {
+document.querySelector('.objects').style.display="none";
+document.querySelector('.weapons').style.display="none";
+if (window.getComputedStyle(document.querySelector('.spells')).display=='none'){
+document.querySelector('.spells').style.display="flex";
+} else {
+document.querySelector('.spells').style.display="none";
+}
+}
+
+document.querySelector('.button2').onclick = function() {
+    
+document.querySelector('.weapons').style.display="none";
+document.querySelector('.spells').style.display="none";
+if (window.getComputedStyle(document.querySelector('.objects')).display=='none'){
+document.querySelector('.objects').style.display="flex";
+} else {
+document.querySelector('.objects').style.display="none";
+}
+}
+        
+        </script>
+    </body>
+    
+</html>
+        

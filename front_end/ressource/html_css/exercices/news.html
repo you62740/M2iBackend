@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0">
+    <title>Le monde point effere !</title>
+    <link rel="stylesheet" href="css/news.css" media="screen" />
+	<script type="text/javascript">
+		
+		function toggleMenu()
+		{
+			var element = document.getElementById("menu");
+			var currentClass = element.getAttribute("class");
+			
+			if( currentClass == "closed")
+			{
+				element.setAttribute("class", "opened");
+			}
+			else
+			{
+				element.setAttribute("class", "closed");
+			}
+			
+		}
+		
+	</script>
+</head>
+
+<body>
+
+    <div id="container">
+
+        <div id="header">
+			<h1>Mon super site de news</h1>
+		</div>
+
+        <div id="menu" class="closed" onclick="toggleMenu();">
+		
+			<ul>
+				<li class="nav_link">menu 1</li>
+				<li class="nav_link">menu 2</li>
+				<li class="nav_link">menu 3</li>
+				<li class="nav_link">menu 4</li>
+			</ul>
+		
+		</div>
+		
+		<div id="login_menu">
+			<p>Connexion:</p>
+			<p>
+				<input type="text" value="login"/>
+				<input type="text" value="mot de passe"/>
+			</p>
+			<p><a href="">ou inscrivez vous ici</a></p>
+		</div>
+
+        <p class="article">
+			Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vitae interdum turpis. Duis non ex ac augue sollicitudin consectetur. Sed consequat consequat mauris, a volutpat purus viverra a. Cras ligula libero, blandit id tellus vel, tincidunt convallis nulla. Donec vel lobortis augue. Fusce consequat dui erat, non dictum orci mattis in. Nam volutpat malesuada magna vel iaculis. Maecenas tempus egestas odio, a mattis dolor volutpat quis.
+
+			Quisque ante mi, feugiat id turpis non, laoreet fermentum urna. Nam vestibulum eget arcu id mattis. Fusce risus dui, suscipit et nibh fringilla, placerat consequat justo. Morbi ac augue justo. Integer iaculis malesuada ligula quis suscipit. In id nunc at velit varius placerat. Mauris nec magna dictum, posuere nunc quis, sodales diam. Cras non felis lorem. Integer bibendum eu elit in facilisis. Sed nisi urna, placerat ut lorem eget, accumsan pharetra risus.
+
+			Nullam a quam porttitor, venenatis nulla eu, varius tortor. Quisque gravida, libero a vehicula imperdiet, libero massa interdum dui, non tincidunt orci tellus non ex. In cursus leo eget tellus rhoncus sollicitudin. Interdum et malesuada fames ac ante ipsum primis in faucibus. Nullam tristique eros et lorem feugiat tempor mattis sed turpis. Donec ultricies ornare mi vel euismod. Suspendisse eu nibh semper, aliquet tellus id, facilisis nibh. Sed non eros ac est posuere sollicitudin volutpat at ligula. Suspendisse eu nisi ut justo rhoncus fermentum.
+		</p>
+        <p class="article">
+			Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vitae interdum turpis. Duis non ex ac augue sollicitudin consectetur. Sed consequat consequat mauris, a volutpat purus viverra a. Cras ligula libero, blandit id tellus vel, tincidunt convallis nulla. Donec vel lobortis augue. Fusce consequat dui erat, non dictum orci mattis in. Nam volutpat malesuada magna vel iaculis. Maecenas tempus egestas odio, a mattis dolor volutpat quis.
+
+			Quisque ante mi, feugiat id turpis non, laoreet fermentum urna. Nam vestibulum eget arcu id mattis. Fusce risus dui, suscipit et nibh fringilla, placerat consequat justo. Morbi ac augue justo. Integer iaculis malesuada ligula quis suscipit. In id nunc at velit varius placerat. Mauris nec magna dictum, posuere nunc quis, sodales diam. Cras non felis lorem. Integer bibendum eu elit in facilisis. Sed nisi urna, placerat ut lorem eget, accumsan pharetra risus.
+
+			Nullam a quam porttitor, venenatis nulla eu, varius tortor. Quisque gravida, libero a vehicula imperdiet, libero massa interdum dui, non tincidunt orci tellus non ex. In cursus leo eget tellus rhoncus sollicitudin. Interdum et malesuada fames ac ante ipsum primis in faucibus. Nullam tristique eros et lorem feugiat tempor mattis sed turpis. Donec ultricies ornare mi vel euismod. Suspendisse eu nibh semper, aliquet tellus id, facilisis nibh. Sed non eros ac est posuere sollicitudin volutpat at ligula. Suspendisse eu nisi ut justo rhoncus fermentum.
+		</p>
+        <p class="article">
+			Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vitae interdum turpis. Duis non ex ac augue sollicitudin consectetur. Sed consequat consequat mauris, a volutpat purus viverra a. Cras ligula libero, blandit id tellus vel, tincidunt convallis nulla. Donec vel lobortis augue. Fusce consequat dui erat, non dictum orci mattis in. Nam volutpat malesuada magna vel iaculis. Maecenas tempus egestas odio, a mattis dolor volutpat quis.
+
+			Quisque ante mi, feugiat id turpis non, laoreet fermentum urna. Nam vestibulum eget arcu id mattis. Fusce risus dui, suscipit et nibh fringilla, placerat consequat justo. Morbi ac augue justo. Integer iaculis malesuada ligula quis suscipit. In id nunc at velit varius placerat. Mauris nec magna dictum, posuere nunc quis, sodales diam. Cras non felis lorem. Integer bibendum eu elit in facilisis. Sed nisi urna, placerat ut lorem eget, accumsan pharetra risus.
+
+			Nullam a quam porttitor, venenatis nulla eu, varius tortor. Quisque gravida, libero a vehicula imperdiet, libero massa interdum dui, non tincidunt orci tellus non ex. In cursus leo eget tellus rhoncus sollicitudin. Interdum et malesuada fames ac ante ipsum primis in faucibus. Nullam tristique eros et lorem feugiat tempor mattis sed turpis. Donec ultricies ornare mi vel euismod. Suspendisse eu nibh semper, aliquet tellus id, facilisis nibh. Sed non eros ac est posuere sollicitudin volutpat at ligula. Suspendisse eu nisi ut justo rhoncus fermentum.
+		</p>
+        <p class="article">
+			Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vitae interdum turpis. Duis non ex ac augue sollicitudin consectetur. Sed consequat consequat mauris, a volutpat purus viverra a. Cras ligula libero, blandit id tellus vel, tincidunt convallis nulla. Donec vel lobortis augue. Fusce consequat dui erat, non dictum orci mattis in. Nam volutpat malesuada magna vel iaculis. Maecenas tempus egestas odio, a mattis dolor volutpat quis.
+
+			Quisque ante mi, feugiat id turpis non, laoreet fermentum urna. Nam vestibulum eget arcu id mattis. Fusce risus dui, suscipit et nibh fringilla, placerat consequat justo. Morbi ac augue justo. Integer iaculis malesuada ligula quis suscipit. In id nunc at velit varius placerat. Mauris nec magna dictum, posuere nunc quis, sodales diam. Cras non felis lorem. Integer bibendum eu elit in facilisis. Sed nisi urna, placerat ut lorem eget, accumsan pharetra risus.
+
+			Nullam a quam porttitor, venenatis nulla eu, varius tortor. Quisque gravida, libero a vehicula imperdiet, libero massa interdum dui, non tincidunt orci tellus non ex. In cursus leo eget tellus rhoncus sollicitudin. Interdum et malesuada fames ac ante ipsum primis in faucibus. Nullam tristique eros et lorem feugiat tempor mattis sed turpis. Donec ultricies ornare mi vel euismod. Suspendisse eu nibh semper, aliquet tellus id, facilisis nibh. Sed non eros ac est posuere sollicitudin volutpat at ligula. Suspendisse eu nisi ut justo rhoncus fermentum.
+		</p>
+       
+        <p class="article">
+			Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vitae interdum turpis. Duis non ex ac augue sollicitudin consectetur. Sed consequat consequat mauris, a volutpat purus viverra a. Cras ligula libero, blandit id tellus vel, tincidunt convallis nulla. Donec vel lobortis augue. Fusce consequat dui erat, non dictum orci mattis in. Nam volutpat malesuada magna vel iaculis. Maecenas tempus egestas odio, a mattis dolor volutpat quis.
+
+			Quisque ante mi, feugiat id turpis non, laoreet fermentum urna. Nam vestibulum eget arcu id mattis. Fusce risus dui, suscipit et nibh fringilla, placerat consequat justo. Morbi ac augue justo. Integer iaculis malesuada ligula quis suscipit. In id nunc at velit varius placerat. Mauris nec magna dictum, posuere nunc quis, sodales diam. Cras non felis lorem. Integer bibendum eu elit in facilisis. Sed nisi urna, placerat ut lorem eget, accumsan pharetra risus.
+
+			Nullam a quam porttitor, venenatis nulla eu, varius tortor. Quisque gravida, libero a vehicula imperdiet, libero massa interdum dui, non tincidunt orci tellus non ex. In cursus leo eget tellus rhoncus sollicitudin. Interdum et malesuada fames ac ante ipsum primis in faucibus. Nullam tristique eros et lorem feugiat tempor mattis sed turpis. Donec ultricies ornare mi vel euismod. Suspendisse eu nibh semper, aliquet tellus id, facilisis nibh. Sed non eros ac est posuere sollicitudin volutpat at ligula. Suspendisse eu nisi ut justo rhoncus fermentum.
+		</p>
+       
+        <p class="article">
+			Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vitae interdum turpis. Duis non ex ac augue sollicitudin consectetur. Sed consequat consequat mauris, a volutpat purus viverra a. Cras ligula libero, blandit id tellus vel, tincidunt convallis nulla. Donec vel lobortis augue. Fusce consequat dui erat, non dictum orci mattis in. Nam volutpat malesuada magna vel iaculis. Maecenas tempus egestas odio, a mattis dolor volutpat quis.
+
+			Quisque ante mi, feugiat id turpis non, laoreet fermentum urna. Nam vestibulum eget arcu id mattis. Fusce risus dui, suscipit et nibh fringilla, placerat consequat justo. Morbi ac augue justo. Integer iaculis malesuada ligula quis suscipit. In id nunc at velit varius placerat. Mauris nec magna dictum, posuere nunc quis, sodales diam. Cras non felis lorem. Integer bibendum eu elit in facilisis. Sed nisi urna, placerat ut lorem eget, accumsan pharetra risus.
+
+			Nullam a quam porttitor, venenatis nulla eu, varius tortor. Quisque gravida, libero a vehicula imperdiet, libero massa interdum dui, non tincidunt orci tellus non ex. In cursus leo eget tellus rhoncus sollicitudin. Interdum et malesuada fames ac ante ipsum primis in faucibus. Nullam tristique eros et lorem feugiat tempor mattis sed turpis. Donec ultricies ornare mi vel euismod. Suspendisse eu nibh semper, aliquet tellus id, facilisis nibh. Sed non eros ac est posuere sollicitudin volutpat at ligula. Suspendisse eu nisi ut justo rhoncus fermentum.
+		</p>
+       
+
+		<div class="pub">pub pour du shampoing</div>
+        <div id="footer">footer</div>
+
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,1 @@
+mysqld -u root -p

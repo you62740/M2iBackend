@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <title>Chat</title>
+		<script src="node_modules/socket.io/node_modules/socket.io-client/socket.io.js"></script>
+		<script type="text/javascript">
+		
+			var socket = null;
+			
+			function sendMessage()
+			{
+				var mon_message = document.getElementById("user_message");
+				var mon_login = document.getElementById("user_login");
+				var message = mon_message.value;
+				var login = mon_login.value;
+				
+				socket.emit(
+							'message_from_client', 
+							{
+								user_login: login, 
+								user_message: message 
+							}
+				);
+				
+				mon_message.value = "";
+				mon_login.value = "";
+			}
+			
+			function connectSucces(data)
+			{
+				var mon_bouton = document.getElementById('send_btn');
+				mon_bouton.addEventListener('click', sendMessage );
+			}
+			
+			// data ici vaut le tableau qui contient l'ensemble des messages 
+			// envoyés par l'ensemble des clients connectés au serveur
+			function messagesHandler(data)
+			{
+				var i = 0;
+				var max = data.length;
+				var html = "";
+				var container = document.getElementById("messages");
+				var cur_msg = "";
+				
+				for( i = 0; i < max; i++ )
+				{
+				
+					cur_msg = data[i].user_message;
+					cur_msg = cur_msg.replace('lml', '<img height="25px" src="./img/rock.jpg"/>');
+					
+					html += "<p>";
+					html += data[i].user_login;
+					html += ": ";
+					html += cur_msg;
+					html += "</p>";
+				}
+				
+				container.innerHTML = html;
+				
+			}
+			
+			window.onload = function()
+			{
+				socket = io.connect('127.0.0.1:3000');
+				socket.on('connection_ok', connectSucces );
+				socket.on('all_messages', messagesHandler );
+			};
+		
+		</script>
+    </head>
+    <body>
+		<div id="messages">
+			
+		</div>
+		<div>
+			<input type="text" value="" id="user_login"/>
+			<input type="text" value="" id="user_message"/>
+			<button id="send_btn">Envoyer</button>
+		</div>
+    </body>
+</html>

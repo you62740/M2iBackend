@@ -1,0 +1,71 @@
+#container button
+{
+	display: block;
+	width: 100px;
+	text-align: center;
+}
+
+.myBtn
+{
+	background-color: #008080;
+	color: #FFFFFF;
+	border: 2px solid #004040;
+	
+	transform: none;
+	transition-duration: 1s;
+	transition-property: background-color, color, transform;
+}
+
+.mouseover
+{
+	cursor: pointer;
+	transform: translateX(50px);
+	transition-duration: 1s;
+	transition-property: background-color, color, transform;
+	background-color: #80FFFF;
+	color: #333333;
+}
+
+.mousedown
+{
+	cursor: pointer;
+	transform: translateX(50px) rotate(20deg);
+	transition-duration: 1s;
+	transition-property: background-color, color, transform;
+	background-color: #80FFFF;
+	color: #333333;
+}
+
+.mouseup
+{
+	cursor: pointer;
+	transform: translateX(50px);
+	transition-duration: 1s;
+	transition-property: background-color, color, transform;
+	background-color: #80FFFF;
+	color: #333333;
+}
+
+
+#container2 div
+{
+	display: block;
+	width: 100px;
+	height: 100px;
+	margin-top: 8px;
+	
+	transform: none;
+	transition-duration: 1s;
+	transition-property: transform, background-color;
+	
+	background-color: cyan;
+}
+
+#container2 .rotation
+{
+	transform: rotateZ(370deg);
+	transition-duration: 1s;
+	transition-property: transform, background-color;
+	background-color: red;
+}
+

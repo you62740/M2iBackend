@@ -1,0 +1,6 @@
+body{background-color:#333333;}
+.container{overflow:hidden;width:80%;margin:auto;height:250px;background-color:orange;display:flex;flex-direction:row;flex-wrap:nowrap;justify-content:flex-start;align-items:flex-start;}
+.carre{margin:0;width:200px;height:100px;flex-shrink:1;flex-grow:0.05;}
+.rouge{background-color:red;}
+.vert{background-color:green;flex-shrink:0.2;}
+.bleu{background-color:cyan;}

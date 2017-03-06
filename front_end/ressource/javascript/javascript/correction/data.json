@@ -1,0 +1,16 @@
+[
+	{"id":0, "nom":"Jobs", "prenom":"Steve", "matiere":"biologie", "note": 17},
+	{"id":0, "nom":"Jobs", "prenom":"Steve", "matiere":"mathématiques", "note": 12},
+	{"id":0, "nom":"Jobs", "prenom":"Steve", "matiere":"physique", "note": 14},
+	{"id":0, "nom":"Jobs", "prenom":"Steve", "matiere":"chimie", "note": 8},
+	
+	{"id":1, "nom":"Bay", "prenom":"Michael", "matiere":"biologie", "note": 5},
+	{"id":1, "nom":"Bay", "prenom":"Michael", "matiere":"mathématiques", "note": 2},
+	{"id":1, "nom":"Bay", "prenom":"Michael", "matiere":"physique", "note": 18},
+	{"id":1, "nom":"Bay", "prenom":"Michael", "matiere":"chimie", "note": 19},
+	
+	{"id":2, "nom":"Teach", "prenom":"Edward", "matiere":"biologie", "note": 7},
+	{"id":2, "nom":"Teach", "prenom":"Edward", "matiere":"mathématiques", "note": 3},
+	{"id":2, "nom":"Teach", "prenom":"Edward", "matiere":"physique", "note": 12},
+	{"id":2, "nom":"Teach", "prenom":"Edward", "matiere":"chimie", "note": 14}
+]

@@ -1,0 +1,8 @@
+- 	Créez une table qui recense les armes des pirates 
+	( flingues, mousquet, sabres etc... )
+	
+- 	Laissez la table vide 
+-	Créez un formulaire qui permet de créer une nouvelle arme
+- 	Récupérez les données du formulaire puis, insérez-les à l'aide de php + PDO
+    dans votre table.
+-	Affichez l'ensemble des armes présentes dans la table sur votre page.

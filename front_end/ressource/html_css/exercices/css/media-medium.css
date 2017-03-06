@@ -1,0 +1,12 @@
+#header {
+  background-image:       url(images/entete-medium.jpg);
+}
+
+#article, #aside {
+  float:        left;
+  width:      70%;
+  padding:    6em 0;
+}
+#aside {
+  width:          30%;
+}

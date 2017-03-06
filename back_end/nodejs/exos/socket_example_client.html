@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <title>Chat</title>
+		<script src="node_modules/socket.io/node_modules/socket.io-client/socket.io.js"></script>
+		<script type="text/javascript">
+		
+			var socket = null;
+			
+			function dataFromServerHandler(data)
+			{
+				var num_cacahuete = parseInt(data.cacahuete);
+				var num_poireaux = parseInt(data.poireaux);
+				var num_patates = parseInt(data.patates);
+				
+				num_cacahuete++;
+				num_poireaux++;
+				num_patates++;
+				
+				setTimeout( 
+						function()
+						{
+							socket.emit('data_from_client',  
+										{
+											cacahuete: num_cacahuete, 
+											poireaux: num_poireaux,
+											patates: num_patates
+										}
+							);
+						}, 
+						1000
+				);
+			}
+		
+			window.onload = function()
+			{
+				socket = io.connect('127.0.0.1:3000');
+				
+				socket.emit(
+							'data_from_client',  
+							{
+								cacahuete: 0, 
+								poireaux: 0,
+								patates: 0
+							}
+						);
+				socket.on('data_from_server', dataFromServerHandler );
+			};
+		
+		</script>
+    </head>
+    <body>
+    </body>
+</html>

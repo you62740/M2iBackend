@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title></title>
+</head>
+<body>
+
+	<h1>Etudiants</h1>
+	
+	<form method="POST" action="/students/add">
+		<input type="text" value="" name="student"/>
+		<input type="submit" value="Ajouter"/>
+	</form>
+	<%
+		for( var i = 0; i < students.length; i++ )
+		{
+	%>
+	
+	<form method="POST" action="/students/remove">
+		<input type="text" value="<%= students[i] %>" name="student"/>
+		<input type="submit" value="Supprimer"/>
+	</form>
+	
+	<%
+		}
+	%>
+	
+</body>
+</html>

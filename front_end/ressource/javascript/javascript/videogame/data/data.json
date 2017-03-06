@@ -1,0 +1,14 @@
+{
+	"map_data":[
+		{"x":50, "y":20, "tile":"simple_rock"}
+	],
+	"map_tiles":{
+		"simple_rock":{"x":137, "y":324, "width":16, "height":16}
+	},
+	"rockman_states":
+	{
+		"normal" 	: {"x":1	, "y":18, "width":24, "height":24},
+		"runleft1" 	: {"x":75	, "y":18, "width":34, "height":24},
+		"runleft2" 	: {"x":119	, "y":18, "width":28, "height":24}
+	}
+}

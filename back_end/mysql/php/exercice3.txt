@@ -1,0 +1,27 @@
+ ***** Créer un tchat *****
+
+- 	le tchat devra comporter une zone ou l'on voit les 20 derniers messages 
+	des utilisateurs ( vous pouvez faire un tour du côté du mot clé "LIMIT" en MySQL )
+
+- 	Le tchat devra comporter une autre zone ou un utilisateur pourra donner son pseudo
+(le pseudo peut changer à chaque message pas de soucis)
+
+- 	Le tchat devra comporter une zone ou l'utilisateur peut entrer son message
+
+
+- Si vous voulez voir les nouveaux messages, vous devez recharger la page 
+ATTENTION: si vous rechargez la page et que tu vous avez le message "la page a 
+été visitée avec des données de formulaires voulez-vous le soumettre à nouveau 
+blablabla..." Si vous cliquez sur OK, cela aura pour effet de resoumettre votre 
+formulaire et donc de renvoyer votre dernier message une fois encore. 
+
+Solution: une fois le message ajouté en BDD, vous pouvez rediriger l'utilisateur (
+à l'aide de la fonction header() de php donc ... ) vers la page en cours, cela aura 
+pour effet de le rediriger vers la même page, mais sans aucune donnée de formulaire.
+
+FIN de l'exercice, 16h00
+
+
+	
+	
+	

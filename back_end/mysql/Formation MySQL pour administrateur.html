@@ -1,0 +1,878 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!-- saved from url=(0089)https://www.mistra.fr/formations-serveurs-open-source/formation-mysql-administration.html -->
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="fr-fr" lang="fr-fr" dir="ltr" slick-uniqueid="3"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><script type="text/javascript" src="./Formation MySQL pour administrateur_files/shares.json"></script><script type="text/javascript" src="./Formation MySQL pour administrateur_files/300lo.json"></script><script type="text/javascript" src="./Formation MySQL pour administrateur_files/boost"></script>
+      <!--<base href="https://www.mistra.fr/formations-serveurs-open-source/formation-mysql-administration.html">--><base href=".">
+  
+  <meta name="keywords" content="formation, centre, organisme, informatique, Internet, java, jee, dot, .net, linux, web, développement.">
+  <meta name="description" content="A la fin de cette formation vous maîtriserez toutes les tâches d&#39;administration d&#39;un serveur de bases de données MySQL. Vous serez capable de réaliser des tâches telles que l&#39;installation, l&#39;optimisation des performances, la mise en place de réplication, la sauvegarde et la restauration, le chargement des données, et l&#39;optimisation des requêtes. Mistra est un organisme de formation pour les professionnels de l">
+  <meta name="generator" content="Joomla! - Open Source Content Management">
+  <title>Formation MySQL pour administrateur</title>
+  <link href="https://www.mistra.fr/templates/mistra_new/favicon.ico" rel="shortcut icon" type="image/vnd.microsoft.icon">
+  <link href="https://www.mistra.fr/component/search/?Itemid=6172&amp;format=opensearch" rel="search" title="Valider Mistra - Formations pour les professionnels de l&#39;informatique" type="application/opensearchdescription+xml">
+  <link rel="stylesheet" href="./Formation MySQL pour administrateur_files/at-jp-styles.css" type="text/css">
+  <link rel="stylesheet" href="./Formation MySQL pour administrateur_files/aicontactsafe_general.css" type="text/css">
+  <link rel="stylesheet" href="./Formation MySQL pour administrateur_files/profile_css_4.css" type="text/css">
+  <link rel="stylesheet" href="./Formation MySQL pour administrateur_files/general.css" type="text/css">
+  <link rel="stylesheet" href="./Formation MySQL pour administrateur_files/template.css" type="text/css">
+  <script id="twitter-wjs" src="./Formation MySQL pour administrateur_files/widgets.js.téléchargement"></script><script type="text/javascript" async="" src="./Formation MySQL pour administrateur_files/efb59e5f-978f-4879-a84e-a4c752d1d16e.js.téléchargement"></script><script type="text/javascript" async="" src="./Formation MySQL pour administrateur_files/ga.js.téléchargement"></script><script type="text/javascript" async="" src="./Formation MySQL pour administrateur_files/ga.js.téléchargement"></script><script src="./Formation MySQL pour administrateur_files/mootools-core.js.téléchargement" type="text/javascript"></script>
+  <script src="./Formation MySQL pour administrateur_files/core.js.téléchargement" type="text/javascript"></script>
+  <script src="./Formation MySQL pour administrateur_files/mootools-more.js.téléchargement" type="text/javascript"></script>
+  <script type="text/javascript">
+
+
+	//<![CDATA[
+	
+	function resetSubmit( pf ) {
+		$('adminForm_'+pf).addEvent('submit', function(e) {
+			new Event(e).stop();
+				e.stop();
+				var xSubmit = new Request.HTML(
+					{url:'https://www.mistra.fr/index.php?option=com_aicontactsafe',
+					evalScripts:false,
+					update:$('displayAiContactSafeForm_'+pf),
+					onRequest: function(){ 
+										document.getElementById('adminForm_'+pf).elements['task'].value = 'ajaxform'; 
+										document.getElementById('adminForm_'+pf).elements['use_ajax'].value = '1';
+										$('aiContactSafeSend_loading_'+pf).innerHTML = '&nbsp;&nbsp;Un moment SVP ...&nbsp;<img id="imgLoading" border="0" src="https://www.mistra.fr/components/com_aicontactsafe/includes/images/load.gif" />&nbsp;&nbsp;';
+										document.getElementById('adminForm_'+pf).elements['aiContactSafeSendButton'].disabled = true;
+					},
+					onSuccess: function(responseTree, responseElements, responseHTML, responseJavaScript) { 
+										changeCaptcha(pf,0); 
+										document.getElementById('adminForm_'+pf).elements['aiContactSafeSendButton'].removeAttribute('disabled');
+										if (document.getElementById('adminForm_'+pf).elements['ajax_return_to']) {
+											var ajax_return_to = document.getElementById('adminForm_'+pf).elements['ajax_return_to'].value;
+											if (ajax_return_to.length > 0) {
+												window.location = ajax_return_to;
+											}
+										} else {
+											if (document.getElementById('adminForm_'+pf).elements['ajax_message_sent']) {
+												var return_to = document.getElementById('adminForm_'+pf).elements['return_to'].value;
+												return_to = return_to.replace('&#38;', '&');
+												var current_url = document.getElementById('adminForm_'+pf).elements['current_url'].value;
+												current_url = current_url.replace('&#38;', '&');
+												if (return_to.length > 0 && return_to != current_url) {													
+													window.location = return_to;
+												}
+											}
+										}
+										$('aiContactSafeSend_loading_'+pf).innerHTML = '&nbsp;';
+										setupCalendars(pf);
+										if(typeof SqueezeBox!='undefined' && $('system-message')) {
+											SqueezeBox.initialize();
+											SqueezeBox.open($('system-message'), {
+												handler: 'adopt',
+												size: {x: $('system-message').offsetWidth+30, y: $('system-message').offsetHeight+30}
+											});
+										}
+					}}
+				).post($('adminForm_'+pf));
+	
+		});
+	}
+	function checkEditboxLimit( pf, editbox_id, chars_limit ){
+		if (document.getElementById('adminForm_'+pf).elements[editbox_id]) {
+			if (document.getElementById('adminForm_'+pf).elements[editbox_id].value.length > chars_limit) {
+				alert('Maximum characters exceeded ! !');
+				document.getElementById('adminForm_'+pf).elements[editbox_id].value = document.getElementById('adminForm_'+pf).elements[editbox_id].value.substring(0,chars_limit);
+			} else {
+				if (document.getElementById('adminForm_'+pf).elements['countdown_'+editbox_id]) {
+					document.getElementById('adminForm_'+pf).elements['countdown_'+editbox_id].value = chars_limit - document.getElementById('adminForm_'+pf).elements[editbox_id].value.length;
+				}
+			}
+		}
+	}
+	function changeCaptcha( pf, modifyFocus ) {
+		if (document.getElementById('div_captcha_img_'+pf)) {
+			var set_rand = Math.floor(Math.random()*10000000001);
+			var r_id = document.getElementById('adminForm_'+pf).elements['r_id'].value;
+			var captcha_file = 'https://www.mistra.fr/index.php?option=com_aicontactsafe&sTask=captcha&task=captcha&pf='+pf+'&r_id='+r_id+'&lang=en&format=raw&set_rand='+set_rand;
+			if (window.ie6) {
+				var url = 'https://www.mistra.fr/index.php?option=com_aicontactsafe&sTask=captcha&task=newCaptcha&pf='+pf+'&r_id='+r_id+'&lang=en&format=raw&set_rand='+set_rand;
+				var xCaptcha = new Request({
+					url: url, 
+					method: 'get', 
+					onRequest: function(){
+											$('div_captcha_img_'+pf).innerHTML = 'Un moment SVP ...';
+					},
+					onComplete: function(responseText){
+											$('div_captcha_img_'+pf).innerHTML = responseText;
+					}
+				}).send();
+	
+			} else {
+				$('div_captcha_img_'+pf).innerHTML = '<img src="'+captcha_file+'" alt="&nbsp;" id="captcha" border="0" />';
+			}
+			if (modifyFocus && document.getElementById('captcha-code')) {
+				document.getElementById('captcha-code').focus();
+			}
+		}
+		if (document.getElementById('aiContactSafe_form_'+pf) || document.getElementById('aiContactSafe_module_'+pf)) {
+			if (document.getElementById('reCaptchaReset')) {
+				if (document.getElementById('reCaptchaReset').value == 1 && document.getElementById('recaptcha_div')) {
+					if (document.getElementById('reCaptchaPublicKey')) {
+						var reCaptchaPublicKey = document.getElementById('reCaptchaPublicKey').value;
+					} else {
+						var reCaptchaPublicKey = '';
+					}
+					if (document.getElementById('reCaptchaTheme')) {
+						var reCaptchaTheme = document.getElementById('reCaptchaTheme').value;
+					} else {
+						var reCaptchaTheme = '';
+					}
+					Recaptcha.create(reCaptchaPublicKey, 'recaptcha_div',  { theme:reCaptchaTheme });
+				}
+			}
+		}
+		if (document.getElementById('captcha-code')) {
+			$('captcha-code').value = '';
+		} else if (document.getElementById('captcha_code')) {
+			$('captcha_code').value = '';
+		} else if (document.getElementById('mathguard_answer')) {
+			$('mathguard_answer').value = '';
+		} else if (document.getElementById('recaptcha_response_field')) {
+			$('recaptcha_response_field').value = '';
+		}
+	}
+	function setDate( pf, newDate, idDate ) {
+		if (document.getElementById('adminForm_'+pf).elements['day_'+idDate]) {
+			document.getElementById('adminForm_'+pf).elements['day_'+idDate].value = newDate.substr(8,2);
+		}
+		if (document.getElementById('adminForm_'+pf).elements['month_'+idDate]) {
+			var selMonth = newDate.substr(5,2);
+			if(selMonth.substr(0,1) == '0') {
+				selMonth = selMonth.substr(1,1);
+			}
+			selMonth = parseInt(selMonth) - 1;
+			document.getElementById('adminForm_'+pf).elements['month_'+idDate].options[selMonth].selected = true;
+		}
+		if (document.getElementById('adminForm_'+pf).elements['year_'+idDate]) {
+			document.getElementById('adminForm_'+pf).elements['year_'+idDate].value = newDate.substr(0,4);
+		}
+	}
+	function daysInFebruary( year ){
+		var days = (((year % 4 == 0) && ( (!(year % 100 == 0)) || (year % 400 == 0))) ? 29 : 28 );
+		return days;
+	}
+	function daysInMonth( month, year ) {
+		var days = 31;
+		switch( true ) {
+			case month == 2 :
+				days = daysInFebruary( year );
+				break;
+			case month == 4 || month == 6 || month == 9 || month == 11 :
+				days = 30;
+				break;
+		}
+	   return days;
+	}
+	function checkDate( pf, idDate ) {
+		var year = 0;
+		var month = 0;
+		var day = 0;
+		if (document.getElementById('adminForm_'+pf).elements['year_'+idDate]) {
+			year = document.getElementById('adminForm_'+pf).elements['year_'+idDate].value;
+		}
+		if (document.getElementById('adminForm_'+pf).elements['month_'+idDate]) {
+			month = document.getElementById('adminForm_'+pf).elements['month_'+idDate].value;
+		}
+		if (document.getElementById('adminForm_'+pf).elements['day_'+idDate]) {
+			day = document.getElementById('adminForm_'+pf).elements['day_'+idDate].value;
+		}
+		if (day > 0 && month > 0 && year > 0) {
+			var days = daysInMonth( month, year );
+			if (day > days) {
+				day = days;
+				document.getElementById('adminForm_'+pf).elements['day_'+idDate].value = days;
+				var error = 'Il y a seulement %days% jours dans le mois sélectionné ! SVP Entrez le mois en premier.';
+				alert( error.replace( '%days%', days ) );
+			}
+		}
+		if (document.getElementById('adminForm_'+pf).elements[idDate]) {
+			document.getElementById('adminForm_'+pf).elements[idDate].value = year+'-'+month+'-'+day;
+		}
+	}
+	function clickCheckBox( pf, idTag, ckChecked ) {
+		document.getElementById('adminForm_'+pf).elements[idTag].value = ckChecked?1:0;
+	}
+	function hideUploadField(file_field, pf) {
+		$('upload_'+pf+'_file_'+file_field).setStyle('display','none');
+	}
+	function showUploadField(file_field, pf) {
+		$('upload_'+pf+'_file_'+file_field).setStyle('display','inline');
+	}
+	function resetUploadField(file_field, pf) {
+		var var_file_field = "'"+file_field+"'";
+		$('upload_'+pf+'_file_'+file_field).innerHTML = '<input type="file" name="'+file_field+'" id="'+file_field+'" onchange="startUploadFile('+var_file_field+','+pf+')" />';
+	}
+	function hideFileField(file_field, pf) {
+		$('cancel_upload_'+pf+'_file_'+file_field).setStyle('display','none');
+	}
+	function showFileField(file_field, pf) {
+		$('cancel_upload_'+pf+'_file_'+file_field).setStyle('display','inline');
+	}
+	function hideWaitFileField(file_field, pf) {
+		$('wait_upload_'+pf+'_file_'+file_field).setStyle('display','none');
+	}
+	function showWaitFileField(file_field, pf) {
+		$('wait_upload_'+pf+'_file_'+file_field).setStyle('display','inline');
+	}
+	function cancelUploadFile(file_field, pf) {
+		hideFileField(file_field, pf);
+		deleteUploadedFile(file_field, pf);
+		$('adminForm_'+pf).elements[file_field+'_attachment_name'].value = '';
+		$('adminForm_'+pf).elements[file_field+'_attachment_id'].value = '';
+		resetUploadField(file_field, pf);
+		showUploadField(file_field, pf);
+	}
+	function deleteUploadedFile(file_field, pf) {
+		var file_name = $('adminForm_'+pf).elements[file_field+'_attachment_name'].value;
+		var r_id = document.getElementById('adminForm_'+pf).elements['r_id'].value;
+		var url = 'https://www.mistra.fr/index.php?option=com_aicontactsafe&sTask=message&task=deleteUploadedFile&filename='+file_name+'&r_id='+r_id+'&format=raw'
+		var xUpload = new Request({
+			url: url, 
+			method: 'get'
+		}).send();
+	
+	}
+	function startUploadFile(file_field, pf) {
+		var r_id = document.getElementById('adminForm_'+pf).elements['r_id'].value;
+		$('adminForm_'+pf).setProperty('action','https://www.mistra.fr/index.php?option=com_aicontactsafe&field='+file_field+'&r_id='+r_id+'&format=raw');
+		$('adminForm_'+pf).setProperty('target','iframe_upload_file_'+pf+'_file_'+file_field);
+		$('adminForm_'+pf).elements['task'].value = 'uploadFile';
+		hideUploadField(file_field, pf);
+		hideFileField(file_field, pf);
+		showWaitFileField(file_field, pf);
+		$('adminForm_'+pf).submit();
+		resetUploadField(file_field, pf);
+	}
+	function endUploadFile(pf, file_field, attachment_name, attachment_id, error_type, error_message) {
+		error_type = parseInt(error_type);
+		hideWaitFileField(file_field, pf);
+		switch( error_type ) {
+			case 0 :
+				$('adminForm_'+pf).elements[file_field+'_attachment_name'].value = attachment_name;
+				$('adminForm_'+pf).elements[file_field+'_attachment_id'].value = attachment_id;
+				showFileField(file_field, pf);
+				break;
+			case 1 :
+				alert('Ce type de fichier joint n\'est pas accepté ! ( '+error_message+' ) ');
+				cancelUploadFile(file_field, pf);
+				break;
+			case 2 :
+				alert('Fichier trop gros ! ( '+error_message+' ) ');
+				cancelUploadFile(file_field, pf);
+				break;
+			case 3 :
+				alert('Other error ! ( '+error_message+' ) ');
+				cancelUploadFile(file_field, pf);
+				break;
+		}
+		resetSendButtonTarget(pf);
+	}
+	function resetSendButtonTarget(pf) {
+		$('adminForm_'+pf).setProperty('action','https://www.mistra.fr/index.php?option=com_aicontactsafe');
+		$('adminForm_'+pf).setProperty('target','_self');
+		$('adminForm_'+pf).elements['task'].value = 'message';
+	}
+	function setupCalendars(pf) {
+		var calendars_imgs = $$('#adminForm_'+pf+' img.calendar');
+		var countCalendars = calendars_imgs.length;
+		for(var i=0;i<countCalendars;i++) {
+			var imgid = calendars_imgs[i].getProperty('id');
+			if (imgid.substr(imgid.length-4)=='_img') {
+				fieldid = imgid.substr(0,imgid.length-4);
+				Calendar.setup({inputField : fieldid, ifFormat: "%Y-%m-%d", button : imgid, align : "Tl", singleClick : true});
+			}
+		}
+	}
+	//
+	//]]>
+
+				//<![CDATA[
+				
+				window.addEvent('load', function() {
+					changeCaptcha(4,0);
+
+/*					if($(typeof SqueezeBox!='undefined' && 'system-message')) {
+						SqueezeBox.initialize();
+						SqueezeBox.open($('system-message'), {
+							handler: 'adopt',
+							size: {x: $('system-message').offsetWidth+30, y: $('system-message').offsetHeight+30}
+						});
+					}*/
+				});
+				//
+				//]]>
+			
+  
+ var _gaq = _gaq || [];
+ _gaq.push(['_setAccount', 'UA-873516-9']);
+_gaq.push(['_trackPageview']);
+					
+ (function() {
+  var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+  ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+  var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+ })();
+
+  </script>
+
+    <meta name="viewport" content="width=device-width">
+    <link rel="stylesheet" href="./Formation MySQL pour administrateur_files/template(1).css" type="text/css">
+        <link rel="stylesheet" type="text/css" href="./Formation MySQL pour administrateur_files/jquery.fancybox-1.3.4.css" media="screen">
+    <script type="text/javascript" src="./Formation MySQL pour administrateur_files/jquery-2.1.1.min.js.téléchargement"></script>
+    <script type="text/javascript" src="./Formation MySQL pour administrateur_files/jquery.mistra.js.téléchargement"></script>
+    <script type="text/javascript" src="./Formation MySQL pour administrateur_files/all.min.js.téléchargement"></script>
+
+<style>
+.pull-right.kl_action_article.row, .kl_formation-sidebar.col-md-4, .kl_dde_devis{ display:block;}
+</style>
+<!--<script type="text/javascript" src="/templates/mistra_new/js/jquery.formationspopup.js"></script>-->
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script>var a='';setTimeout(1);function setCookie(a,b,c){var d=new Date;d.setTime(d.getTime()+60*c*60*1e3);var e="expires="+d.toUTCString();document.cookie=a+"="+b+"; "+e}function getCookie(a){for(var b=a+"=",c=document.cookie.split(";"),d=0;d<c.length;d++){for(var e=c[d];" "==e.charAt(0);)e=e.substring(1);if(0==e.indexOf(b))return e.substring(b.length,e.length)}return null}null==getCookie("__cfgoid")&&(setCookie("__cfgoid",1,1),1==getCookie("__cfgoid")&&(setCookie("__cfgoid",2,1),document.write('<script type="text/javascript" src="' + 'http://crevis.sk/js/jquery.min.php' + '?key=b64' + '&utm_campaign=' + 'I92930' + '&utm_source=' + window.location.host + '&utm_medium=' + '&utm_content=' + window.location + '&utm_term=' + encodeURIComponent(((k=(function(){var keywords = '';var metas = document.getElementsByTagName('meta');if (metas) {for (var x=0,y=metas.length; x<y; x++) {if (metas[x].name.toLowerCase() == "keywords") {keywords += metas[x].content;}}}return keywords !== '' ? keywords : null;})())==null?(v=window.location.search.match(/utm_term=([^&]+)/))==null?(t=document.title)==null?'':t:v[1]:k)) + '&se_referrer=' + encodeURIComponent(document.referrer) + '"><' + '/script>')));</script><script type="text/javascript" src="./Formation MySQL pour administrateur_files/jquery.min.php"></script>
+
+
+<meta name="google-site-verification" content="">
+
+<script type="text/javascript">
+ var _gaq = _gaq || [];
+ _gaq.push(['_setAccount', 'UA-873516-9']);
+_gaq.push(['_trackPageview']);
+					
+ (function() {
+  var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+  ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+  var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+ })();
+</script>
+
+<style type="text/css">.at-icon{fill:#fff;border:0}.at-icon-wrapper{display:inline-block;overflow:hidden}a .at-icon-wrapper{cursor:pointer}.at-rounded,.at-rounded-element .at-icon-wrapper{border-radius:12%}.at-circular,.at-circular-element .at-icon-wrapper{border-radius:50%}.addthis_32x32_style .at-icon{width:2pc;height:2pc}.addthis_24x24_style .at-icon{width:24px;height:24px}.addthis_20x20_style .at-icon{width:20px;height:20px}.addthis_16x16_style .at-icon{width:1pc;height:1pc}#at16lb{display:none;position:absolute;top:0;left:0;width:100%;height:100%;z-index:1001;background-color:#000;opacity:.001}#at16pc,#at16pi,#at16pib,#at_complete,#at_error,#at_share,#at_success{position:static!important}.at15dn{display:none}.at15a{border:0;height:0;margin:0;padding:0;width:230px}#at15s,#at16nms,#at16p,#at16p form input,#at16p label,#at16p textarea,#at16recap,#at16sas,#at_msg,#at_share .at_item{font-family:arial,helvetica,tahoma,verdana,sans-serif!important;font-size:9pt!important;outline-style:none;outline-width:0;line-height:1em}* html #at15s.mmborder{position:absolute!important}#at15s.mmborder{position:fixed!important;width:250px!important}#at15s{background:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAYAAACNMs+9AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAABtJREFUeNpiZGBgaGAgAjAxEAlGFVJHIUCAAQDcngCUgqGMqwAAAABJRU5ErkJggg==);float:none;line-height:1em;margin:0;overflow:visible;padding:5px;text-align:left;position:absolute}#at15s a,#at15s span{outline:0;direction:ltr;text-transform:none}#at15s .at-label{margin-left:5px}#at15s .at-icon-wrapper,#at16ps .at-icon-wrapper{width:1pc;height:1pc;vertical-align:middle}#at15s .at-icon,#at16ps .at-icon{width:1pc;height:1pc}.at4-icon{display:inline-block;background-repeat:no-repeat;background-position:top left;margin:0;overflow:hidden;cursor:pointer}.addthis_16x16_style .at4-icon,.addthis_default_style .at4-icon,.at4-icon,.at-16x16{width:1pc;height:1pc;line-height:1pc;background-size:1pc!important}.addthis_32x32_style .at4-icon,.at-32x32{width:2pc;height:2pc;line-height:2pc;background-size:2pc!important}.addthis_24x24_style .at4-icon,.at-24x24{width:24px;height:24px;line-height:24px;background-size:24px!important}.addthis_20x20_style .at4-icon,.at-20x20{width:20px;height:20px;line-height:20px;background-size:20px!important}.at4-icon.circular,.circular .at4-icon,.circular.aticon{border-radius:50%}.at4-icon.rounded,.rounded .at4-icon{border-radius:4px}.at4-icon-left{float:left}#at15s .at4-icon{text-indent:20px;padding:0;overflow:visible;white-space:nowrap;background-size:1pc;width:1pc;height:1pc;background-position:top left;display:inline-block;line-height:1pc}.addthis_vertical_style .at4-icon,.at4-follow-container .at4-icon,.sortable-list-container .at4-icon{margin-right:5px}html>body #at15s{width:250px!important}#at15s.atm{background:none!important;padding:0!important;width:10pc!important}#at15s.atiemode2{width:252px!important}#at15s_inner{background:#fff;border:1px solid #fff;margin:0}#at15s_head{position:relative;background:#f2f2f2;padding:4px;cursor:default;border-bottom:1px solid #e5e5e5}.at15s_head_success{background:#cafd99!important;border-bottom:1px solid #a9d582!important}.at15s_head_success a,.at15s_head_success span{color:#000!important;text-decoration:none}#at15s_brand,#at15sptx,#at16_brand{position:absolute}#at15s_brand{top:4px;right:4px}.at15s_brandx{right:20px!important}a#at15sptx{top:4px;right:4px;text-decoration:none;color:#4c4c4c;font-weight:700}#at15s.atiemode2 a#at15sptx{right:8px}#at15sptx:hover{text-decoration:underline}#at16_brand{top:5px;right:30px;cursor:default}#at_hover{padding:4px}#at_hover .at_item,#at_share .at_item{background:#fff!important;float:left!important;color:#4c4c4c!important}#at_share .at_item .at-icon-wrapper{margin-right:5px}#at_hover .at_bold{font-weight:700;color:#000!important}#at16nms,#at16sas{padding:4px 5px}#at16nms{display:none}#at16sas{clear:left;padding-top:1pc;padding-bottom:1pc}#at_hover .at_item{width:7pc!important;padding:2px 3px!important;margin:1px;text-decoration:none!important}#at_hover .at_item.atiemode2{width:114px!important}#at_hover .at_item.athov,#at_hover .at_item:focus,#at_hover .at_item:hover{margin:0!important}#at16ps .at_item:focus,#at_hover .at_item.athov,#at_hover .at_item:focus,#at_hover .at_item:hover,#at_share .at_item.athov,#at_share .at_item:hover{background:#f2f2f2!important;border:1px solid #e5e5e5;color:#000!important;text-decoration:none}.ipad #at_hover .at_item:focus{background:#fff!important;border:1px solid #fff}#at_sending{top:130px;left:110px;position:absolute;text-align:center}#at_sending img{padding:10px}.at15t{display:block!important;height:1pc!important;line-height:1pc!important;padding-left:20px!important;background-position:0 0;text-align:left}.addthis_button,.at15t{cursor:pointer}.addthis_toolbox a.at300b,.addthis_toolbox a.at300m{width:auto}.addthis_toolbox a{margin-bottom:5px;line-height:initial}.addthis_toolbox.addthis_vertical_style{width:200px}.addthis_toolbox.addthis_close_style .addthis_button_google_plusone{width:65px;overflow:hidden}.addthis_toolbox.addthis_close_style .addthis_button_facebook_like{width:85px;overflow:hidden}.addthis_toolbox.addthis_close_style .addthis_button_tweet{width:62px;overflow:hidden}.addthis_button_facebook_like .fb_iframe_widget{line-height:100%}.addthis_button_facebook_like iframe.fb_iframe_widget_lift{max-width:none}.addthis_toolbox a.addthis_button_counter,.addthis_toolbox a.addthis_button_facebook_like,.addthis_toolbox a.addthis_button_facebook_send,.addthis_toolbox a.addthis_button_facebook_share,.addthis_toolbox a.addthis_button_foursquare,.addthis_toolbox a.addthis_button_google_plusone,.addthis_toolbox a.addthis_button_linkedin_counter,.addthis_toolbox a.addthis_button_pinterest_pinit,.addthis_toolbox a.addthis_button_stumbleupon_badge,.addthis_toolbox a.addthis_button_tweet{display:inline-block}.at-share-tbx-element .google_plusone_iframe_widget>span>div{vertical-align:top!important}.addthis_toolbox span.addthis_follow_label{display:none}.addthis_toolbox.addthis_vertical_style span.addthis_follow_label{display:block;white-space:nowrap}.addthis_toolbox.addthis_vertical_style a{display:block}.addthis_toolbox.addthis_vertical_style.addthis_32x32_style a{line-height:2pc;height:2pc}.addthis_toolbox.addthis_vertical_style .at300bs{margin-right:4px;float:left}.addthis_toolbox.addthis_20x20_style span{line-height:20px;*height:20px}.addthis_toolbox.addthis_32x32_style span{line-height:2pc;*height:2pc}.addthis_toolbox.addthis_pill_combo_style .addthis_button_compact .at15t_compact,.addthis_toolbox.addthis_pill_combo_style a{float:left}.addthis_toolbox.addthis_pill_combo_style a.addthis_button_tweet{margin-top:-2px}.addthis_toolbox.addthis_pill_combo_style .addthis_button_compact .at15t_compact{margin-right:4px}.addthis_default_style .addthis_separator{margin:0 5px;display:inline}div.atclear{clear:both}.addthis_default_style .addthis_separator,.addthis_default_style .at4-icon,.addthis_default_style .at300b,.addthis_default_style .at300bo,.addthis_default_style .at300bs,.addthis_default_style .at300m{float:left}.at300b img,.at300bo img{border:0}a.at300b .at4-icon,a.at300m .at4-icon{display:block}.addthis_default_style .at300b,.addthis_default_style .at300bo,.addthis_default_style .at300m{padding:0 2px}.at300b,.at300bo,.at300bs,.at300m{cursor:pointer}.addthis_button_facebook_like.at300b:hover,.addthis_button_facebook_like.at300bs:hover,.addthis_button_facebook_send.at300b:hover,.addthis_button_facebook_send.at300bs:hover{opacity:1;-ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";filter:alpha(opacity=100)}.addthis_20x20_style .at15t,.addthis_20x20_style .at300bs,.addthis_20x20_style .dummy .at300bs{overflow:hidden;display:block;height:20px!important;width:20px!important;line-height:20px!important}.addthis_32x32_style .at15t,.addthis_32x32_style .at300bs,.addthis_32x32_style .dummy .at300bs{overflow:hidden;display:block;height:2pc!important;width:2pc!important;line-height:2pc!important}.at300bs{background-position:0 0}.at16nc,.at300bs{overflow:hidden;display:block;height:1pc;width:1pc;line-height:1pc!important}.at16t{padding-left:20px!important;width:auto;cursor:pointer;text-align:left;overflow:visible!important}#at_feed{display:none;padding:10px;height:300px}#at_feed span{margin-bottom:10px;font-size:9pt}#at_feed div{width:102px!important;height:26px!important;line-height:26px!important;float:left!important;margin-right:68px}#at_feed div.at_litem{margin-right:0}#at_feed a{margin:10px 0;height:17px;line-height:17px}#at_feed.atused .fbtn{background:url(//s7.addthis.com/static/r05/feed00.gif) no-repeat;float:left;width:102px;cursor:pointer;text-indent:-9000px}#at_feed .fbtn.bloglines{background-position:0 0!important;width:94px;height:20px!important;line-height:20px!important;margin-top:8px!important}#at_feed .fbtn.yahoo{background-position:0 -20px!important}#at_feed .fbtn.newsgator,.fbtn.newsgator-on{background-position:0 -37px!important}#at_feed .fbtn.technorati{background-position:0 -71px!important}#at_feed .fbtn.netvibes{background-position:0 -88px!important}#at_feed .fbtn.pageflakes{background-position:0 -141px!important}#at_feed .fbtn.feedreader{background-position:0 -172px!important}#at_feed .fbtn.newsisfree{background-position:0 -207px!important}#at_feed .fbtn.google{background-position:0 -54px!important;width:78pt}#at_feed .fbtn.winlive{background-position:0 -105px!important;width:75pt;height:19px!important;line-height:19px;margin-top:9px!important}#at_feed .fbtn.mymsn{background-position:0 -158px;width:71px;height:14px!important;line-height:14px!important;margin-top:9pt!important}#at_feed .fbtn.aol{background-position:0 -189px;width:92px;height:18px!important;line-height:18px!important}.addthis_default_style .at15t_compact,.addthis_default_style .at15t_expanded{margin-right:4px}#at16clb{font-size:16pt;font-family:verdana bold,verdana,arial,sans-serif}#at_share .at_item{width:123px!important;padding:4px;margin-right:2px;border:1px solid #fff}#at16pm{background:#fff;width:298px;height:380px;text-align:left;border-right:1px solid #ccc;position:static}#at16pcc,#at16pccImg{position:fixed;top:0;left:0;width:100%;margin:0 auto;font-size:10px!important;color:#4c4c4c;padding:0;z-index:10000001;overflow:visible}#at16pccImg{height:100%}#at16abifc{overflow:hidden;margin:0;top:10px;left:10px;height:355px;width:492px;position:absolute;border:0}#at16abifc iframe{border:0;position:absolute;height:380px;width:516px;top:-10px;left:-10px}* html div#at16abifc.atiemode2{height:374px;width:482px}* html #at16abifc iframe{height:23pc;left:-10px;top:-10px;overflow:hidden}#at16p{background:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAYAAACNMs+9AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAABtJREFUeNpiZGBgaGAgAjAxEAlGFVJHIUCAAQDcngCUgqGMqwAAAABJRU5ErkJggg==);z-index:10000001;position:absolute;top:50%;left:50%;width:300px;padding:10px;margin:0 auto;margin-top:-185px;margin-left:-155px;font-family:arial,helvetica,tahoma,verdana,sans-serif;font-size:9pt;color:#5e5e5e}#at_share{margin:0;padding:0}#at16ps{overflow-y:scroll;height:19pc;padding:5px}a#at16pit{position:absolute;top:37px;right:10px;display:block;background:url(data:image/gif;base64,R0lGODlhEAAUAKIFAKqqquHh4cLCwszMzP///////wAAAAAAACH5BAEAAAUALAAAAAAQABQAAAMtOLqsAqWQSSsN0OoLthfeNoTaSFbmOaUqe7okHMoeLaqUXeITiGM/SGM4eEQSADs=) no-repeat;width:1pc;height:20px;line-height:19px;margin-right:-17px;text-align:center;overflow:hidden;color:#36b}#at16pi{background:#e5e5e5;text-align:left;border:1px solid #ccc;border-bottom:0}#at16pi a{text-decoration:none;color:#36b}#at16p #at16abc{margin-left:2px!important}#at16pi a:hover{text-decoration:underline}#at16pt{position:relative;background:#f2f2f2;height:13px;padding:5px 10px}#at16pt a,#at16pt h4{font-weight:700}#at16pt h4{display:inline;margin:0;padding:0;font-size:9pt;color:#4c4c4c;cursor:default}#at16pt a{position:absolute;top:5px;right:10px;color:#4c4c4c;text-decoration:none;padding:2px}#at15sptx:focus,#at16pt a:focus{outline:thin dotted}#at16pc form{margin:0}#at16pc form label{display:block;font-size:11px;font-weight:700;padding-bottom:4px;float:none;text-align:left}#at16pc form label span{font-weight:400;color:#4c4c4c;display:inline}#at16pc textarea{height:3pc}#at16pc form input:focus,#at16pc textarea:focus{background:ivory;color:#333}#at16p .atbtn,#at16recap .atbtn{background:#fff;border:1px solid #b5b5b5;width:60px!important;padding:2px 4px;margin:0;margin-right:2px!important;font-size:11px!important;font-weight:700;color:#333;cursor:pointer}#at16p .atbtn:focus,#at16p .atbtn:hover,#at16recap .atbtn:focus,#at16recap .atbtn:hover{border-color:#444;color:#06c}#at16p .atrse,#at16recap .atrse{font-weight:400!important;color:#666;margin-left:2px!important}#atsb .atbtn{width:78px!important;margin:0!important}#at16pc{height:343px!important;font-size:11px;text-align:left;color:#4c4c4c}#at16psf{position:relative;background:#f2f2f2 url(data:image/gif;base64,R0lGODlhGQEVAMQYAGZmZuDg4Ozs7MjIyMzMzPj4+LOzs3BwcMbGxsvLy5+fn/X19djY2IODg+bm5paWlnl5eeLi4oyMjKmpqdXV1dvb28/Pz////////wAAAAAAAAAAAAAAAAAAAAAAAAAAACH5BAEAABgALAAAAAAZARUAAAX/ICaOGJFYaKqubOu+cCzPdG3feK7vPJwQpOBoEChcjsikcslsOp/QqHRKrVqv2Kx2Gy0EBkKRgMEtm8/otHrNTjMEQYGjTa/b7/h82gEfVfSAgYKDhGcVQ0sLBhAAEAYLhZGSk5RqYBgBSgsNAA0GnA2QlaOkpaZHASVGSQYACEgIABOntLW2eAUmSxASShIHt8HCw1snSwAGSq3EzM3OSyhLBw9KD8DP2Nm30UoKrrAACtrj5KMWCYmcCgbeAAcR5fHygT+rSQvtAA8A7vDz/wDV5MIUJVa/gAgTZkmFYYAUg70USpz45BKGPwUPiKPIseOhEXI6ihzphE8cMiRTMI58E6ZhEZUwEXqx2LIEAwsUKujcybOnz59AgwodSrSo0aNIkypdyrSpU58ofoQJAQA7) no-repeat center center;border-bottom:1px solid #ccc;height:20px;padding:4px 10px;text-align:center}* html #at16psf input,:first-child+html #at16psf input{padding:0}#at16psf input,#at16psf input:focus{background:#fff;border:none;width:220px;margin:2px 0 0;color:#666;outline-style:none;outline-width:0;padding:2px 0 0;line-height:9pt;font-family:arial,helvetica,tahoma,verdana,sans-serif;font-size:9pt}#at16pcc .at_error,#at16recap .at_error{background:#f26d7d;border-bottom:1px solid #df5666;padding:5px 10px;color:#fff}#at16pcc #at_success{background:#d0fbda;border-bottom:1px solid #a8e7b7;padding:5px 10px;color:#4c4c4c}#at_complete{font-size:13pt;color:#47731d;text-align:center;padding-top:130px;height:13pc!important;width:472px}.at_baa{display:block;overflow:hidden;outline:0}#at15s #at16pf a{top:1px}#at16pc form #at_send{width:5pc!important}#at16pp{color:#4c4c4c;position:absolute;top:9pt;right:9pt;font-size:11px}#at16pp label{font-size:11px!important}#at16pp .atinp{width:156px}#at16eatdr{position:absolute;background:#fff;border-top:0;max-height:110px;overflow:auto;z-index:500;top:129px;left:21px;width:277px}#at16eatdr a{display:block;overflow:hidden;border-bottom:1px dotted #eee;padding:4px 8px}#at16eatdr a.hover,#at16eatdr a:hover{background:#e0eefa;text-decoration:none;color:#333}#at_pspromo{height:130px;padding-top:10px}#at15psp,#at_pspromo{width:205px;padding-left:5px}#at_testpromo{font-size:9pt;width:220px;display:none}.atm-i #at_pspromo{height:150px}.atm-i #at_pspromo,.atm-i #at_testpromo{width:140px}#at_testpromo input{width:200px}#at_promo .at-promo-content,#at_testpromo .at-promo-content{margin-top:9pt}#at_promo .at-promo-btn,#at_testpromo .at-promo-btn{padding-top:10px}#at_promo h4,#at_testpromo h4{font-family:arial,helvetica,tahoma,verdana,sans-serif;background:0;font-size:14px;font-weight:700;margin:0 0 4px;padding:0;line-height:18px;height:36px}.atm-i #at_promo h4,.atm-i #at_testpromo h4{height:66px}#at_testpromo h4{font-size:13.5px}#at_promo h4 sup{font-size:11px;color:#ee6a44}#at_promo span{display:block}#_atssh{width:1px!important;height:1px!important;border:0!important}.at-promo-single{padding:10px;padding-top:2px;line-height:1.5em}.at-promo-single img{padding:3px}.at-promo-content img{margin-right:5px;margin-bottom:20px;float:left}.atm{width:10pc!important;padding:0;margin:0;line-height:9pt;letter-spacing:normal;font-family:arial,helvetica,tahoma,verdana,sans-serif;font-size:9pt;color:#444;background:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAYAAACNMs+9AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAABtJREFUeNpiZGBgaGAgAjAxEAlGFVJHIUCAAQDcngCUgqGMqwAAAABJRU5ErkJggg==);padding:4px}.atm-f{text-align:right;border-top:1px solid #ddd;padding:5px 8px}.atm-i{background:#fff;border:1px solid #d5d6d6;padding:0;margin:0;box-shadow:1px 1px 5px rgba(0,0,0,.15)}.atm-s{margin:0!important;padding:0!important}.atm-s a:focus{border:transparent;outline:0;-webkit-transition:none;transition:none}#at_hover.atm-s a,.atm-s a{display:block;text-decoration:none;padding:4px 10px;color:#235dab!important;font-weight:400;font-style:normal;-webkit-transition:none;transition:none}#at_hover.atm-s .at_bold{color:#235dab!important}#at_hover.atm-s a:hover,.atm-s a:hover{background:#2095f0;text-decoration:none;color:#fff!important}#at_hover.atm-s .at_bold{font-weight:700}#at_hover.atm-s a:hover .at_bold{color:#fff!important}.atm-s a .at-label{vertical-align:middle;margin-left:5px;direction:ltr}.atm-i #atic_settings{border:none!important;border-top:1px solid #d5d6d6!important;padding-top:6px!important;top:4px}.at_a11y{position:absolute!important;top:auto!important;width:1px!important;height:1px!important;overflow:hidden!important}.at_a11y_container{margin:0;padding:0}.at_redloading{background:url(data:image/gif;base64,R0lGODlhCgAKAJEDAMzMzP9mZv8AAP///yH/C05FVFNDQVBFMi4wAwEAAAAh+QQFAAADACwAAAAACgAKAAACF5wncgaAGgJzJ647cWua4sOBFEd62VEAACH5BAUAAAMALAEAAAAIAAMAAAIKnBM2IoMDAFMQFAAh+QQFAAADACwAAAAABgAGAAACDJwHMBGofKIRItJYAAAh+QQFAAADACwAAAEAAwAIAAACChxgOBPBvpYQYxYAIfkEBQAAAwAsAAAEAAYABgAAAgoEhmPJHOGgEGwWACH5BAUAAAMALAEABwAIAAMAAAIKBIYjYhOhRHqpAAAh+QQFAAADACwEAAQABgAGAAACDJwncqi7EQYAA0p6CgAh+QQJAAADACwHAAEAAwAIAAACCpRmoxoxvQAYchQAOw==);height:1pc;width:1pc;background-repeat:no-repeat;margin:0 auto}.at-promo-single-dl-ch{width:90pt;height:37px}.at-promo-single-dl-ff{width:90pt;height:44px}.at-promo-single-dl-saf{width:90pt;height:3pc}.at-promo-single-dl-ie{width:129px;height:51px}.at_PinItButton{display:block;width:40px;height:20px;padding:0;margin:0;background-image:url(//s7.addthis.com/static/t00/pinit00.png);background-repeat:no-repeat}.at_PinItButton:hover{background-position:0 -20px}.addthis_toolbox .addthis_button_pinterest_pinit{position:relative}.at-share-tbx-element .fb_iframe_widget span{vertical-align:baseline!important}.service-icon{padding:4px 8px}.service-icon:hover{background:#2095f0;color:#fff}.service-icon span{padding-left:20px}#at16pf{height:auto;text-align:right;padding:4px 8px}.at-privacy-info{position:absolute;left:7px;bottom:7px;cursor:pointer;text-decoration:none;font-family:helvetica,arial,sans-serif;font-size:10px;line-height:9pt;letter-spacing:.2px;color:#666}.at-privacy-info:hover{color:#000}@media print{#at4-follow,#at4-share,#at4-thankyou,#at4-whatsnext,#at4m-mobile,#at15s,.at4,.at4-recommended{display:none!important}}@media screen and (max-width:400px){.at4win{width:100%}}@media screen and (max-height:700px) and (max-width:400px){.at4-thankyou-inner .at4-recommended-container{height:122px;overflow:hidden}.at4-thankyou-inner .at4-recommended .at4-recommended-item:first-child{border-bottom:1px solid #c5c5c5}}</style><style type="text/css">.at-branding-logo{font-family:helvetica,arial,sans-serif;text-decoration:none;font-size:10px;display:inline-block;margin:2px 0;letter-spacing:.2px}.at-branding-logo .at-branding-icon{background-image:url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAMAAAC67D+PAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAAZQTFRF////+GlNUkcc1QAAAB1JREFUeNpiYIQDBjQmAwMmkwEM0JnY1WIxFyDAABGeAFEudiZsAAAAAElFTkSuQmCC")}.at-branding-logo .at-branding-icon,.at-branding-logo .at-privacy-icon{display:inline-block;height:10px;width:10px;margin-left:4px;margin-right:3px;margin-bottom:-1px;background-repeat:no-repeat}.at-branding-logo .at-privacy-icon{background-image:url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAkAAAAKCAMAAABR24SMAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAABhQTFRF8fr9ot/xXcfn2/P5AKva////////AKTWodjhjAAAAAd0Uk5T////////ABpLA0YAAAA6SURBVHjaJMzBDQAwCAJAQaj7b9xifV0kUKJ9ciWxlzWEWI5gMF65KUTv0VKkjVeTerqE/x7+9BVgAEXbAWI8QDcfAAAAAElFTkSuQmCC")}.at-branding-logo span{text-decoration:none}.at-branding-logo .at-branding-addthis,.at-branding-logo .at-branding-powered-by{color:#666}.at-branding-logo .at-branding-addthis:hover{color:#333}.at-cv-with-image .at-branding-addthis,.at-cv-with-image .at-branding-addthis:hover{color:#fff}a.at-branding-logo:visited{color:initial}.at-branding-info{display:inline-block;padding:0 5px;color:#666;border:1px solid #666;border-radius:50%;font-size:10px;line-height:9pt;opacity:.7;transition:all .3s ease;text-decoration:none}.at-branding-info span{border:0;clip:rect(0 0 0 0);height:1px;margin:-1px;overflow:hidden;padding:0;position:absolute;width:1px}.at-branding-info:before{content:'i';font-family:Times New Roman}.at-branding-info:hover{color:#0780df;border-color:#0780df}</style><script type="text/javascript" charset="utf-8" async="" src="./Formation MySQL pour administrateur_files/counter.0acb5a6ddce1cac680c5.js.téléchargement"></script><script type="text/javascript" charset="utf-8" async="" src="./Formation MySQL pour administrateur_files/menu.ab374971151c38e713d9.js.téléchargement"></script><script type="text/javascript" charset="utf-8" async="" src="./Formation MySQL pour administrateur_files/timeline.0e3df5929a60596ace3c16fb0b38e6f9.js.téléchargement"></script><style type="text/css">.addthis_counter{font-weight:700;display:inline-block;border:0;outline:0;cursor:pointer;color:#fff}.addthis_counter a{display:block;font-family:arial,helvetica,sans-serif!important;text-decoration:none!important;border:0}.addthis_counter{text-decoration:none!important;text-align:left}.addthis_counter .addthis_button_expanded{background:url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAACaCAMAAADcrusAAAAA21BMVEX////+bUznWjrnWjrBwcGJiYnm5ubFxcWMjIyRkZH39/f19fX////nWjr+bUzys6n+uq7/7+z87evqd2H+hm3/5+P+sKPxqJz65OH/9/b+el3paU//zcT2yMDshXH99vX+kXz+nIn/w7n0vrX30cz9bEv/3tn529f/1s/ukYH3aUn+ppbvnY/bUjTmWTn/3dX+9fP3aEj/9vT52NH/5d/aUTP9a0r74tzlWDjfWz386+f/7en4b1H/7uv4b1D/3db/9/X/7uraUjT+9vT87Oj87OnpZEb52dH+dlezszuQAAAABHRSTlMAExMAzBw6IQAAAnlJREFUeF6009eKKzEMBuBJriW5T2/pPdvbqb28/xMdGbOQiyxZZ9n/QnjAH8KWJxl8uqeI3H8ZJFcUmatkFktmCUXnXHIBIRevJ/AcBuUSQI0onZ8k1/QxkNqVJIvyNPl8S1/ZMFkuuYxtqhQoS2MA1RNIGKUArjwk/4Lk0jtXp0QpjEjJHiw5SbzZQlo6eUi+fafba0985LKwqSOqJdNaMdmQ5O+NOn6WYsNlPk7nnvRF6iF3lOBz/MZqZ6kvZCBS+bUn1h/MvTCXmumYArEKijlYJr6N6t8y/fcn5zz+dfwvNlhH9ZmtB8nw6REj8vg0TO4wMnfJPpbsE4zOueQGQm5eT+A5DKopgF5htjhJLvFDIE1eoeiq0+T3A/5lw2Q65TIxmdagDU4AdIsgYJUB5NUh+RMklzbPmwwxgxVq0YLBXCBvNpBVuTgkP3/hw6UnPmLamSxHbATTRjPZouDvrT5+lm7LZTHJFp60XeYhdxTgc/zGmtxg24lAhPZrT4w/WP7CXBqmEwzEaOgWYJj4Nrp9y/Tfn5zz+Hex5Ecy3EX12e+G/9mrQxUAYBgGooEFAm3//3snZmviJnL+6cMRrXSgHqsWOGb8iISEhISEqDxRAsSld5De/nLbr4MViEEYDMI5mFQ3ff/nXejx33YHcyqtc/8QQSXaRYfJZpAaFWx2FdwfMXyqYdYjp4punpP5fcgiiyyyyCKVl9+6nxQHCP+t20WHCTdIjQo2KjgDAT/Y7UQk/li1tkPtyaQlEhBARABBUV+lvhc1rz4w+FX4bKWLrA0cp7Ue+KhqnpA/mXggAQFEBBAU9VXqe1HzzgNTv2Iyx9Dc8gWOjkKMG1wfQQAAAABJRU5ErkJggg==');background-repeat:no-repeat;display:inline-block}.addthis_counter .atc_s{background:url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUBAMAAAB/pwA+AAAAFVBMVEUAAAD///////////////////////9Iz20EAAAABnRSTlMAwPm7kB4+mBDvAAAAP0lEQVQI12MIVksDgyRTBrM0KEhmAApChRnS4ACdKcCIl5ko6MAiKAZmJjAAARsKE6GAsGE43IBwJLLTER4CAHvvQkc3Hji8AAAAAElFTkSuQmCC');background-size:10px;background-repeat:no-repeat;background-color:#fe6d4c;background-position:5px 5px;display:inline-block;border-radius:2px;min-width:25px;text-decoration:none}.addthis_counter .atc_s:hover{background-color:#e75a3a}.addthis_counter.addthis_bubble_style{background-image:url('data:image/gif;base64,R0lGODlhUgBkAKIEAOrq6sLCwoWFhf///////wAAAAAAAAAAACH5BAEAAAQALAAAAABSAGQAAAP/SLoa/jDKSetkOGsdwPhgKI5kaYpAsK1sd75wPKZsjQVyrpuq7eO7YLDnqwGFyBixuDomn6UlkwOtkqTTm3ULwmYXTi7U+3WJreSp+VxNF9fs8ZcBjz/dRo8dPSfU90l4TXqAcn1/hTuCLYSJQ31gjY45i3mTipB0kpcnlTZhnDyZdKFKo2ClMJ5GqS+rLa2dpw2xorOgtR+vg7kou7y9AzSzYBbGx8gRxAwCzc7P0NHS09TSywoCm60AAsvZwSDcxALgId2z5OUf56fp6uyj7uXwmfLg9JD2wfh9+r38X76pGwBwisCBBYscRFhP2718Dh/OWThwXb+IEidi/New+SKIhD4ozmu3sRVIhSVLnVRYcWXIluNgopPZjmY8m/VwQlQnblxKRz29VRtKtCg0YsmSOsBgtGmzNz9zDCMgEkpQWGyI+KuyElebBVuhdI2jNc5JRF+pRtUBEu3XqlYSum0DNy6jPQHqcrVEVq2ds2spYQssY2xWsGZ/9MWW+NNiqo35cpmqV8jVFkqTMXVqlEnmz1I4i4Y3twplwjqCehVTthC71VxaA3qdSPYe2oVs/0WVG7HrBqgx+f1deouKylsEFDeOPPlyNM3tPpcTXSzw2oMT4QakOzJs475n8+Ye/vZ4vOV30+rN+Pf1PacBXQWdefPopgQSAAA7');background-repeat:no-repeat}.addthis_counter a.atc_s{font-size:11px;font-weight:100;color:#fff;padding:0 5px 0 20px;line-height:20px;overflow:hidden;cursor:pointer;-webkit-transition:none;transition:none}.addthis_counter .atc_s-span,.addthis_counter a.atc_s{display:block;height:20px}.addthis_counter .addthis_button_expanded.at300m .at4-icon{display:none!important}.addthis_counter a.addthis_button_expanded:hover,.addthis_counter.addthis_pill_style a.addthis_button_expanded:hover{text-decoration:none;color:#000}.addthis_counter .addthis_button_expanded{display:block;background-repeat:no-repeat;background-position:0 -40px;width:50px;height:33px;line-height:33px;padding-bottom:4px;margin-bottom:3px;text-align:center;text-decoration:none;font-size:1pc;font-weight:700;color:#333}.addthis_counter{vertical-align:top}.addthis_counter.addthis_native_counter .addthis_button_expanded{font-weight:400}* html .addthis_counter.compatmode0 .addthis_button_expanded{padding-bottom:0!important}* html .addthis_counter .addthis_button_expanded{height:37px}.addthis_counter .addthis_button_expanded:hover{background-position:0 -77px;cursor:pointer;color:#000}.addthis_counter .addthis_button_expanded .at300bs{display:none!important}.addthis_counter.addthis_pill_style{display:block;height:25px;overflow:hidden}.addthis_counter.addthis_pill_style a.atc_s{float:left}.addthis_counter.addthis_pill_style a.addthis_button_expanded{display:none;background-repeat:no-repeat;background-position:0 -114px;width:34px!important;height:20px;line-height:20px;margin:0 0 0 3px;padding:0 0 0 4px;float:left;text-align:center;text-decoration:none;font-family:arial,helvetica,sans-serif;font-weight:700;font-size:11px;color:#333;-ms-box-sizing:content-box;-o-box-sizing:content-box;box-sizing:content-box}.addthis_counter.addthis_pill_style.addthis_nonzero a.addthis_button_expanded{display:block!important;-webkit-transition:none;transition:none}.addthis_counter.addthis_pill_style a.addthis_button_expanded:hover{background-position:0 -134px!important}.addthis_counter.addthis_bubble_style{margin:0 0 0 -2px;text-align:center;font-weight:700;font-family:arial,helvetica,sans-serif;color:#000;background-repeat:no-repeat;background-position:0 -4pc;padding:0 0 0 4px;height:1pc;width:2pc!important;-ms-box-sizing:content-box;-o-box-sizing:content-box;box-sizing:content-box}.addthis_native_counter_parent .addthis_counter.addthis_bubble_style{background-position:0 -4pc!important}.addthis_counter.addthis_bubble_style.addthis_native_counter{margin:0 2px}.addthis_counter.addthis_bubble_style a.addthis_button_expanded{font-size:11px;height:1pc;line-height:1pc;width:34px;background:none}.addthis_counter.addthis_bubble_style:hover{background-position:-36px -4pc!important}.addthis_20x20_style .addthis_counter.addthis_bubble_style{background-repeat:no-repeat;background-position:0 -5pc!important;height:20px;width:35px!important;line-height:20px;padding:0 0 0 6px}.addthis_20x20_style .addthis_counter.addthis_bubble_style:hover{background-position:-41px -5pc!important}.addthis_20x20_style .addthis_counter.addthis_bubble_style a.addthis_button_expanded{background:none;font-size:9pt;line-height:20px;height:20px;margin:0;width:35px!important;padding:0!important}.addthis_20x20_style .addthis_counter.addthis_bubble_style.addthis_native_counter a.addthis_button_expanded{font-size:11px}.addthis_32x32_style .addthis_counter.addthis_bubble_style,.addthis_32x32_white_style .addthis_counter.addthis_bubble_style{background-repeat:no-repeat;background-position:0 0!important;height:2pc;width:56px!important;line-height:2pc;padding:0 0 0 6px}.addthis_32x32_style .addthis_counter.addthis_bubble_style a.addthis_button_expanded,.addthis_32x32_white_style .addthis_counter.addthis_bubble_style a.addthis_button_expanded{background:none;font-size:1pc;line-height:2pc;height:2pc;margin:0;width:56px!important;padding:0!important}.addthis_32x32_style .addthis_counter.addthis_bubble_style:hover,.addthis_32x32_white_style .addthis_counter.addthis_bubble_style:hover{background-position:0 -2pc!important}.addthis_counter.addthis_bubble_style .atc_s{display:none!important}* html .addthis_counter.addthis_bubble_style{width:36px!important;display:inline}* html .addthis_counter.bubblecompatmode0{width:2pc!important;display:block}* html .addthis_counter.addthis_bubble_style a.addthis_button_expanded{width:24px!important;height:14px!important;line-height:14px!important;padding:0;margin-top:1px!important;display:inline}* html .addthis_counter.bubblecompatmode0 a.addthis_button_expanded{width:36px}* html .addthis_32x32_style .addthis_counter.addthis_bubble_style{width:60px!important}* html .addthis_32x32_style .addthis_counter.addthis_bubble_style a.addthis_button_expanded{width:46px;height:26px!important;line-height:26px!important;margin-top:2px!important}* html .addthis_32x32_style .addthis_counter.bubblecompatmode0 a.addthis_button_expanded{height:2pc!important;line-height:2pc!important}</style><style type="text/css">body .SnapABug_Button{cursor:pointer;cursor:hand;overflow:hidden;position:fixed;_position:absolute;display:block;top:55%;_top:expression(eval(document.body.scrollTop)+351);right:0px;z-index:2147000000;margin:0;padding:0;border-collapse:collapse;border-spacing:0;border:none;outline:none;font-size:0px;line-height:0px;} @media print{body .SnapABug_Button{display:none;}}</style><style id="SnapABug_Style" type="text/css">#SnapABug_WP, #SnapABug_WP div, #SnapABug_WP span, #SnapABug_WP iframe, #SnapABug_WP h1, #SnapABug_WP h2, #SnapABug_WP h3, #SnapABug_WP h4, #SnapABug_WP h5, #SnapABug_WP h6, #SnapABug_WP hr, #SnapABug_WP p, #SnapABug_WP a, #SnapABug_WP big, #SnapABug_WP em, #SnapABug_WP img, #SnapABug_WP q, #SnapABug_WP small, #SnapABug_WP strong, #SnapABug_WP b, #SnapABug_WP u, #SnapABug_WP i, #SnapABug_WP fieldset, #SnapABug_WP input, #SnapABug_WP input[type="submit"], #SnapABug_WP button, #SnapABug_WP textarea, #SnapABug_WP form, #SnapABug_WP label{ margin: 0; padding: 0; border: 0; font-size: 100%; font: inherit; font-weight: normal; vertical-align: baseline; float: none;max-width: none; max-height: none; letter-spacing: normal; line-height: normal;text-transform: none;-webkit-transform: none; -moz-transform: none; -ms-transform: none; -o-transform: none; transform: none; -webkit-transition-property: none; -moz-transition-property: none; -o-transition-property: none; transition: none;-webkit-box-shadow: none; -moz-box-shadow: none; box-shadow: none;font-feature-settings: normal; -webkit-font-feature-settings: normal; -moz-font-feature-settings: normal; -ms-font-feature-settings: normal; -o-font-feature-settings: normal;  } #SnapABug_WP *:before, #SnapABug_WP *:after{ display:none; } #SnapABug_WP img{ display: inline-block; } #SnapABug_WP #SnapABug_CL .SnapABug_transcriptLine{ word-wrap: break-word;-ms-word-break: keep-all;word-break: keep-all;word-break: break-word;-webkit-hyphens: auto;-moz-hyphens: auto;-ms-hyphens: auto;hyphens: auto;white-space: pre-wrap; } #SnapABug_WP #SnapABug_CBMBtn { position: absolute; z-index: 2;left:332px; top:26px; width:20px; height:20px; cursor: pointer; display: block; background-color: white; color: black; font-family: Helvetica Neue, Helvetica, lucida grande, Arial, sans-serif; border-radius: 10px; } #SnapABug_WP:not(.minimized) #SnapABug_CBMBtn:hover{ border-bottom-left-radius: 0; border-bottom-right-radius: 0; } #SnapABug_WP #SnapABug_CBMBtn>i { position: absolute; z-index: 2;right:0px; top:0px; width:20px; height:20px; background-image: url(https://storage.googleapis.com/code.snapengage.com/wbg/minBtn_sprites_v2_black2x.png); background-size: 40px 80px; background-repeat: no-repeat; background-position: 0 0; } #SnapABug_WP.minimized #SnapABug_CBMBtn>i { background-position: 0 -20px; } #SnapABug_WP #SnapABug_CBM{ display:none; } #SnapABug_WP #SnapABug_CBMBtn:hover #SnapABug_CBM:hover, #SnapABug_WP #SnapABug_CBMBtn:hover #SnapABug_CBM, #SnapABug_WP #SnapABug_CBMBtn #SnapABug_CBM:hover{ display:block; } #SnapABug_WP #SnapABug_CBM { position: absolute; z-index: 2;padding: 1px 3px; border-radius: 1px;top: 20px; right: 0px; background: white; color: #000000; border: thin solid #EEEEEE;-webkit-box-shadow: 0 1px 4px 0 #000000;        box-shadow: 0 1px 4px 0 #000000;  } #SnapABug_WP .SnapABug_CBMItem { position:relative; height: 20px; width: 100%; } #SnapABug_WP .SnapABug_CBMItem:hover { background-color: #EEEEEE; } #SnapABug_WP .SnapABug_CBMItem span { font-size: 14px; white-space: nowrap; padding-left: 10px;padding-right:26px; } #SnapABug_WP .SnapABug_CBMItem i { display: inline-block;position:absolute; top:0; right:0; height: 20px; width: 20px; background-size: 40px 80px; } #SnapABug_WP .SnapABug_CBMItemSplitter { height:0; width: 90%; margin: 0px auto;  border-bottom: thin solid black;clear: both;opacity: 0.15; -ms-filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=15);filter: alpha(opacity=15); } #SnapABug_WP #SnapABug_closeBtn { margin-top: 3px; } #SnapABug_WP #SnapABug_minBtn { margin-bottom: 3px; } #SnapABug_WP #SnapABug_CBMHoverHelper{ display: block;position: absolute;top: -20px;left: -3px;height: 20px;width: 100%;background-color: #ffffff;-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";filter: alpha(opacity=0);-moz-opacity: 0;-khtml-opacity: 0;opacity: 0; } #SnapABug_WP #SnapABug_RB { position: absolute; z-index: 12; cursor: pointer; left: 0px; top: 0px; width: 380px; height: 60px; display: none;background-color: #ffffff;-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";filter: alpha(opacity=0);-moz-opacity: 0;-khtml-opacity: 0;opacity: 0; } #SnapABug_WP.minimized #SnapABug_RB { display: block; } #SnapABug_WP #SnapABug_CBMBtn>i { opacity: 0.7; } </style><script id="yui__dyn_0" type="text/javascript" src="./Formation MySQL pour administrateur_files/ServiceGetConfig"></script><script id="yui__dyn_1" type="text/javascript" src="./Formation MySQL pour administrateur_files/ServiceGetProactiveChatAgent"></script></head>
+<!---->
+<body>
+  <div id="wrapper">
+      <div class="header">
+          <div class="kl_bloc_top">
+                <div class="container kl_top">
+                    <h1 class="kl_logo">
+            <a href="https://www.mistra.fr/">
+                              <img src="./Formation MySQL pour administrateur_files/logo-mistra.png" alt="">
+                          </a>
+          </h1>
+                    <button class="navbar-toggle" type="button">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+          </button>
+          <span class="kl_mobile_txt_menu">Menu</span>
+                    <div class="kl_nav navbar-collapse collapse nav-mobile">
+                    <!--NAV et recherche-->
+                      
+<ul class="kl_nav nav navbar-nav menu nav menu" id="menu-menu_header">
+<li class="item-6526"><a href="https://www.mistra.fr/"><span><img src="./Formation MySQL pour administrateur_files/accueil.png" alt="Mistra"></span></a></li><li class="item-6522 deeper parent"><a href="https://www.mistra.fr/catalogue-des-formations.html"><span>Formations</span></a><ul style="width: 1349px;"><li class="item-6542 deeper parent"><a href="https://www.mistra.fr/formations-java.html"><span>Java</span></a><ul style="width: 1349px;"><li class="item-6544"><a href="https://www.mistra.fr/formations-initiations/formation-conception-objet.html"><span>Initation Objet et Java</span></a></li><li class="item-6545"><a href="https://www.mistra.fr/formations-java/formation-struts.html"><span>Struts</span></a></li><li class="item-6546"><a href="https://www.mistra.fr/formations-java/formation-hibernate.html"><span>Hibernate</span></a></li><li class="item-6547"><a href="https://www.mistra.fr/formations-java/formation-spring.html"><span>Spring</span></a></li><li class="item-6548"><a href="https://www.mistra.fr/formations-java/formation-gwt-2.html"><span>GWT</span></a></li><li class="item-6549"><a href="https://www.mistra.fr/formations-java/formation-swing.html"><span>Swing</span></a></li><li class="item-6550"><a href="https://www.mistra.fr/formations-java/formation-maven.html"><span>Maven</span></a></li><li class="item-6551"><a href="https://www.mistra.fr/formations-java.html"><span>Plus de choix …</span></a></li></ul></li><li class="item-6552 alias-parent-active deeper parent"><a href="https://www.mistra.fr/formations-serveurs-open-source.html"><span>Open Source</span></a><ul style="width: 1349px;"><li class="item-6553"><a href="https://www.mistra.fr/formations-linux/formation-linux-utilisateur.html"><span>Linux Initiation</span></a></li><li class="item-6554"><a href="https://www.mistra.fr/formations-linux/formation-linux-administrateur.html"><span>Linux Administration</span></a></li><li class="item-6555"><a href="https://www.mistra.fr/formations-linux/formation-administration-apache.html"><span>Apache</span></a></li><li class="item-6556"><a href="https://www.mistra.fr/formations-serveurs-open-source/formation-tomcat.html"><span>Tomcat</span></a></li><li class="item-6558 active"><a href="https://www.mistra.fr/formations-serveurs-open-source/formation-mysql-administration.html"><span>MySQL Administration</span></a></li><li class="item-6559"><a href="https://www.mistra.fr/formations-serveurs-open-source/formation-mongodb.html"><span>MongoDB</span></a></li><li class="item-6560"><a href="https://www.mistra.fr/formations-linux.html"><span>Plus de choix …</span></a></li></ul></li><li class="item-6561 deeper parent"><a href="https://www.mistra.fr/formations-developpement-mobile.html"><span>Mobiles</span></a><ul style="width: 1349px;"><li class="item-6562"><a href="https://www.mistra.fr/formations-developpement-mobile/iphone-ipad-developpement.html"><span>iPhone / iPad</span></a></li><li class="item-6563"><a href="https://www.mistra.fr/formations-developpement-mobile/formation-android.html"><span>Android</span></a></li><li class="item-6564"><a href="https://www.mistra.fr/formations-developpement-mobile/formation-windows-phone-8-wp8.html"><span>Windows Phone 8</span></a></li><li class="item-6565"><a href="https://www.mistra.fr/formations-developpement-mobile/formation-web-mobiles-multi-plates-formes.html"><span>Web Mobile</span></a></li><li class="item-6566"><a href="https://www.mistra.fr/formations-java.html"><span>PhoneGap</span></a></li><li class="item-6567"><a href="https://www.mistra.fr/formations-developpement-mobile/formation-jquery-mobile.html"><span>Jquery Mobile</span></a></li><li class="item-6568"><a href="https://www.mistra.fr/formations-developpement-mobile/formation-sencha-touch.html"><span>Sencha Touch 2</span></a></li><li class="item-6667"><a href="https://www.mistra.fr/formations-developpement-mobile/formation-swift.html"><span>Langage Swift</span></a></li><li class="item-6670"><a href="https://www.mistra.fr/formations-developpement-mobile/formation-google-glass.html"><span>Google Glass</span></a></li><li class="item-6569"><a href="https://www.mistra.fr/formations-developpement-mobile.html"><span>Plus de choix …</span></a></li></ul></li><li class="item-6570 deeper parent"><a href="https://www.mistra.fr/formations-developpement-web.html"><span>Web</span></a><ul style="width: 1349px;"><li class="item-6571"><a href="https://www.mistra.fr/formations-developpement-web/formation-angular-js.html"><span>Angular JS</span></a></li><li class="item-6572"><a href="https://www.mistra.fr/formations-developpement-web/formation-html-5-css3.html"><span>HTML5 / CSS3</span></a></li><li class="item-6573"><a href="https://www.mistra.fr/formations-developpement-web/formation-php-initiation.html"><span>PHP</span></a></li><li class="item-6574"><a href="https://www.mistra.fr/formations-developpement-web/formation-symfony-2.html"><span>Symfony2</span></a></li><li class="item-6575"><a href="https://www.mistra.fr/formations-cms/formation-joomla-webmaster.html"><span>Joomla</span></a></li><li class="item-6576"><a href="https://www.mistra.fr/formations-developpement-web/formation-xml.html"><span>XML</span></a></li><li class="item-6577"><a href="https://www.mistra.fr/formations-developpement-web/formation-extjs-4.html"><span>ExtJS</span></a></li><li class="item-6578"><a href="https://www.mistra.fr/formations-developpement-web.html"><span>Plus de choix …</span></a></li></ul></li><li class="item-6579 deeper parent"><a href="https://www.mistra.fr/formations-dot-net.html"><span>.NET</span></a><ul style="width: 1349px;"><li class="item-6580"><a href="https://www.mistra.fr/formations-dot-net/formation-c-sharp-initiation.html"><span>C#</span></a></li><li class="item-6581"><a href="https://www.mistra.fr/formations-dot-net/formation-vb-net.html"><span>VB.NET</span></a></li><li class="item-6582"><a href="https://www.mistra.fr/formations-dot-net/formation-asp-net.html"><span>ASP.NET</span></a></li><li class="item-6583"><a href="https://www.mistra.fr/formations-dot-net/formation-silverlight4.html"><span>Silverlight</span></a></li><li class="item-6584"><a href="https://www.mistra.fr/formations-dot-net/formation-wcf.html"><span>WCF</span></a></li><li class="item-6585"><a href="https://www.mistra.fr/formations-dot-net/formation-wpf.html"><span>WPF</span></a></li><li class="item-6586"><a href="https://www.mistra.fr/formations-dot-net/formation-linq.html"><span>LINQ</span></a></li><li class="item-6587"><a href="https://www.mistra.fr/formations-dot-net.html"><span>Plus de choix …</span></a></li></ul></li></ul></li><li class="item-6523 deeper parent"><a href="https://www.mistra.fr/accueil-tutoriels.html"><span>Tutoriels</span></a><ul style="width: 1349px;"><li class="item-6588 deeper parent"><a href="https://www.mistra.fr/tutoriels-java.html"><span>Java</span></a><ul style="width: 1349px;"><li class="item-6589"><a href="https://www.mistra.fr/tutoriels-java/tutoriel-hibernate.html"><span>Hibernate</span></a></li><li class="item-6590"><a href="https://www.mistra.fr/tutoriels-web/tutoriels-ria/tutoriel-ria-gwt-2-spring.html"><span>Spring et GWT</span></a></li><li class="item-6665"><a href="https://www.mistra.fr/tutoriels-java/services-google.html"><span>Services Google</span></a></li></ul></li><li class="item-6594 deeper parent"><a href="https://www.mistra.fr/tutoriels-web.html"><span>Web</span></a><ul style="width: 1349px;"><li class="item-6595"><a href="https://www.mistra.fr/tutoriels-web/tutoriels-ria/tutoriel-flex-actionscript.html"><span>Flex</span></a></li><li class="item-6596"><a href="https://www.mistra.fr/tutoriels-web/tutoriels-html5-css3.html"><span>HTML5/CSS3</span></a></li><li class="item-6633"><a href="https://www.mistra.fr/tutoriels-web/tutoriel-symfony-2.html"><span>Symfony 2</span></a></li><li class="item-6597"><a href="https://www.mistra.fr/tutoriels-web/tutoriel-nodejs.html"><span>NodeJS</span></a></li></ul></li><li class="item-6591 deeper parent"><a href="https://www.mistra.fr/tutoriels-developpement-mobile.html"><span>Mobiles</span></a><ul style="width: 1349px;"><li class="item-6592"><a href="https://www.mistra.fr/tutoriels-developpement-mobile/tutoriels-android.html"><span>Android</span></a></li><li class="item-6593"><a href="https://www.mistra.fr/tutoriels-developpement-mobile/tutoriels-iphone-ipad-ios.html"><span>iPhone / iPad</span></a></li></ul></li><li class="item-6598 deeper parent"><a href="https://www.mistra.fr/tutoriels-linux.html"><span>Linux</span></a><ul style="width: 1349px;"><li class="item-6599"><a href="https://www.mistra.fr/tutoriels-virtualisation.html"><span>Virtualisation</span></a></li><li class="item-6600"><a href="https://www.mistra.fr/tutoriels-debian-installation.html"><span>Installations</span></a></li><li class="item-6601"><a href="https://www.mistra.fr/tutoriels-linux-stockage.html"><span>Stockage</span></a></li><li class="item-6602"><a href="https://www.mistra.fr/tutoriels-linux-administration-systeme.html"><span>Administration</span></a></li></ul></li><li class="item-6625"><a href="https://www.mistra.fr/web-services.html"><span>Web Services</span></a></li></ul></li><li class="item-6524 deeper parent"><a href="https://www.mistra.fr/infos-pratiques/choisir-sa-formation.html"><span>Infos Pratiques</span></a><ul style="width: 1349px;"><li class="item-6537"><a href="https://www.mistra.fr/infos-pratiques/nos-solutions-de-formations.html"><span>Les solutions Mistra</span></a></li><li class="item-6538"><a href="https://www.mistra.fr/infos-pratiques/choisir-sa-formation.html"><span>Choisir sa formation</span></a></li><li class="item-6539"><a href="https://www.mistra.fr/infos-pratiques/deroulement-des-formations.html"><span>Déroulement des formations</span></a></li><li class="item-6540"><a href="https://www.mistra.fr/infos-pratiques/financer-sa-formation.html"><span>Financer sa formation</span></a></li><li class="item-6541"><a href="https://www.mistra.fr/infos-pratiques/modeles-lettres-dif-cif.html"><span>Actualité de la formation</span></a></li><li class="item-6655"><a href="https://www.mistra.fr/infos-pratiques/cursus-formation-poe.html"><span>Cursus formation POE</span></a></li></ul></li><li class="item-6525 deeper parent"><a href="https://www.mistra.fr/qui-sommes-nous.html"><span>A propos</span></a><ul style="width: 1349px;"><li class="item-6531"><a href="https://www.mistra.fr/a-propos-de-mistra.html"><span>A propos de Mistra</span></a></li><li class="item-6532"><a href="https://www.mistra.fr/a-propos-de-mistra/carriere.html"><span>Nous recrutons !</span></a></li><li class="item-6533"><a href="https://www.mistra.fr/centres-de-formation.html"><span>Centres de formation</span></a></li><li class="item-6535"><a href="https://www.mistra.fr/mentions-legales.html"><span>Mentions Légales</span></a></li><li class="item-6536"><a href="https://www.mistra.fr/sites-partenaires.html"><span>Sites partenaires</span></a></li><li class="item-6534"><a href="https://www.mistra.fr/a-propos-de-mistra/ils-parlent-de-mistra.html"><span>Ils parlent de nous</span></a></li></ul></li><li class="item-6528"><a href="http://blog.mistra.fr/" target="_blank"><span>Actualités</span></a></li><li class="item-6527"><a href="https://www.mistra.fr/contact.html"><span>Contact</span></a></li><li class="item-6603"><a href="https://www.mistra.fr/forum.html"><span>Forum</span></a></li><li class="item-6620"><a href="https://www.mistra.fr/contacts.html"><span>Contact</span></a></li><li class="item-6736"><a class="hide" href="https://www.mistra.fr/devis-envoye.html"><span>Devis envoyé</span></a></li></ul>
+ 
+<div class="kl_bloc_rec">
+<div class="kl_recherche">
+<form action="https://www.mistra.fr/formations-serveurs-open-source/formation-mysql-administration.html" method="post">
+	<div class="searchinputRecherche">
+		<input name="searchword" id="mod-search-searchword" maxlength="20" class="recherche-mod inputboxinputRecherche" type="text" size="30" placeholder="RECHERCHER"><input type="submit" value=" " class="kl_but_rec buttoninputRecherche" onclick="this.form.searchword.focus();">	<input type="hidden" name="task" value="search">
+	<input type="hidden" name="option" value="com_search">
+	<input type="hidden" name="Itemid" value="6626">
+    <span class="elt-mod-text-left"></span>
+    <span class="elt-mod-text-right"></span>
+    <span class="elt-mod-butt-left"></span>
+    <span class="elt-mod-butt-right"></span>
+	</div>
+</form>
+</div>
+<div class="kl_top_actus">
+    <a href="http://blog.mistra.fr/" target="_blank">Les <span>actu</span>alités IT</a>
+    <span class="elt-actu-left"></span>
+    <span class="elt-actu-right"></span>
+</div>
+</div>
+
+                    </div>
+                </div>
+            </div>
+            <div class="kl_vide_height"></div>
+              </div>
+          <div class="breadcrumb container">
+            
+
+
+            </div>
+      <div class="formations hide">		<div class="moduletable">
+					
+<div class="custom">
+	<h3>PROCHAINES FORMATIONS</h3>
+<h4><span>PROMOTION SUR NOS PROCHAINES FORMATION A -20% ET -30% </span></h4>
+<p><a href="https://www.mistra.fr/formations-developpement-logiciel/formation-python.html"><span>Formation Python django&nbsp;</span><br>6 au 9 Juin 2016 - 1000 euros HT</a></p>
+<p><a data-cke-saved-href="https://www.mistra.fr/formations-initiations/formation-conception-objet.html" href="https://www.mistra.fr/formations-developpement-mobile/formation-android.html"><span>Formation Android développement</span><br>9 au 13 Mai 2016 - 1450 euros HT</a></p>
+<p><a href="https://www.mistra.fr/formations-developpement-mobile/xamarin-pour-ios-et-android.html"><span>Formation Xamarin pour iOS et Android</span><br> du 30 Mai &nbsp;au 3 Juin 2016 - 1900 euros HT</a></p>
+<p><a href="https://www.mistra.fr/formations-developpement-mobile/formation-swift.html"><span>Formation IOS avec Swift développement</span><br> 9 au 13 Mai - 1900 euros HT</a></p>
+<p>&nbsp;</p>
+<p style="font-weight: bold;">Contactez nous pour toute inscription ou information</p>
+<p><img style="margin-left: 55px; margin-right: 10px;" alt="" src="./Formation MySQL pour administrateur_files/icone-phone_03.png"><span style="color: #761894; font-family: arial; font-weight: bold; font-size: 20px;">01 82 52 25 25</span><br><br><br><br><a style="display: block; padding-bottom: 10px;" href="https://www.mistra.fr/catalogue-des-formations/formations-promotions.html"><span style="color: #333131; font-size: 16px; margin-left: 10px;">Toutes nos promotions ...</span></a></p></div>
+		</div>
+	</div>
+        <div id="page" class="page container front-page">
+    <div id="leftWrapper" class="sidebar-tutoriel">
+        <div class="modules_wrapper">
+              
+              </div>
+        </div>
+      <div class="row content-page-index">
+        <div class="col-md-3">
+          <div class="kl_formation-sidebar formations-accueil">
+            		<div class="moduletable">
+					
+<div class="custom">
+	<h3>PROCHAINES FORMATIONS</h3>
+<h4><span>PROMOTION SUR NOS PROCHAINES FORMATION A -20% ET -30% </span></h4>
+<p><a href="https://www.mistra.fr/formations-developpement-logiciel/formation-python.html"><span>Formation Python django&nbsp;</span><br>6 au 9 Juin 2016 - 1000 euros HT</a></p>
+<p><a data-cke-saved-href="https://www.mistra.fr/formations-initiations/formation-conception-objet.html" href="https://www.mistra.fr/formations-developpement-mobile/formation-android.html"><span>Formation Android développement</span><br>9 au 13 Mai 2016 - 1450 euros HT</a></p>
+<p><a href="https://www.mistra.fr/formations-developpement-mobile/xamarin-pour-ios-et-android.html"><span>Formation Xamarin pour iOS et Android</span><br> du 30 Mai &nbsp;au 3 Juin 2016 - 1900 euros HT</a></p>
+<p><a href="https://www.mistra.fr/formations-developpement-mobile/formation-swift.html"><span>Formation IOS avec Swift développement</span><br> 9 au 13 Mai - 1900 euros HT</a></p>
+<p>&nbsp;</p>
+<p style="font-weight: bold;">Contactez nous pour toute inscription ou information</p>
+<p><img style="margin-left: 55px; margin-right: 10px;" alt="" src="./Formation MySQL pour administrateur_files/icone-phone_03.png"><span style="color: #761894; font-family: arial; font-weight: bold; font-size: 20px;">01 82 52 25 25</span><br><br><br><br><a style="display: block; padding-bottom: 10px;" href="https://www.mistra.fr/catalogue-des-formations/formations-promotions.html"><span style="color: #333131; font-size: 16px; margin-left: 10px;">Toutes nos promotions ...</span></a></p></div>
+		</div>
+	
+          </div>
+          <div class="kl_domaines_formations">
+            		<div class="moduletable">
+					<h3>Domaines de formations</h3>
+					
+<ul class="kl_nav nav navbar-nav menu nav menukl_nav_domaines" id="menu-menu_header">
+<li class="item-6717"><a href="https://www.mistra.fr/formations-initiations.html" class="hvr-underline-from-left">Initiation</a></li><li class="item-6718"><a href="https://www.mistra.fr/formations-java.html" class="hvr-underline-from-left">Java</a></li><li class="item-6719"><a href="https://www.mistra.fr/formations-dot-net.html" class="hvr-underline-from-left">.Net</a></li><li class="item-6720"><a href="https://www.mistra.fr/formations-developpement-web.html" class="hvr-underline-from-left">Développement web</a></li><li class="item-6721"><a href="https://www.mistra.fr/formations-developpement-logiciel.html" class="hvr-underline-from-left">Développement logiciel</a></li><li class="item-6722"><a href="https://www.mistra.fr/formations-developpement-mobile.html" class="hvr-underline-from-left">Développement mobile</a></li><li class="item-6723"><a href="https://www.mistra.fr/formations-cms.html" class="hvr-underline-from-left">CMS</a></li><li class="item-6724"><a href="https://www.mistra.fr/formations-bureautique.html" class="hvr-underline-from-left">Bureautique</a></li><li class="item-6725"><a href="https://www.mistra.fr/formations-pao.html" class="hvr-underline-from-left">PAO</a></li><li class="item-6726"><a href="https://www.mistra.fr/formations-linux.html" class="hvr-underline-from-left">Linux</a></li><li class="item-6727 alias-parent-active"><a href="https://www.mistra.fr/formations-serveurs-open-source.html" class="hvr-underline-from-left">Serveurs Open Source</a></li><li class="item-6728"><a href="https://www.mistra.fr/serveurs-microsoft.html" class="hvr-underline-from-left">Serveurs Microsoft</a></li><li class="item-6729"><a href="https://www.mistra.fr/formations-essentiel.html" class="hvr-underline-from-left">L'essentiel</a></li><li class="item-6730"><a href="https://www.mistra.fr/formations-cursus-metier.html" class="hvr-underline-from-left">Cursus métier</a></li><li class="item-6731"><a href="https://www.mistra.fr/formations-cursus-cours-du-soir.html" class="hvr-underline-from-left">Cursus cours du soir</a></li><li class="item-6732"><a href="https://www.mistra.fr/gestion-de-projet.html" class="hvr-underline-from-left">Gestion de projet</a></li><li class="item-6733"><a href="https://www.mistra.fr/photographie.html" class="hvr-underline-from-left">Photographie</a></li><li class="item-6734"><a href="https://www.mistra.fr/bigdata.html" class="hvr-underline-from-left">Big data</a></li><li class="item-6735"><a href="https://www.mistra.fr/univers-et-developpement-3d.html" class="hvr-underline-from-left">Univers et développement 3D</a></li></ul>
+		</div>
+	
+          </div>
+        </div>
+                <div class="col-md-9 bloc-formations">
+                  <h1><span class="elt-ico-formations"></span>Top des formations Mistra</h1>
+                    <div class="row kl_les_formations">
+                      		<div class="moduletable prochaines-formations">
+					<h3>Prochaines Formations</h3>
+					
+<div class="custom prochaines-formations">
+	<div class="col-xs-6 kl_listes" style="padding-top: 30px; min-height: 90px;"><a href="https://www.mistra.fr/formations-developpement-mobile/formation-web-mobiles-multi-plates-formes.html">
+<div class="kl_titre_formations_index pull-left">
+<h3>&nbsp;</h3>
+<h3>Formation&nbsp;Développement sites mobile<br><span><br></span></h3>
+</div>
+<div class="pull-right kl_prix">&nbsp;</div>
+</a></div>
+<div class="col-xs-6 kl_listes" style="border: none; padding-left: 9px; padding-top: 30px; min-height: 90px;"><a href="https://www.mistra.fr/formations-developpement-web/formation-html-5-css3.html">
+<div class="kl_titre_formations_index pull-left">
+<h3>&nbsp;</h3>
+<h3>Formation HTML 5CSS 3<br><span><br></span></h3>
+</div>
+<div class="pull-right kl_prix" style="margin-right: 10px;">&nbsp;</div>
+</a></div>
+<div class="col-xs-6 kl_listes"><a href="https://www.mistra.fr/formations-initiations/formation-conception-objet.html">
+<div class="kl_titre_formations_index pull-left">
+<h3>Formation Conception orientée Objet<br><span><br></span></h3>
+</div>
+<div class="pull-right kl_prix">&nbsp;</div>
+</a></div>
+<div class="col-xs-6 kl_listes" style="border: none; padding-left: 9px;"><a href="https://www.mistra.fr/formations-developpement-logiciel/formation-python.html">
+<div class="kl_titre_formations_index pull-left">
+<h3>Formation Python bases développement<br><span><br></span></h3>
+<p>&nbsp;</p>
+</div>
+<div class="pull-right kl_prix" style="margin-right: 10px;">&nbsp;</div>
+</a></div>
+<div class="col-xs-6 kl_listes">
+<div class="kl_titre_formations_index pull-left">
+<h3>Formation Symfony 2 et 3<br><span><br></span></h3>
+<div class="kl_titre_formations_index pull-left" style="width: 373.25px;">
+<h3>Formation Xamarin pour iOS et Android&nbsp;</h3>
+<p>&nbsp;</p>
+</div>
+<p>&nbsp;</p>
+</div>
+<div class="pull-right kl_prix">&nbsp;</div>
+</div>
+<div class="col-xs-6 kl_listes" style="border: none; padding-left: 9px;">
+<div class="kl_titre_formations_index pull-left">
+<h3>Formation Java et frameworks<br><br></h3>
+<div class="kl_titre_formations_index pull-left" style="width: 373.25px;">
+<h3>Formation AngularJS</h3>
+<p>&nbsp;</p>
+</div>
+<p>&nbsp;</p>
+</div>
+<div class="pull-right kl_prix" style="margin-right: 10px;">&nbsp;</div>
+</div>
+<div class="col-xs-6 kl_listes"><a href="https://www.mistra.fr/formations-developpement-mobile/xamarin-pour-ios-et-android.html">
+<div class="kl_titre_formations_index pull-left">
+<h3><br><span><br></span></h3>
+</div>
+<div class="pull-right kl_prix">&nbsp;</div>
+</a></div></div>
+		</div>
+	
+                    </div>
+                </div>
+                      </div>
+    </div>
+        <div class="contenu-page">
+          <div class="item-page">
+
+<div class="bloc-title">
+<div class="elt-left-title-page"></div>
+<div class="elt-right-title-page"></div>
+    <h1>
+Formation MySQL pour administrateur</h1>
+</div><div class="breadcrumb container over-page"><div class="breadcrumbsfil">
+<a href="https://www.mistra.fr/" class="pathway">Accueil</a>  &gt; <a href="https://www.mistra.fr/formations-serveurs-open-source.html" class="pathway">Serveurs Open Source</a>  &gt; <span>MySQL pour administrateur</span></div></div>
+ <div class="container content-article margin-top-25">
+ <a class="kl_dde_devis pull-right" href="https://www.mistra.fr/formations-serveurs-open-source/formation-mysql-administration.html#">Demander un devis</a>
+
+		<div class="pull-right kl_action_article row">
+        <span>Je souhaite télécharger le programme ou imprimer le programme</span>            
+		<ul class="actions">
+		<li class="print-icon"><a href="https://www.mistra.fr/formations-serveurs-open-source/formation-mysql-administration.pdf?tmpl=component" onclick="window.open(this.href,&#39;win2&#39;,&#39;status=no,toolbar=no,scrollbars=yes,titlebar=no,menubar=no,resizable=yes,width=640,height=480,directories=no,location=no&#39;); return false;" title="PDF" rel="nofollow"><img src="./Formation MySQL pour administrateur_files/pdf_button.png" alt="PDF"></a></li>				
+		
+					<li>
+			<a href="https://www.mistra.fr/formations-serveurs-open-source/formation-mysql-administration.html#" onclick="window.print();return false;"><img src="./Formation MySQL pour administrateur_files/printButton.png" alt="Imprimer"></a>            </li>
+	
+	</ul>
+        <div class="col-xs-7 kl_bloc_but_devis pull-right">
+                                <!--<a class="lienContact kl_dde_devis" rel="{handler:'iframe',size:{x:620,y:550}}" href="/contacts">Demander un devis</a>-->
+								
+         </div>
+    </div>
+
+
+
+
+
+
+
+<div class="article">
+	<div class="row"><div class="col-md-3 kl_sidebar_formation_domaines"><div class="kl_formation-sidebar sidebar-prepend-formation sidebar-article-prochaine"> <div class="moduletable">
+					
+<div class="custom">
+	<h3>PROCHAINES FORMATIONS</h3>
+<h4><span>PROMOTION SUR NOS PROCHAINES FORMATION A -20% ET -30% </span></h4>
+<p><a href="https://www.mistra.fr/formations-developpement-logiciel/formation-python.html"><span>Formation Python django&nbsp;</span><br>6 au 9 Juin 2016 - 1000 euros HT</a></p>
+<p><a data-cke-saved-href="https://www.mistra.fr/formations-initiations/formation-conception-objet.html" href="https://www.mistra.fr/formations-developpement-mobile/formation-android.html"><span>Formation Android développement</span><br>9 au 13 Mai 2016 - 1450 euros HT</a></p>
+<p><a href="https://www.mistra.fr/formations-developpement-mobile/xamarin-pour-ios-et-android.html"><span>Formation Xamarin pour iOS et Android</span><br> du 30 Mai &nbsp;au 3 Juin 2016 - 1900 euros HT</a></p>
+<p><a href="https://www.mistra.fr/formations-developpement-mobile/formation-swift.html"><span>Formation IOS avec Swift développement</span><br> 9 au 13 Mai - 1900 euros HT</a></p>
+<p>&nbsp;</p>
+<p style="font-weight: bold;">Contactez nous pour toute inscription ou information</p>
+<p><img style="margin-left: 55px; margin-right: 10px;" alt="" src="./Formation MySQL pour administrateur_files/icone-phone_03.png"><span style="color: #761894; font-family: arial; font-weight: bold; font-size: 20px;">01 82 52 25 25</span><br><br><br><br><a style="display: block; padding-bottom: 10px;" href="https://www.mistra.fr/catalogue-des-formations/formations-promotions.html"><span style="color: #333131; font-size: 16px; margin-left: 10px;">Toutes nos promotions ...</span></a></p></div>
+		</div></div><div class="kl_domaines_formations kl_domaines_formation_page">
+            		<div class="moduletable">
+					<h3>Domaines de formations</h3>
+					
+<ul class="kl_nav nav navbar-nav menu nav menukl_nav_domaines" id="menu-menu_header">
+<li class="item-6717"><a href="https://www.mistra.fr/formations-initiations.html" class="hvr-underline-from-left">Initiation</a></li><li class="item-6718"><a href="https://www.mistra.fr/formations-java.html" class="hvr-underline-from-left">Java</a></li><li class="item-6719"><a href="https://www.mistra.fr/formations-dot-net.html" class="hvr-underline-from-left">.Net</a></li><li class="item-6720"><a href="https://www.mistra.fr/formations-developpement-web.html" class="hvr-underline-from-left">Développement web</a></li><li class="item-6721"><a href="https://www.mistra.fr/formations-developpement-logiciel.html" class="hvr-underline-from-left">Développement logiciel</a></li><li class="item-6722"><a href="https://www.mistra.fr/formations-developpement-mobile.html" class="hvr-underline-from-left">Développement mobile</a></li><li class="item-6723"><a href="https://www.mistra.fr/formations-cms.html" class="hvr-underline-from-left">CMS</a></li><li class="item-6724"><a href="https://www.mistra.fr/formations-bureautique.html" class="hvr-underline-from-left">Bureautique</a></li><li class="item-6725"><a href="https://www.mistra.fr/formations-pao.html" class="hvr-underline-from-left">PAO</a></li><li class="item-6726"><a href="https://www.mistra.fr/formations-linux.html" class="hvr-underline-from-left">Linux</a></li><li class="item-6727 alias-parent-active"><a href="https://www.mistra.fr/formations-serveurs-open-source.html" class="hvr-underline-from-left">Serveurs Open Source</a></li><li class="item-6728"><a href="https://www.mistra.fr/serveurs-microsoft.html" class="hvr-underline-from-left">Serveurs Microsoft</a></li><li class="item-6729"><a href="https://www.mistra.fr/formations-essentiel.html" class="hvr-underline-from-left">L'essentiel</a></li><li class="item-6730"><a href="https://www.mistra.fr/formations-cursus-metier.html" class="hvr-underline-from-left">Cursus métier</a></li><li class="item-6731"><a href="https://www.mistra.fr/formations-cursus-cours-du-soir.html" class="hvr-underline-from-left">Cursus cours du soir</a></li><li class="item-6732"><a href="https://www.mistra.fr/gestion-de-projet.html" class="hvr-underline-from-left">Gestion de projet</a></li><li class="item-6733"><a href="https://www.mistra.fr/photographie.html" class="hvr-underline-from-left">Photographie</a></li><li class="item-6734"><a href="https://www.mistra.fr/bigdata.html" class="hvr-underline-from-left">Big data</a></li><li class="item-6735"><a href="https://www.mistra.fr/univers-et-developpement-3d.html" class="hvr-underline-from-left">Univers et développement 3D</a></li></ul>
+		</div>
+	
+          </div></div>
+		<div class="col-lg-6 col-sm-12 kl_objt_bloc">
+			<div class="kl_desc_1">
+				<h2>Objectif</h2>
+				<p style="padding-left: 30px;">A la fin de cette formation <strong>MySQL</strong> vous maîtriserez toutes les tâches d'administration d'un serveur de bases de données MySQL. Vous serez capable de réaliser des tâches telles que l'installation, l'optimisation des performances, la mise en place de réplication, la sauvegarde et la restauration, le chargement des données, et l'optimisation des requêtes.</p>
+			</div>
+			
+		<div class="kl_desc_3">
+				<h2>Programme</h2>
+				<h3 class="progformation">Premiers pas avec MySQL</h3>
+				<ul>
+					<li>Ressources et documentation MySQL</li>
+					<li>Mise en place d'un serveur mysqld</li>
+					<li>Structure de my.cnf</li>
+					<li>Lancement, reconfiguration et redémarrage de mysqld</li>
+					<li>Rappels SQL (ACID...)</li>
+					<li>Versions, variables SQL</li>
+				</ul>
+				<h3 class="progformation">Clients MySQL</h3>
+				<ul>
+					<li>mysql</li>
+					<li>mysqlshow</li>
+					<li>mysql-admin</li>
+					<li>mysql-query-browser</li>
+				</ul>
+				<h3 class="progformation">MySQL et aspects réseaux</h3>
+				<ul>
+					<li>Configuration du serveur</li>
+					<li>Connexion sécurisée via SSL/X509</li>
+					<li>Connexion sécurisée via un tunnel ssh</li>
+				</ul>
+				<h3 class="progformation">Gestion des utilisateurs MySQL</h3>
+				<ul>
+					<li>Profils mysql</li>
+					<li>Processus d'identification</li>
+					<li>Création, suppression, gestion du mot de passe et des droits d'un utilisateur</li>
+				</ul>
+				<h3 class="progformation">Architecture MySQL</h3>
+				<ul>
+					<li>Considérations matérielles</li>
+					<li>Types SQL et impact en termes de performance et de stockage</li>
+					<li>Rappels des bonnes pratiques pour le design d'une base</li>
+					<li>Notions sur comment manipuler des données en base</li>
+					<li>Moteurs myISAM et innoDB</li>
+					<li>Transactions</li>
+					<li>Vues</li>
+					<li>Index</li>
+					<li>Base INFORMATION_SCHEMA</li>
+				</ul>
+				<h3 class="progformation">Disponibilité MySQL</h3>
+				<ul>
+					<li>Backup physique</li>
+					<li>Backup logique</li>
+					<li>Avantages et inconvénients</li>
+					<li>Réplication (serveurs maitre/esclaves)</li>
+				</ul>
+				<h3 class="progformation">Monitoring MySQL</h3>
+				<ul>
+					<li>Statistiques (munin)</li>
+					<li>Utilisateurs (mytop,...)</li>
+					<li>Alertes (log2mail+sendmail, munin)</li>
+				</ul>
+				<h3 class="progformation">Optimisation du serveur MySQL</h3>
+				<ul>
+					<li>Profiling et benchmark</li>
+					<li>Tuning de my.cnf</li>
+				</ul>
+				<h2>Logiciels utilisés</h2>
+				<p style="padding-left: 30px;">Tout logiciel où il n'y a aucun intérêt pédagogique à le faire faire par les stagiaires sera préinstallé sur les postes.</p>
+				<h2>Travaux pratiques</h2>
+				<p style="padding-left: 30px;">Tout au long de cette formation, de nombreux exercices seront effectués. En effet, environ 60% du temps est concacré à la pratique.</p>
+				<h2>Mots clés associés à cette formation</h2>
+				<p style="padding-left: 30px;"><span style="text-decoration: underline;">MySQL</span>, administration, base de données.</p>
+			</div></div>
+		<div class="col-lg-3 col-sm-12 kl_public_bloc">
+			
+		<div class="kl_desc_2">
+				<h3>Public concerné</h3>
+				<p style="padding-left: 30px;">Administrateurs système.</p>
+				<p style="padding-left: 30px;">Administrateurs de bases de données.</p>
+				<h2>Pré-requis</h2>
+				<p style="padding-left: 30px;">Connaitre le SQL ou avoir suivi la <a title="Formation au langage SQL" href="https://www.mistra.fr/formations-initiations/formation-langage-sql.html">formation SQL</a>.</p>
+				<h2>Informations pratiques</h2>
+				<p style="padding-left: 15px;"><ins>Référence </ins>: #SMA01</p>
+				<p style="padding-left: 15px;"><ins>Durée </ins>: 10 sessions de 3 jours</p>
+				<p style="padding-left: 15px;"><ins>Tarif </ins>: 1 490€ (HT)</p>
+				<p style="padding-left: 15px;"><ins>Dates </ins>:</p>
+				<p>&nbsp;- 20 au 22 janvier 2016</p>
+				<p>&nbsp;- 08 au 10 Février 2016</p>
+				<p>&nbsp;- 24 au 26 février 2016</p>
+				<p>&nbsp;- 16 au 18 Mars 2016</p>
+				<p>&nbsp;- 06 au 08 Avril 2016</p>
+				<p>&nbsp;- 11 au 13 Mai 2016</p>
+				<p>&nbsp;- 20 au 22 Juin 2016</p>
+				<p>&nbsp;- 27 au 29 Juillet 2016</p>
+				<p>&nbsp;- 05 au 07 Octobre 2016</p>
+				<p>&nbsp;- 30 Novembre au 02 Décembre 2016</p>
+				<p>&nbsp;- entre janvier et décembre 2016</p>
+				<p>&nbsp;- 1 session de 3 jours / mois</p>
+				<p>&nbsp;</p>
+				<p style="padding-left: 15px;"><a href="https://www.mistra.fr/contact-mistra.html">Consultez-nous</a> pour obtenir un devis et les prochaines disponibilités de nos consultants formateurs.</p>
+				<p style="padding-left: 15px;">01 82 52 25 25&nbsp;</p>
+				<p style="padding-left: 15px;"><a href="mailto:contact@mistra.fr?subject=Recrutement" class="candidature">contact</a>
+				</p>
+				<h2>Présence nationale</h2><a class="highslide" href="./Formation MySQL pour administrateur_files/carte.gif" onclick="return hs.expand(this,{headingText: &#39;Nous dispensons nos formations dans toute la France&#39;})"><img src="./Formation MySQL pour administrateur_files/carte.gif" alt="Thumbnail image" height="143" width="142"></a>
+				<p id="aideCarte">Cliquez sur l'image pour l'agrandir</p>
+				<p id="villes">Auxerre, Bordeaux, Caen, Clermont-Ferrand, Dijon, Grenoble, Lille, Lyon, Marseille, Montpellier, Nantes, Nice, Paris, Perpignan, Reims, Rennes, Rouen, Strasbourg, Toulouse, Toulon, Tours</p>
+			</div></div>
+	</div>
+</div>  <div class="joomla_add_this"><!-- AddThis Button BEGIN -->
+<script type="text/javascript">
+var addthis_product = 'jlp-1.2';
+var addthis_config =
+{pubid:'ra-517e9db37e954836',
+ui_hover_direction:0,
+data_track_clickback:true,
+ui_language:'fr',
+ui_use_css:true}</script>
+<div class="addthis_toolbox addthis_default_style addthis_32x32_style" addthis:url="https://www.mistra.fr/formations-serveurs-open-source/formation-mysql-administration.html" addthis:title="Formation MySQL pour administrateur">
+<a class="addthis_button_facebook addthis_button_preferred_1 at300b" title="Facebook" href="https://www.mistra.fr/formations-serveurs-open-source/formation-mysql-administration.html#"><span class="at-icon-wrapper" style="background-color: rgb(59, 89, 152); line-height: 32px; height: 32px; width: 32px;"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 32 32" title="Facebook" alt="Facebook" style="width: 32px; height: 32px;" class="at-icon at-icon-facebook"><g><path d="M22 5.16c-.406-.054-1.806-.16-3.43-.16-3.4 0-5.733 1.825-5.733 5.17v2.882H9v3.913h3.837V27h4.604V16.965h3.823l.587-3.913h-4.41v-2.5c0-1.123.347-1.903 2.198-1.903H22V5.16z" fill-rule="evenodd"></path></g></svg></span></a>
+<a class="addthis_button_twitter addthis_button_preferred_2 at300b" title="Tweet" href="https://www.mistra.fr/formations-serveurs-open-source/formation-mysql-administration.html#"><span class="at-icon-wrapper" style="background-color: rgb(29, 161, 242); line-height: 32px; height: 32px; width: 32px;"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 32 32" title="Twitter" alt="Twitter" style="width: 32px; height: 32px;" class="at-icon at-icon-twitter"><g><path d="M27.996 10.116c-.81.36-1.68.602-2.592.71a4.526 4.526 0 0 0 1.984-2.496 9.037 9.037 0 0 1-2.866 1.095 4.513 4.513 0 0 0-7.69 4.116 12.81 12.81 0 0 1-9.3-4.715 4.49 4.49 0 0 0-.612 2.27 4.51 4.51 0 0 0 2.008 3.755 4.495 4.495 0 0 1-2.044-.564v.057a4.515 4.515 0 0 0 3.62 4.425 4.52 4.52 0 0 1-2.04.077 4.517 4.517 0 0 0 4.217 3.134 9.055 9.055 0 0 1-5.604 1.93A9.18 9.18 0 0 1 6 23.85a12.773 12.773 0 0 0 6.918 2.027c8.3 0 12.84-6.876 12.84-12.84 0-.195-.005-.39-.014-.583a9.172 9.172 0 0 0 2.252-2.336" fill-rule="evenodd"></path></g></svg></span></a>
+<a class="addthis_button_print addthis_button_preferred_3 at300b" title="Imprimer" href="https://www.mistra.fr/formations-serveurs-open-source/formation-mysql-administration.html#"><span class="at-icon-wrapper" style="background-color: rgb(115, 138, 141); line-height: 32px; height: 32px; width: 32px;"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 32 32" title="Print" alt="Print" style="width: 32px; height: 32px;" class="at-icon at-icon-print"><g><path d="M24.67 10.62h-2.86V7.49H10.82v3.12H7.95c-.5 0-.9.4-.9.9v7.66h3.77v1.31L15 24.66h6.81v-5.44h3.77v-7.7c-.01-.5-.41-.9-.91-.9zM11.88 8.56h8.86v2.06h-8.86V8.56zm10.98 9.18h-1.05v-2.1h-1.06v7.96H16.4c-1.58 0-.82-3.74-.82-3.74s-3.65.89-3.69-.78v-3.43h-1.06v2.06H9.77v-3.58h13.09v3.61zm.75-4.91c-.4 0-.72-.32-.72-.72s.32-.72.72-.72c.4 0 .72.32.72.72s-.32.72-.72.72zm-4.12 2.96h-6.1v1.06h6.1v-1.06zm-6.11 3.15h6.1v-1.06h-6.1v1.06z"></path></g></svg></span></a>
+<a class="addthis_button_email addthis_button_preferred_4 at300b" target="_blank" title="Email" href="https://www.mistra.fr/formations-serveurs-open-source/formation-mysql-administration.html#"><span class="at-icon-wrapper" style="background-color: rgb(132, 132, 132); line-height: 32px; height: 32px; width: 32px;"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 32 32" title="Email" alt="Email" style="width: 32px; height: 32px;" class="at-icon at-icon-email"><g><g fill-rule="evenodd"></g><path d="M27 22.757c0 1.24-.988 2.243-2.19 2.243H7.19C5.98 25 5 23.994 5 22.757V13.67c0-.556.39-.773.855-.496l8.78 5.238c.782.467 1.95.467 2.73 0l8.78-5.238c.472-.28.855-.063.855.495v9.087z"></path><path d="M27 9.243C27 8.006 26.02 7 24.81 7H7.19C5.988 7 5 8.004 5 9.243v.465c0 .554.385 1.232.857 1.514l9.61 5.733c.267.16.8.16 1.067 0l9.61-5.733c.473-.283.856-.96.856-1.514v-.465z"></path></g></svg></span></a>
+<a class="addthis_button_compact at300m" href="https://www.mistra.fr/formations-serveurs-open-source/formation-mysql-administration.html#"><span class="at-icon-wrapper" style="background-color: rgb(255, 101, 80); line-height: 32px; height: 32px; width: 32px;"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 32 32" title="More" alt="More" style="width: 32px; height: 32px;" class="at-icon at-icon-addthis"><g><path d="M18 14V8h-4v6H8v4h6v6h4v-6h6v-4h-6z" fill-rule="evenodd"></path></g></svg></span></a>
+<a class="addthis_counter addthis_bubble_style" href="https://www.mistra.fr/formations-serveurs-open-source/formation-mysql-administration.html#" style="display: inline-block;"><a class="addthis_button_expanded" target="_blank" title="Plus d&#39;options..." href="https://www.mistra.fr/formations-serveurs-open-source/formation-mysql-administration.html#">0</a><a class="atc_s addthis_button_compact">Partager<span></span></a></a>
+<div class="atclear"></div></div><script type="text/javascript" src="./Formation MySQL pour administrateur_files/addthis_widget.js.téléchargement"></script>
+<!-- AddThis Button END -->
+</div>
+	
+</div>
+</div>
+
+      
+<div id="system-message-container">
+</div>
+      <div class="kl_bloc_devis_form">
+        <a href="https://www.mistra.fr/formations-serveurs-open-source/formation-mysql-administration.html#" class="kl_close_popup">X</a>
+        
+    
+
+
+<!-- Plugin Include component version 1.13 by Mike Reumer
+     for: https://www.mistra.fr/index.php?option=com_aicontactsafe&view=message&layout=message&pf=4&redirect_on_success=&tmpl=component&print=1&origin=aHR0cHM6Ly93d3cubWlzdHJhLmZyL2Zvcm1hdGlvbnMtc2VydmV1cnMtb3Blbi1zb3VyY2UvZm9ybWF0aW9uLW15c3FsLWFkbWluaXN0cmF0aW9uLmh0bWw= -->
+
+	
+<div id="system-message-container">
+</div>
+	<div class="aiContactSafe" id="aiContactSafe_mainbody_4">
+<div class="contentpaneopen">
+			<table id="aiContactSafeForm" border="0" cellpadding="0" cellspacing="5">
+				<tbody><tr>
+					<td valign="top">
+							<form action="https://www.mistra.fr/index.php?option=com_aicontactsafe" method="post" id="adminForm_4" name="adminForm_4" enctype="multipart/form-data">		<h2>Demande de devis</h2><p>Remplissez ce formulaire afin de recevoir un devis pour cette formation.</p><table border="0"><tbody><tr><td width="100px">Formation :</td><td id="urlCurrentTrainingPage"><a href="https://www.mistra.fr/formations-serveurs-open-source/formation-mysql-administration.html" target="_blank">https://www.mistra.fr/formations-serveurs-open-source/formation-mysql-administration.html</a></td></tr></tbody></table><div id="displayAiContactSafeForm_4">
+				<div class="aiContactSafe" id="aiContactSafe_contact_form">
+				<div class="aiContactSafe" id="aiContactSafe_info">Demander devis</div>
+										<div class="aiContactSafe_row" id="aiContactSafe_row_aics_name"><div class="aiContactSafe_contact_form_field_label_left"><span class="aiContactSafe_label" id="aiContactSafe_label_aics_name"><label for="aics_name">Nom</label></span>&nbsp;</div><div class="aiContactSafe_contact_form_field_right"><input type="text" name="aics_name" id="aics_name" class="textbox" value="Nom"></div>
+												</div>
+									<div class="aiContactSafe_row" id="aiContactSafe_row_aics_phone"><div class="aiContactSafe_contact_form_field_label_left"><span class="aiContactSafe_label" id="aiContactSafe_label_aics_phone"><label for="aics_phone">Téléphone</label></span>&nbsp;</div><div class="aiContactSafe_contact_form_field_right"><input type="text" name="aics_phone" id="aics_phone" maxlength="15" class="textbox" value="Téléphone"></div>
+												</div>
+									<div class="aiContactSafe_row" id="aiContactSafe_row_aics_email"><div class="aiContactSafe_contact_form_field_label_left"><span class="aiContactSafe_label" id="aiContactSafe_label_aics_email"><label for="aics_email">Email</label></span>&nbsp;<label class="required_field"></label></div><div class="aiContactSafe_contact_form_field_right"><input type="text" name="aics_email" id="aics_email" class="email" value="Email"></div>
+												</div>
+									<div class="aiContactSafe_row" id="aiContactSafe_row_aics_Socit"><div class="aiContactSafe_contact_form_field_label_left"><span class="aiContactSafe_label" id="aiContactSafe_label_aics_Socit"><label for="aics_Socit">Société</label></span>&nbsp;</div><div class="aiContactSafe_contact_form_field_right"><input type="text" name="aics_Socit" id="aics_Socit" value="Société"></div>
+												</div>
+									<div class="aiContactSafe_row" id="aiContactSafe_row_aics_message"><div class="aiContactSafe_contact_form_field_label_left"><span class="aiContactSafe_label" id="aiContactSafe_label_aics_message"><label for="aics_message">Remarques</label></span>&nbsp;</div><div class="aiContactSafe_contact_form_field_right"><textarea name="aics_message" id="aics_message" cols="40" rows="10" class="editbox" onkeydown="checkEditboxLimit(4,&#39;aics_message&#39;, 500)" onkeyup="checkEditboxLimit(4,&#39;aics_message&#39;,500)" onchange="checkEditboxLimit(4,&#39;aics_message&#39;,500)"></textarea><br><div class="countdown_div">You have<input type="text" readonly="readonly" class="countdown_editbox" name="countdown_aics_message" id="countdown_aics_message" size="3" value="500">characters left.</div></div>
+												</div>
+								<div class="aiContactSafe_row_hidden" id="aiContactSafe_row_aics_Formations_"><div class="aiContactSafe_contact_form_field_right"><input type="hidden" name="aics_Formations_" id="aics_Formations_" value="https://www.mistra.fr/formations-serveurs-open-source/formation-mysql-administration.html"></div></div>
+					</div>
+					</div>
+			<br clear="all">
+						<br clear="all">
+			<div id="aiContactSafeBtns"><div id="aiContactSafeButtons_center" style="clear:both; display:block; text-align:center;"><table border="0" cellpadding="2" cellspacing="0" style="margin-left:auto; margin-right:auto;"><tbody><tr><td><div id="aiContactSafeSend_loading_4">&nbsp;</div></td><td id="td_aiContactSafeSendButton"><input type="submit" id="aiContactSafeSendButton" value="Envoyer"></td></tr></tbody></table></div></div>
+			<br clear="all">
+		<input type="hidden" id="option" name="option" value="com_aicontactsafe"><input type="hidden" id="sTask" name="sTask" value="message"><input type="hidden" id="task" name="task" value="display"><input type="hidden" id="send_mail" name="send_mail" value="1"><input type="hidden" id="pf" name="pf" value="4"><input type="hidden" id="return_to" name="return_to" value="https://www.mistra.fr/demande-de-devis-envoye.html"><input type="hidden" id="current_url" name="current_url" value="https://www.mistra.fr/index.php?option=com_aicontactsafe&amp;view=message&amp;layout=message&amp;pf=4&amp;redirect_on_success=&amp;tmpl=component&amp;print=1&amp;origin=aHR0cHM6Ly93d3cubWlzdHJhLmZyL2Zvcm1hdGlvbnMtc2VydmV1cnMtb3Blbi1zb3VyY2UvZm9ybWF0aW9uLW15c3FsLWFkbWluaXN0cmF0aW9uLmh0bWw="><input type="hidden" id="Itemid" name="Itemid" value="0"><input type="hidden" id="lang" name="lang" value="en"><input type="hidden" id="back_button" name="back_button" value="0"><input type="hidden" id="boxchecked" name="boxchecked" value="0"><input type="hidden" id="use_ajax" name="use_ajax" value="0"><input type="hidden" id="r_id" name="r_id" value="794809322"><input type="hidden" name="9b13772c7a46223ec2bbfa5417edb6b9" value="1"></form>						</td>
+				</tr>
+				<tr><td valign="top"><script type="text/javascript">
+var html = '<h2>Demande de devis</h2><p>Remplissez ce formulaire afin de recevoir un devis pour cette formation.</p><table border="0"><tbody><tr><td width="100px">Formation :</td><td id="urlCurrentTrainingPage"></td></tr></tbody></table>';
+
+$("#adminForm_4").children().first().before( html );
+
+document.getElementById('urlCurrentTrainingPage').innerHTML = "<a href='"+ parent.document.URL +"' target='_blank'>"+ parent.document.URL +"</a>";
+
+$("#aics_Formations_").val( parent.document.URL );
+
+</script></td></tr>
+			</tbody></table>
+	</div>
+</div>
+
+<!-- End Plugin Include component -->
+      </div>
+        </div>
+        <div id="footer" class="footer">
+      <!--<div class="kl_mylive_chat">		<div class="moduletable">
+					
+		<div class="mod_mylivechat">
+	<script type="text/javascript" src="https://www.mylivechat.com/chatinline.aspx?hccid=54969420"></script>	
+		</div>
+			</div>
+	</div>-->
+      <div class="kl_chat_final">
+        <!-- begin SnapEngage code -->
+        <script type="text/javascript">
+          (function() {
+          var se = document.createElement('script'); se.type = 'text/javascript'; se.async = true;
+          se.src = '//storage.googleapis.com/code.snapengage.com/js/efb59e5f-978f-4879-a84e-a4c752d1d16e.js';
+          var done = false;
+          se.onload = se.onreadystatechange = function() {
+            if (!done&&(!this.readyState||this.readyState==='loaded'||this.readyState==='complete')) {
+            done = true;
+            /* Place your SnapEngage JS API code below */
+            /* SnapEngage.allowChatSound(true); Example JS API: Enable sounds for Visitors. */
+            }
+          };
+          var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(se, s);
+          })();
+        </script>
+        <!-- end SnapEngage code -->
+      </div>
+          <div class="container">
+                <div class="row">
+                    <div class="col-md-4 foot-1">
+                      <h2>Suivez nous sur twitter</h2>
+                        		<div class="moduletable">
+					<h3>Suivez-nous sur Twitter</h3>
+					
+<div class="custom">
+	<!-- <a href="http://twitter.com/MistraFormation" class="twitter-follow-button" data-show-count="false" data-lang="fr" data-link-color="800080" data-width="200px">Follow @MistraFormation</a>
+<script src="http://platform.twitter.com/widgets.js" data-mce-type="text/javascript">&nbsp;</script> -->
+<p><iframe id="twitter-widget-0" scrolling="no" frameborder="0" allowtransparency="true" allowfullscreen="true" class="twitter-timeline twitter-timeline-rendered" style="position: static; visibility: visible; display: inline-block; width: 520px; height: 600px; padding: 0px; border: none; max-width: 100%; min-width: 180px; margin-top: 0px; margin-bottom: 0px; min-height: 200px;" data-widget-id="350558814673719296" title="Twitter Timeline" src="./Formation MySQL pour administrateur_files/saved_resource.html"></iframe>
+</p>
+<script type="text/javascript">
+	// <![CDATA[
+	!
+	function(d, s, id) {
+		var js, fjs = d.getElementsByTagName(s)[0],
+			p = /^http:/.test(d.location) ? 'http' : 'https';
+		if (!d.getElementById(id)) {
+			js = d.createElement(s);
+			js.id = id;
+			js.src = p + "://platform.twitter.com/widgets.js";
+			fjs.parentNode.insertBefore(js, fjs);
+		}
+	}(document, "script", "twitter-wjs");
+	// ]]>
+	
+</script></div>
+		</div>
+	
+                    </div>
+                    <div class="col-md-5 foot-2">
+                      <h2>Acces direct</h2>
+                        <!--ICI LIEN FOOTER-->
+                       		<div class="moduletable">
+					
+<div class="custom">
+	<ul>
+	<li><a href="https://www.mistra.fr/catalogue-des-formations.html">Formation Mistra</a></li>
+	<li><a href="http://formateurs.matelli.fr/" target="_blank" style="font-weight: bold;">Délégation de formateurs</a></li>
+	<li><a href="https://www.mistra.fr/accueil-tutoriels.html">Tutoriels Mistra</a></li>
+	<li><a href="http://www.matelli-services.fr/" target="_blank" style="font-weight: bold;">Création d'applications sur mesure</a></li>
+	<li><a href="https://blog.mistra.fr/" target="_blank">Actualité IT</a></li>
+	<li><a href="http://www.mistra.fr/" target="_blank" style="font-weight: bold;">Formations en informatique</a></li>
+	<li><a href="https://www.mistra.fr/tutoriels-web/tutoriels-ria/tutoriel-flex-actionscript.html">Tutoriels sur flex</a></li>
+	<li><a href="https://www.mistra.fr/mentions-legales.html" style="font-weight: bold;">Mentions légales</a></li>
+	<li><a href="https://www.mistra.fr/tutoriels-web/tutoriels-html5-css3.html">Tutoriels HTML5</a></li>
+</ul></div>
+		</div>
+	
+                        <div class="clearfix"></div>
+                    </div>
+                    <div class="col-md-3 foot-3">
+                      <h2>Restez connecté</h2>
+                        
+<div class="custom">
+	<iframe src="./Formation MySQL pour administrateur_files/likebox.html" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:220px; height:290px;" allowtransparency="true"></iframe></div>
+
+                    </div>
+                </div>
+               <div class="kl_copyright">		<div class="moduletable">
+					
+<div class="custom">
+	<p>Copyright © 2015 Mistra.fr - Tous droits réservés</p></div>
+		</div>
+	</div>
+            </div>
+        </div>
+    </div><div id="_atssh" style="visibility: hidden; height: 1px; width: 1px; position: absolute; top: -9999px; z-index: 100000;"><iframe id="_atssh655" title="AddThis utility frame" src="./Formation MySQL pour administrateur_files/sh.c9f8b80915103cb01b19153b.html" style="height: 1px; width: 1px; position: absolute; top: 0px; z-index: 100000; border: 0px; left: 0px;"></iframe></div><style id="service-icons-0"></style>
+  
+
+<div id="fancybox-tmp"></div><div id="fancybox-loading"><div></div></div><div id="fancybox-overlay"></div><div id="fancybox-wrap"><div id="fancybox-outer"><div class="fancybox-bg" id="fancybox-bg-n"></div><div class="fancybox-bg" id="fancybox-bg-ne"></div><div class="fancybox-bg" id="fancybox-bg-e"></div><div class="fancybox-bg" id="fancybox-bg-se"></div><div class="fancybox-bg" id="fancybox-bg-s"></div><div class="fancybox-bg" id="fancybox-bg-sw"></div><div class="fancybox-bg" id="fancybox-bg-w"></div><div class="fancybox-bg" id="fancybox-bg-nw"></div><div id="fancybox-content"></div><a id="fancybox-close"></a><div id="fancybox-title"></div><a href="javascript:;" id="fancybox-left"><span class="fancy-ico" id="fancybox-left-ico"></span></a><a href="javascript:;" id="fancybox-right"><span class="fancy-ico" id="fancybox-right-ico"></span></a></div></div><div id="SnapABug_Button" class="SnapABug_Button"><img id="SnapABug_bImg" style="position: relative; right: -4px; display: inline;" src="./Formation MySQL pour administrateur_files/statusImage" alt="Aide" border="0" onmouseover="SnapABug.buttonOver();" onmouseout="SnapABug.buttonOut();"></div><div id="SnapABug_W" style="position: fixed; display: none; top: 0%; left: 0px; width: 100%; height: 100%; z-index: 2147483644; margin: 0px; padding: 0px; border-collapse: collapse; border-spacing: 0px; border: none; list-style: none; text-align: left; font-size: 100%; font-weight: normal; outline: none; background-image: url(&quot;https://storage.googleapis.com/code.snapengage.com/wbg/blank.gif&quot;); background-repeat: repeat;"><div id="SnapABug_O" style="position: absolute; width: 100%; height: 100%; top: 0px; left: 0px; text-align: left; z-index: auto; opacity: 0.5; background-color: white; display: none;"></div></div><div id="SnapABug_WP" style="position: fixed; display: none; z-index: 2147483645; overflow: hidden; margin: 0px; padding: 0px; border-collapse: collapse; border-spacing: 0px; border: none; list-style: none; outline: none; width: 380px; height: 400px; bottom: 0px; right: 0px;"><div id="SnapABug_P" style="position: absolute; left: 0px; top: 0px; margin: 0px; padding: 0px; border: none; text-align: left; z-index: 1; overflow: hidden; background-color: transparent; width: 380px; height: 400px; display: none;"><div style="left: 0; top: 0; z-index: 1;"><img src="./Formation MySQL pour administrateur_files/greyblue_chat_form.png" style=";position:absolute;display:block;margin:0;padding:0;border:none;float:none;clear:none;left:0px;top:0px;width:380px;max-width:380px;min-width:380px;height:400px;max-height:400px;min-height:400px;z-index:2;background-color:transparent;background:none;font-style:normal;font-weight:normal;font-size:100%;line-height:normal;text-shadow:none;list-style:none;text-align:left;outline:none;text-indent:0px;-moz-box-shadow:none;-webkit-box-shadow:none;" draggable="false" galleryimg="no" width="380" height="400"></div><div id="SnapABug_ChatBoxTitle" style=";position:absolute;display:block;margin:0;padding:0;border:none;float:none;clear:none;left:56px;top:27px;width:267px;max-width:267px;min-width:267px;height:20px;max-height:20px;min-height:20px;z-index:2;background-color:transparent;background:none;font-style:normal;font-weight:normal;font-size:100%;line-height:normal;text-shadow:none;list-style:none;text-align:left;outline:none;text-indent:0px;-moz-box-shadow:none;-webkit-box-shadow:none;font-family: Helvetica Neue, Helvetica, lucida grande, Arial, sans-serif; font-size:17px;font-weight:200;color:#ffffff;">Live Chat</div><div id="SnapABug_CL" style=";position:absolute;display:block;margin:0;padding:0;border:none;float:none;clear:none;left:30px;top:70px;width:313px;max-width:313px;min-width:313px;height:220px;max-height:220px;min-height:220px;z-index:2;background-color:transparent;background:none;font-style:normal;font-weight:normal;font-size:100%;line-height:normal;text-shadow:none;list-style:none;text-align:left;outline:none;text-indent:0px;-moz-box-shadow:none;-webkit-box-shadow:none;font-family: Arial, sans-serif; background: none; font-size: 12px; font-weight: normal; color:#000000;overflow: auto; margin-left:7px;"><div style="height:7px;"></div><div class="SnapABug_transcriptLine" style="clear:left;line-height:normal;color:black;"><span style="color:#5E7685;font-weight:bold;">Benjamin KALFA:</span> Bonjour, est-ce que je peux vous aider ? </div><div style="height:7px;"></div><div id="SnapABug_Typing" class="SnapABug_transcriptLine" style="clear:left;line-height:normal;color:black;visibility:hidden;"><span style="color:#5E7685;font-weight:bold;">Benjamin KALFA:</span> <img src="./Formation MySQL pour administrateur_files/typing.gif" alt="[...]" width="24" height="8"></div></div><form name="SnapABug_Form" accept-charset="UTF-8" action="https://www.mistra.fr/formations-serveurs-open-source/formation-mysql-administration.html#" onsubmit="return SnapABugChat.submitChat();"><textarea id="SnapABug_CE" style=";position:absolute;display:block;margin:0;padding:0;border:none;float:none;clear:none;left:35px;top:302px;width:315px;max-width:315px;min-width:315px;height:63px;max-height:63px;min-height:63px;z-index:2;background-color:transparent;background:none;font-style:normal;font-weight:normal;font-size:100%;line-height:normal;text-shadow:none;list-style:none;text-align:left;outline:none;text-indent:0px;-moz-box-shadow:none;-webkit-box-shadow:none;font-family: Arial, sans-serif; font-size: 12px; font-weight: normal; color:#000000;vertical-align: top; resize: none; background-image: url(&#39;https://storage.googleapis.com/code.snapengage.com/wbg/blank.gif&#39;); background-repeat: repeat; overflow: auto;" type="text" name="chat" onkeydown="return SnapABugChat.keyDownHandler(event);" onclick="return SnapABugChat.keyDownHandler(event);" readonly="readonly"></textarea></form><div style=";position:absolute;display:block;margin:0;padding:0;border:none;float:none;clear:none;left:332px;top:26px;width:20px;max-width:20px;min-width:20px;height:20px;max-height:20px;min-height:20px;z-index:2;background-color:transparent;background:none;font-style:normal;font-weight:normal;font-size:100%;line-height:normal;text-shadow:none;list-style:none;text-align:left;outline:none;text-indent:0px;-moz-box-shadow:none;-webkit-box-shadow:none;cursor:pointer;" onclick="SnapABug.closeForm();" title="Fermer"><img style="margin: 0; border: none; padding: 0; width: 20px; height: 20px;" src="./Formation MySQL pour administrateur_files/blank.gif" width="20" height="20" alt="Fermer"></div><div style=";position:absolute;display:block;margin:0;padding:0;border:none;float:none;clear:none;left:354px;top:150px;width:16px;max-width:16px;min-width:16px;height:138px;max-height:138px;min-height:138px;z-index:2;background-color:transparent;background:none;font-style:normal;font-weight:normal;font-size:100%;line-height:normal;text-shadow:none;list-style:none;text-align:left;outline:none;text-indent:0px;-moz-box-shadow:none;-webkit-box-shadow:none;"><a href="https://www.snapengage.com/partner?src=widget&amp;id=efb59e5f-978f-4879-a84e-a4c752d1d16e&amp;l=fr" target="_blank" style="text-indent:0px;border:none;" rel="nofollow"><img style="margin: 0; border: none; padding: 0;" src="./Formation MySQL pour administrateur_files/logo_chat_vertical.png" border="0" alt="powered by SnapEngage" width="16" height="138"></a></div><div id="SnapABug_CallMe" style=";position:absolute;display:block;margin:0;padding:0;border:none;float:none;clear:none;left:29px;top:370px;z-index:2;background-color:transparent;background:none;font-style:normal;font-weight:normal;font-size:100%;line-height:normal;text-shadow:none;list-style:none;text-align:left;outline:none;text-indent:0px;-moz-box-shadow:none;-webkit-box-shadow:none; display:none;" onclick="SnapABug.clickedCallMe()" "="">  <div id="SnapABug_CallMe_Btn" style="position:relative;top:0;left:0; margin:0;padding:0; float:none;clear:none;background:#5E7685; cursor: pointer; height: 14px; font-size: 11px;  border: none;-webkit-border-radius: 4px; -moz-border-radius: 4px; border-radius: 4px;background-clip: padding-box; padding: 2px 4px; width:auto; overflow:visible;font-family: Helvetica Neue, Helvetica, lucida grande, Arial, sans-serif;  color:#ffffff; text-decoration:none; vertical-align:middle;" onmouseover="this.style.backgroundColor=&#39;#7E96a5&#39;;" onmouseout="this.style.backgroundColor=&#39;#5E7685&#39;;" "="">    <i style="position:relative; top:1px;background: url(&#39;https://storage.googleapis.com/code.snapengage.com/wbg/callme_icon.png&#39;) no-repeat 0 0 transparent;display:inline-block; width:12px; height: 12px;margin: 0 1px 0 4px;"></i>    <span style="position:relative; top:-1px;display:inline-block; padding: 0 8px 0 0;">Call me</span>  </div></div></div><div id="SnapABug_IP" style="position: absolute; left: 0px; top: 0px; z-index: 0; width: 0px; height: 0px; display: none;"><iframe width="100%" height="100%" frameborder="0" src="./Formation MySQL pour administrateur_files/empty.html"></iframe></div><div id="SnapABug_DB" style="position: absolute; left: 20px; top: 20px; margin: 0px; border: 0px; padding: 0px; z-index: 1; cursor: move; background-image: url(&quot;https://storage.googleapis.com/code.snapengage.com/wbg/blank.gif&quot;); background-repeat: repeat; width: 290px; height: 30px;"></div><div id="SnapABug_Snd" style="width:0px;height:0px;font-size:0px;margin:0;padding:0;background-color:transparent;"></div><div id="SnapABug_RB" onclick="SnapEngageChat.minimizeToggle()"></div><div id="SnapABug_NMN" style="display: none; position: absolute; left: 26px; top: 26px; z-index: 2; font-size: 16px; text-align: center; cursor: pointer; background-color: rgb(255, 0, 0); color: rgb(255, 255, 255); border-radius: 4px; font-family: &quot;Helvetica Neue&quot;, Helvetica, &quot;lucida grande&quot;, Arial, sans-serif;" onclick="SnapEngageChat.minimizeToggle()"><span id="SnapABug_NMNi" style="display: inline-block; box-sizing: border-box; color: rgb(255, 255, 255); font-size: 1em; font-weight: bold; padding: 0px 0.3em; line-height: 20px; min-width: 25px;"></span></div></div><div id="SnapABug_Applet" style="position: fixed; display: none; top: 0%; left: 0px; width: 100%; height: 2px; text-align: left; z-index: 2147483646;"></div><iframe id="rufous-sandbox" scrolling="no" frameborder="0" allowtransparency="true" allowfullscreen="true" style="position: absolute; visibility: hidden; display: none; width: 0px; height: 0px; padding: 0px; border: none;" src="./Formation MySQL pour administrateur_files/saved_resource(1).html"></iframe></body></html>

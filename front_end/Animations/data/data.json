@@ -1,0 +1,39 @@
+﻿{
+	"characters": 
+	[
+		{ 
+			"animations" 	: 
+			{
+				"walk_bottom":["bottom_1","bottom_0","bottom_1","bottom_2"],
+				"walk_left":["left_1","left_0","left_1","left_2"],
+				"walk_right":["right_1","right_0","right_1","right_2"],
+				"walk_up":["up_1","up_0","up_1","up_2"]
+			},	 
+			"states"		: 
+			{
+				
+				"bottom_0"	: {"x": 0	, "y": 0	, "width": 32, "height": 32},
+				"bottom_1"	: {"x": 32	, "y": 0	, "width": 32, "height": 32},
+				"bottom_2"	: {"x": 64	, "y": 0	, "width": 32, "height": 32},
+				"left_0"	: {"x": 0	, "y": 32	, "width": 32, "height": 32},
+				"left_1"	: {"x": 32	, "y": 32	, "width": 32, "height": 32},
+				"left_2"	: {"x": 64	, "y": 32	, "width": 32, "height": 32},
+				"right_0"	: {"x": 0	, "y": 64	, "width": 32, "height": 32},
+				"right_1"	: {"x": 32	, "y": 64	, "width": 32, "height": 32},
+				"right_2"	: {"x": 64	, "y": 64	, "width": 32, "height": 32},
+				"up_0"		: {"x": 0	, "y": 96	, "width": 32, "height": 32},
+				"up_1"		: {"x": 32	, "y": 96	, "width": 32, "height": 32},
+				"up_2"		: {"x": 64	, "y": 96	, "width": 32, "height": 32}
+			},
+			"state"		: "bottom_1"				,
+			"img"		: "img/persos.png"	,
+			"type"		: "_warrior_"			,
+			"nom"		: "Robocop"				,
+			"metier"	: "flic"				,
+			"pv"		: 100					,
+			"defMagic"	: 100					,
+			"defPhy"	: 100					,
+			"degats"	: 5	
+		}
+	]	
+}

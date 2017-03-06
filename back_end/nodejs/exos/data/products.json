@@ -1,0 +1,30 @@
+[
+	{ 
+		"name":"Splatoon", 
+		"price": 50, 
+		"reference": "splatoon", 
+		"description":"Splash! Sploosh! Gare à toi!", 
+		"img":"/img/splatoon.jpg"
+	},
+	{ 
+		"name":"Assassin's Creed", 
+		"price": 40, 
+		"reference": "assassin", 
+		"description":"Coup de pied circulaire, lame dans la jugulaire !", 
+		"img":"/img/ac.jpg"
+	},
+	{ 
+		"name":"Uncharted 4", 
+		"price": 70, 
+		"reference": "uncharted_4", 
+		"description":"Rien ne surpasse un voleur... Enfin si, un voleur riche.", 
+		"img":"/img/uncharted4.jpg"
+	},
+	{ 
+		"name":"Angry Birds", 
+		"price": 2, 
+		"reference": "angry_birds", 
+		"description":"Des piafs et des cochons !", 
+		"img":"/img/angry.png"
+	}
+]

@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="fr">
+	<head>
+		<meta charset="utf-8"> 
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=0">
+			
+		<title>M2I</title>
+		
+		<script type="text/javascript" src="js/rpg/Actor.js"></script>
+		<script type="text/javascript" src="js/rpg/Personnage.js"></script>
+		<script type="text/javascript" src="js/rpg/Warrior.js"></script>
+		<script type="text/javascript" src="js/rpg/Weapon.js"></script>
+		<script type="text/javascript" src="js/rpg/Inventaire.js"></script>
+		<script type="text/javascript" src="js/rpg/Wizard.js"></script>
+		<script type="text/javascript" src="js/rpg/Ennemy.js"></script>
+		<script type="text/javascript" src="js/rpg/Item.js"></script>
+		<script type="text/javascript" src="js/rpg/LifePotion.js"></script>
+		<script type="text/javascript" src="js/rpg/MagicWand.js"></script>
+		<script type="text/javascript" src="js/rpg/ManaPotion.js"></script>
+		<script type="text/javascript" src="js/rpg/Marchand.js"></script>
+		<script type="text/javascript" src="js/rpg/PNJ.js"></script>	
+		
+		<script type="text/javascript" src="js/Controller.js"></script>
+		<script type="text/javascript" src="js/Tile.js"></script>
+		<script type="text/javascript" src="js/Map.js"></script>
+
+		<script type="text/javascript" src="js/greensock/src/minified/TimelineLite.min.js"></script>
+		<script type="text/javascript" src="js/greensock/src/minified/TweenMax.min.js"></script>
+		<script type="text/javascript" src="js/jquery.min.js"></script>	
+		
+		<script type="text/javascript" src="js/Main.js"></script>
+		
+		<link type="text/css" href="css/gridSystem.css" rel="stylesheet" />
+		<link type="text/css" href="css/global.css" rel="stylesheet" />
+		<link type="text/css" href="css/gameDesign.css" rel="stylesheet" />
+        
+	</head>
+	<body>
+	
+        <div id="gameContainer" class="col mob-10 dsk-10 tab-10">
+            <div class="row">
+                <div id="playerState" class="col mob-6 dsk-6 tab-6">
+                    <div id="playerStateVie">
+                        <p>LIFE</p>
+                    </div>
+                    <div id="playerStateMana">
+                        <p>MANA</p>
+                    </div>
+                </div>
+                <!--<div class="col mob-5 dsk-0 tab-0"> -- eZam : Not USED
+                <ul id="menu"> 
+                        <li>
+                            <a href="#">MENU</a>
+                            <ul>
+                                <li><a href="#">ITEMS</a></li>
+                                <li><a href="#">INTERFACE</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>-->
+                <div class="gameNav col mob-2 dsk-2 tab-2">
+                    <a href="#">MENU</a>
+                </div>
+                
+                <div class="gameNav col mob-2 dsk-2 tab-2">
+                    <a href="#">ITEMS</a>
+                </div>
+                
+                <div class="gameNav col mob-2 dsk-2 tab-2">
+                    <a href="#">INTERFACE</a>
+                </div>
+            </div>
+            
+            <div id="mapContainer" class="row">
+            
+                <div id="map"  class="col mob-12 tab-12 dsk-12"></div>
+                
+                <div id ="arrowContainer">
+                
+                    <div class="row">
+                        <div class="col mob-4 tab-4 dsk-4"></div>
+                        
+                        <div class=" col mob-4 tab-4 dsk-4">
+                            <img src="images/system/haut.jpg" id="img_haut">
+                        </div>
+                        
+                        <div class="col mob-4 tab-4 dsk-4"></div>
+                    </div>
+                    
+                    <div class="row">
+                        <div class="col mob-4 tab-4 dsk-4" >
+                            <img src="images/system/gauche.jpg" id="img_gauche">
+                        </div>
+                        
+                        <div class=" col mob-4 tab-4 dsk-4"></div>
+                        
+                        <div class="col mob-4 tab-4 dsk-4">
+                            <img src="images/system/droite.jpg" id="img_droite">
+                        </div>
+                    </div>
+                    
+                    <div class="row">
+                        <div class="col mob-4 tab-4 dsk-4"></div>
+                        
+                        <div class=" col mob-4 tab-4 dsk-4">
+                            <img src="images/system/bas.jpg" id="img_bas">
+                        </div>
+                        
+                        <div class="col mob-4 tab-4 dsk-4"></div>
+                    </div>
+                    
+                </div>
+            </div>
+            
+            <div class="row">
+                <div class="combat col mob-12 tab-12 dsk-12">
+                </div>
+            </div>			
+        </div>
+        
+	</body>
+</html>

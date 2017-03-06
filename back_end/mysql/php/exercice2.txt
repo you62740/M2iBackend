@@ -1,0 +1,10 @@
+- 	Partir de la base de la correction exercice 1
+
+- 	Afficher l'ensemble des armes dans un tableau HTML ( toutes les données, id compris )
+
+- 	Créer un second formulaire qui permet de supprimer une ou 
+	plusieurs ligne(s) en fonction de la valeur de son id.
+
+	
+	
+	

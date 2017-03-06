@@ -1,0 +1,110 @@
+app:
+    resource: "@AppBundle/Controller/"
+    type:     annotation
+
+m2iprojet_home_route:
+    path     :  /
+    defaults :  {  
+                    _controller: AppBundle\Controller\WebServiceController::
+                }
+                
+m2iprojet_presentationDefault_route:
+    path     :  /presentation
+    defaults :  {  
+                    _controller: AppBundle\Controller\WebServiceController::displayArticleDefault
+                }
+m2iprojet_presentationArticle_route:
+    path     :  /presentation/article/{category}
+    defaults :  {  
+                    _controller: AppBundle\Controller\WebServiceController::displayArticle, category : 'unknown'
+                }
+m2iprojet_presentationListe_route:
+    path     :  /presentation/liste/
+    defaults :  {  
+                    _controller: AppBundle\Controller\WebServiceController::liste
+                }
+m2iprojet_parcoursJourneeType_route:
+    path     :  /parcours/{category}
+    defaults :  {  
+                    _controller: AppBundle\Controller\WebServiceController::displayArticle, category : 'unknown'
+                }
+m2iprojet_livreorTemoignage_route:
+    path     :  /livreor
+    defaults :  {  
+                    _controller: AppBundle\Controller\WebServiceController::livreor
+                }
+m2iprojet_evenement_route:
+    path     :  /evenement/{category}
+    defaults :  {  
+                    _controller: AppBundle\Controller\WebServiceController::displayArticle, category : 'unknown'
+                }
+m2iprojet_connexion_route:
+    path     :  /connexion
+    defaults :  {  
+                    _controller: AppBundle\Controller\ConnexionController::connexion
+                }
+m2iprojet_connect_route:
+    path     :  /connect
+    defaults :  {  
+                    _controller: AppBundle\Controller\ConnexionController::connect
+                }
+m2iprojet_admin_forum_route:
+    path     :  /admin/forum
+    defaults :  {  
+                    _controller: AppBundle\Controller\AdminController::forums
+                }
+m2iprojet_admin_route:
+    path     :  /admin
+    defaults :  {  
+                    _controller: AppBundle\Controller\AdminController::admin
+                }
+m2iprojet_admin_user_route:
+    path     :  /admin/user
+    defaults :  {  
+                    _controller: AppBundle\Controller\AdminController::users
+                }
+m2iprojet_admin_user_modif_route:
+    path     :  /admin/user/modif/{user_id}
+    defaults :  {  
+                    _controller: AppBundle\Controller\AdminController::modif_users, selected_user: 0
+                }
+m2iprojet_admin_user_suppr_route:
+    path     :  /admin/user/suppr/{user_id}
+    defaults :  {  
+                    _controller: AppBundle\Controller\AdminController::suppr_users, selected_user: 0
+                }
+m2iprojet_admin_article_route:
+    path     :  /admin/article
+    defaults :  {  
+                    _controller: AppBundle\Controller\AdminController::articles
+                }
+m2iprojet_admin_article_modif_route:
+    path     :  /admin/article/modif/{article_id}
+    defaults :  {  
+                    _controller: AppBundle\Controller\AdminController::modif_articles, selected_article: 0
+                }
+m2iprojet_admin_article_suppr_route:
+    path     :  /admin/article/suppr/{article_id}
+    defaults :  {  
+                    _controller: AppBundle\Controller\AdminController::suppr_articles, selected_article: 0
+                }
+m2iprojet_admin_testimony_route:
+    path     :  /admin/testimony
+    defaults :  {  
+                    _controller: AppBundle\Controller\AdminController::testimonys
+                }
+m2iprojet_admin_testimony_modif_route:
+    path     :  /admin/testimony/modif/{testimony_id}
+    defaults :  {  
+                    _controller: AppBundle\Controller\AdminController::modif_testimonys, selected_testimony: 0
+                }
+m2iprojet_admin_testimony_suppr_route:
+    path     :  /admin/testimony/suppr/{testimony_id}
+    defaults :  {  
+                    _controller: AppBundle\Controller\AdminController::suppr_testimonys, selected_testimony: 0
+                }                
+m2iprojet_admin_picture_route:
+    path     :  /admin/picture
+    defaults :  {  
+                    _controller: AppBundle\Controller\AdminController::admin
+                }

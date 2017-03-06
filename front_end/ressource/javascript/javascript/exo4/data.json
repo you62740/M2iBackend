@@ -1,0 +1,19 @@
+{
+	"titre":"Stagiaires",
+	
+	"champs":["id","Nom","Prenom","Age","Sexe"],
+	
+	"data":[
+	
+		{"id":0,"Nom":"Fofana", "Prenom":"Aïda", "age":36, "sex":"F"},
+		{"id":1,"Nom":"Rubin", "Prenom":"Gilles", "age":35, "sex":"H"},
+		{"id":2,"Nom":"Lelievre", "Prenom":"Jean-Edouard", "age":33, "sex":"H"},
+		{"id":3,"Nom":"Oudni", "Prenom":"Brahim", "age":26, "sex":"Alien"},
+		{"id":4,"Nom":"Masmoudi", "Prenom":"Rami", "age":29, "sex":"Enorme"},
+		{"id":5,"Nom":"Elhabchi", "Prenom":"Salah", "age":35, "sex":"H"},
+		{"id":6,"Nom":"Koched", "Prenom":"Foued", "age":35, "sex":"H"},
+		{"id":7,"Nom":"Baabou", "Prenom":"Jalel", "age":30, "sex":"H"},
+		{"id":8,"Nom":"Legrand", "Prenom":"Nicolas", "age":29, "sex":"H"}
+		
+	]
+}

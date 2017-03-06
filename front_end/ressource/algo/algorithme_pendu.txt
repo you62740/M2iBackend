@@ -1,0 +1,42 @@
+- Créer une valeur "goodWord"
+- Créer une valeur "userWord"
+- Créer une valeur "currentLetter"
+- Créer une valeur "nbChances"
+- Créer une valeur "found"
+
+- Tirer un mot au hasard parmi une liste de mot et le stocker
+dans la valeur "goodWord".
+
+- Stocker dans la valeur "userWord" une chaîne de caractères de même longueur que "goodWord" mais dont chaque lettre est une "*".
+
+- Stocker dans "nbChances" une valeur arbitraire
+
+Tant que "nbChances" est supérieur à 0 et que la valeur "userWord" contient au moins un caractère "*"
+
+
+
+    - Demander à l'utilisateur de saisir une lettre et stocker la lettre saisie dans "currentLetter".
+ 
+	- stocker la valeur "false" dans "found".
+	
+    Pour chaque caractère présent dans "goodWord" 
+	
+		- 	Comparer la valeur de 
+			"currentLetter" à la lettre en cours.
+	  
+		- 	Si les deux lettres sont les mêmes, 
+			alors remplacer le caractère "*" contenu 
+			dans "userWord" se trouvant à la même 
+			position que la lettre en cours par la 
+			valeur contenue dans "currentLetter". 
+			Passer la valeur de "found" à true.
+			
+	- Si "found" est égal à false décrémenter de une unité la valeur de "nbChances"
+	  
+--- fin de boucle --- il faut remonter
+	
+	
+- Si "userWord" ne contient plus aucun caractère "*" alors le joueur a gagné
+
+- Sinon il a perdu
+

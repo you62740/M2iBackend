@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en" manifest="cache.manifest">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Cache</title>
+	<link type="text/css" rel="stylesheet" href="css/cache.css">
+	<script type="application/x-javascript">
+	if('applicationCache' in window)
+	{
+		window.applicationCache.addEventListener('checking', function(e) {
+			console.log('Verification si mise a jour disponible');
+		},false);
+
+		window.applicationCache.addEventListener('downloading',function(e) {
+		    console.log('Téléchargement de la mise a jour');
+		},false);
+
+		window.applicationCache.addEventListener('progress',function(e) {
+			console.log('Téléchargement du fichier n°'+(e.loaded)+' sur '+(e.total));
+		},false);
+
+		window.applicationCache.addEventListener('cached',function(e) {
+			console.log('Premiere mise en cache terminée avec succès');
+		},false);
+
+		window.applicationCache.addEventListener('updateready',function(e) {
+			console.log('Téléchargement de la mise a jour ok');
+			window.applicationCache.swapCache();
+		},false);
+
+		window.applicationCache.addEventListener('noupdate',function(e) {
+			console.log('Aucune mise a jour disponible');
+		},false);
+
+		window.applicationCache.addEventListener('error',function(e) {
+			console.log('Erreur - Le fichier manifest contient une erreur ou un des fichiers retourne une erreur 404');
+		},false);
+
+		window.applicationCache.addEventListener('obsolete',function(e) {
+			console.log('Le fichier manifest n existe plus, les fichiers en cache correspondant vont être supprimé');
+		},false);
+	}
+	</script>
+</head>
+
+<body>
+	<p>
+		<img src="images/image1.png">
+	</p>
+	<p>
+		<img src="images/image2.png">
+	</p>
+	<p>
+		<img src="images/image3.png">
+	</p>
+</body>
+</html>

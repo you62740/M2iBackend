@@ -1,0 +1,33 @@
+/* --- BASIC HTML ELEMENT ---*/
+
+body
+{
+	margin :0;
+	padding:0;
+}
+
+header
+{
+    height: 10%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    background-color: gray;
+}
+
+section
+{
+    height: 80%;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: flex-end;
+    background-color: #FFF0F5;
+}
+
+footer
+{
+    height: 10%;
+    background-color: gray;
+}

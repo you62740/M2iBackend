@@ -1,0 +1,126 @@
+$(document).ready(function(){
+slideHauteur();
+/*if($('.chap').outerHeight()>14){
+	$(this).find('.kl_prix').css('background','red');
+}*/
+$('button.navbar-toggle').click(function(){
+	if($('.container.kl_top .kl_nav').is(':hidden')){
+		$('.container.kl_top .kl_nav').slideDown(500);
+		$('.kl_nav.navbar-collapse.collapse.nav-mobile').css({'visibility':'visible'});
+	}
+	else if($('.container.kl_top .kl_nav').is(':visible')){
+		$('.container.kl_top .kl_nav').slideUp(500);
+		$('.kl_nav.navbar-collapse.collapse.nav-mobile').css({'visibility':'hidden'});
+	}
+	
+});
+/*Ajout hover underline from left*/
+$('.kl_domaines_formations ul li a').addClass('hvr-underline-from-left');
+$('.item-6248 a').attr('href','/a-propos-de-mistra.html');
+if (window.location.href.indexOf("/a-propos-de-mistra.html") >= 0) {
+    $('.item-6248').addClass('active');
+}
+/*Bug dans le back office lors des insertions des liens mail mailto*/
+$('.candidature').attr('href','mailto:contact@mistra.fr?subject=Recrutement');
+$('.kl-mail-contact').attr('href','mailto:contact@mistra.fr');
+$('.kl-mail-contact-webmaster').attr('href','mailto:webmaster@placeojeunes.com');
+$('.content-article .article .row').prepend('<div class="col-md-3 kl_sidebar_formation_domaines"><div class="kl_formation-sidebar sidebar-prepend-formation sidebar-article-prochaine"> </div></div>');
+var contenuSidebarFormation=$('.formations').html();
+$(contenuSidebarFormation).appendTo('.kl_formation-sidebar.sidebar-prepend-formation.sidebar-article-prochaine');
+/*Domaine formations dans les autres page formations*/
+var contenuDomainesFormations=$('.kl_domaines_formations').html();
+$('.kl_sidebar_formation_domaines').append('<div class="kl_domaines_formations kl_domaines_formation_page">'+contenuDomainesFormations+'</div>');
+/*Sidebar dans page recherche*/
+$('.kl_formation-sidebar').prependTo('.kl_search_sidebar');
+$('.kl_domaines_formations').appendTo('.kl_search_sidebar');
+/*sidebar tuto*/
+var contenuSidebarTuto=$('.sidebar-tutoriel .moduletable-leftmenu').html();
+
+if($(contenuSidebarTuto).contents().text()==0){
+$(".sidebar-tuto").addClass("hide");
+$('.content-article.margin-top-25.col-md-8.tutopage').removeClass('col-md-8').addClass('col-md-12');
+}
+else{
+$(contenuSidebarTuto).appendTo('.col-md-4.sidebar-tuto');
+$('.container.content-article').removeClass('container').addClass('col-md-8 tutopage').wrap('<div class="container"></div>');
+$('.content-article.col-md-8.tutopage').before('<div class="col-md-4 sidebar-tuto">'+contenuSidebarTuto+'</div>');
+
+}
+
+/*placeholder pour les forms dans la page contact*/
+$('#adminForm_3 input[type="text"], #adminForm_3 textarea').each(function() { 
+        var $this = $(this); 
+        $this.attr("placeholder", $this.attr("value")).removeAttr("value"); 
+    });
+$('#aiContactSafe_mainbody_3').wrap('<div class="page container" id="page"><div class="page-contact"><div class="contact-form"></div></div></div>');
+$('.bloc-title').after('<div class="breadcrumb container over-page"></div>');
+$('#wrapper .breadcrumbsfil').appendTo('.over-page');
+$('.breadcrumb').prependTo('.list-cat-parent');
+$('.list-cat-parent').find('.filters, table.category').wrapAll('<div class="container"></div>');
+$('.category-list').find('.cat-items').wrap('<div class="container"></div>');
+$('table.category tr:odd').find('a').css({'color':'#FFF', 'background':'#c989da'});
+$('.custom.prochaines-formations > p:odd').css({'padding-left':'9px','border-right':'none'});
+$('.kl_nav ul li a').contents().wrap('<span></span>');
+$('.kl_les_formations .kl_listes:odd').css({'border':'none', 'padding-left':'9px'});
+$('.kl_les_formations .kl_listes:odd').find('.kl_prix').css('margin-right','10px');
+$('.foot-2 ul li:odd').find('a').css('font-weight','bold');	
+$('.kl_les_formations .kl_listes').each(function(i){
+	if(i==0 || i==1){
+	$(this).css({'padding-top':'30px','min-height':'90px'});
+	}
+});
+$('.chap:first').css('margin-top','24px');
+$('.chap:last').css('padding-bottom','24px').after('<div class="clearfix"></div>');
+$('.chap').find('.kl_prix').after('<div class="clearfix"></div>');
+var coord= $('#id_coordonee').html();
+$('#adminForm_3').after('<div class="kl_coordonee">'+coord+'</div>');
+
+/*Sidebar prochaine formation*/
+$('.article .row').find('.col-md-6').each(function(i){
+	if(i==1){
+		$(this).removeClass('col-md-6').addClass('col-lg-3 col-sm-12 kl_public_bloc');
+	}
+});
+
+/*Reconstitution page formations*/
+var pubConcern=$('.kl_desc_2').html();
+var programme=$('.kl_desc_3').html();
+$('.article .row .col-md-6').removeClass('col-md-6').addClass('col-lg-6 col-sm-12 kl_objt_bloc');
+$('.article .row .col-lg-6').append('<div class="kl_desc_3">'+programme+'</div>'); 
+$('.article .row .col-lg-3.col-sm-12').append('<div class="kl_desc_2">'+pubConcern+'</div>');
+$('.article .row .col-lg-6 .kl_desc_2').remove();
+$('.article .row .col-lg-3 .kl_desc_3').remove();
+	$("a.highslide").fancybox({
+		'opacity'		: true,
+		'overlayShow'	: false,
+		'transitionIn'	: 'elastic',
+		'transitionOut'	: 'none'
+	});
+	
+$('.kl_dde_devis').click(function(){
+	$('.kl_bloc_devis_form').animate({right:0});
+	return false;
+});	
+$('.kl_close_popup').click(function(){
+	$('.kl_bloc_devis_form').animate({right:'-502px'});	
+	return false;
+});
+/*background chap par deux*/
+$('.col-xs-9').find('.chap:odd').css('background','#e79cfa');
+$('.col-xs-7').find('.chap:odd').css('background','#e79cfa');
+$('.kl_bloc_devis_form #aiContactSafe_info').text('Demander devis');
+/*titre article si tres long*/
+if($('.bloc-title h1').text().length>59){
+	$('.bloc-title h1').css({'font-size':'18px','padding':'9px 83px 10px 42px'});
+}
+if($('.kl_desc_2').contents().length<2){
+	$('.kl_desc_2').hide();
+}
+
+});
+function slideHauteur(){
+	var hauteur_slide= $('.kl_slider').height();
+	var largeurNav=$('#wrapper').width();
+	$('.elt-slide-left').height(hauteur_slide);	
+	$('.kl_nav ul li > ul').css('width',largeurNav);
+}

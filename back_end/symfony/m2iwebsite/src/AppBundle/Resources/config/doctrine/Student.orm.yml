@@ -1,0 +1,25 @@
+AppBundle\Entity\Student:
+    type: entity
+    table: null
+    repositoryClass: AppBundle\Repository\StudentRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        firstname:
+            type: string
+            length: '20'
+        lastname:
+            type: string
+            length: '20'
+        description:
+            type: text
+            nullable: true
+        avatar:
+            type: string
+            length: '255'
+            nullable: true
+    lifecycleCallbacks: {  }

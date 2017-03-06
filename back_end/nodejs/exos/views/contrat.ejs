@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title></title>
+</head>
+<body>
+
+	<h1>Créer un nouveau contrat:</h1>
+	<form method="post" action="/addcontrat">
+		<table>
+			<tr>
+				<td>
+					<select name="wagon_id">
+					<% 	for(var i=0; i < wagons.length; i++) 
+					{
+					%>
+						<option value="<%= wagons[i].id %>"><%= wagons[i].type %></option>
+				
+					<% 	
+					} 
+					%>
+		
+					</select>
+				</td>
+				<td>
+					<select name="product_id">
+					<% 	for(var i=0; i < products.length; i++) 
+					{
+					%>
+						<option value="<%= products[i].id %>"><%= products[i].label %></option>
+				
+					<% 	
+					} 
+					%>
+		
+					</select>
+				</td>
+				<td>
+					<select name="client_id">
+					<% 	for(var i=0; i < clients.length; i++) 
+					{
+					%>
+						<option value="<%= clients[i].id %>"><%= clients[i].raison %></option>
+				
+					<% 	
+					} 
+					%>
+		
+					</select>
+				</td>
+				<td>
+					<input type="submit" value="Ajouter contrat" />
+				</td>
+			</tr>
+		</table>
+	</form>
+	
+	
+	
+	<table>
+			<% 	for(var i=0; i < contrats.length; i++) 
+			{
+			%>
+			<tr>
+				<td><%= contrats[i].id %></td>
+				<td><%= contrats[i].client_id %></td>
+				<td><%= contrats[i].wagon_id %></td>
+				<td><%= contrats[i]._product_id %></td>
+			</tr>
+			<%
+			}
+			%>
+	</table>
+	
+</body>
+</html>

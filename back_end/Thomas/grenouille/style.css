@@ -1,0 +1,14 @@
+
+.container{
+	display : flex;
+}
+table
+{
+	border : 1px solid black;
+	width : calc(100% / 3);
+}
+table tr td img
+{
+	width : 32px;
+	height : auto;
+}

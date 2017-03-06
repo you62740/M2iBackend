@@ -1,0 +1,40 @@
+Il faut:
+	
+	
+	- Créer un objet de type Forme
+	- Cet objet de type Forme aura comme propriétés
+		- une valeur x
+		- une valeur y
+		- une valeur width
+		- une valeur height
+		- une valeur color
+		- une méthode render qui prendra en paramètre le context 2d du canvas
+		
+		
+	- Créer un objet de type Cercle qui hérite de Forme
+	- Cet objet de type Cercle aura comme propriétés:
+		
+		- une méthode render qui surchagera la méthode parente, on doit voir
+		sur le canvas un cercle de diamètre width ( ou height prenez la valeur que vous
+		voulez ) aux coordonnées x, y avec la couleur color
+		
+		
+			
+	- Créer un objet de type Carre qui hérite de Forme
+	- Cet objet de type Carre aura comme propriétés:
+		
+		- une méthode render qui surchagera la méthode parente, on doit voir
+		sur le canvas un carre de largeur width et hauteur height aux coordonnées x, y avec la couleur color
+		
+		
+		
+	- Récuperer les données des différentes formes ( carrés et cercles ) dans un fichier 
+	json défini à part, à l'aide de l'ajax.
+	Vous devez donc créer autant d'instance de Cercle et de Carre qu'il y a d'objets de ces types définis dans le json et les dessiner sur le canvas à l'aide de la méthode render de chaque objet.
+	
+	
+	
+	30min
+		
+		
+		

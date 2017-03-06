@@ -1,0 +1,6 @@
+#container{background-color:#fafafa;border:1px solid silver;min-width:100px;min-height:100px;}
+#container table{border-collapse:collapse;background-color:#0080C0;text-align:center;}
+#container table th{border-collapse:collapse;background-color:#0080C0;color:white;width:150px;text-align:center;}
+#container table td:nth-child(2n){background-color:#FAFAFA;color:#333333;border:1px dotted #AAAAAA;}
+#container table td:nth-child(2n+1){background-color:#80FFFF;color:#333333;border:1px dotted #333333;}
+

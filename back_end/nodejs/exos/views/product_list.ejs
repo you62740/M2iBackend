@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title></title>
+</head>
+<body>
+
+	<h1>Produits</h1>
+	<table>
+	<% 	for(var i=0; i < products.length; i++) 
+		{
+	%>
+			<tr>
+				<td><%= products[i].id %></td>
+				<td><%= products[i].reference %></td>
+				<td><%= products[i].label %></td>
+			</tr>
+	<% 	} %>
+	</table>
+	
+</body>
+</html>

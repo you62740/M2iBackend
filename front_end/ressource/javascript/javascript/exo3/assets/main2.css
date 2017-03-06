@@ -1,0 +1,23 @@
+
+#container2 div
+{
+	display: block;
+	width: 100px;
+	height: 100px;
+	margin-top: 8px;
+	
+	transform: none;
+	transition-duration: 1s;
+	transition-property: transform, background-color;
+	
+	background-color: cyan;
+}
+
+#container2 .rotation
+{
+	transform: rotateZ(370deg);
+	transition-duration: 1s;
+	transition-property: transform, background-color;
+	background-color: red;
+}
+

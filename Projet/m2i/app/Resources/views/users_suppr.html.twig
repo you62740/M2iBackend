@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>Suppr Users</title>
+	<link href="{{ asset('./css/main.css') }}" type="text/css" rel="stylesheet" />
+</head>
+<body>
+	<div align="right"><a href="{{ path('m2iprojet_admin_user_route')}}" title="retour">
+	<img src="{{ asset('./images/retour.jpg') }}" width="40px" height="40px" style="border-radius:20px;border: black solid 1px"></a></div> 
+	<h3>Supprimer cet utilisateur : </h3>
+	<br/>
+	<img src="{{ asset(selected_user.avatar) }}" width="40px" height="40px" style="border-radius:20px;border: black solid 1px">
+	
+	{{ selected_user.firstname }} {{ selected_user.lastname }}
+	<br/>
+	<label style="color:blue">Age : </label>{{ selected_user.age }} ans -  
+	{% if  selected_user.sex == 'm' %}
+		<label><span style="color:blue">Sexe : </span>Masculin</label>
+	{% else %}
+		<label><span style="color:blue">Sexe : </span>Feminin</label>
+	{%endif%}
+	<br/>
+	<label style="color:blue">Mail : </label>{{ selected_user.mail }}
+	<br/>
+	<label style="color:blue">Login : </label>{{ selected_user.login }}  <label style="color:blue">password : </label>{{ selected_user.password }} 
+	{% if  selected_user.status == 'E' %}
+		<label><span style="color:blue">Statut : </span>élève</label>
+	{% else %}
+		<label><span style="color:blue">Statut : </span><span style="color:red">Formateur</span></label>
+	{%endif%}
+	<br/>
+	<label style="color:blue">CV : </label>{{ selected_user.cv }}
+	
+	
+	{{ form_start(form) }}
+	{{ form_widget(form) }}
+	{{ form_end(form) }}
+	
+	
+	<a href="{{ path('m2iprojet_admin_user_route') }}"><button>Annuler</button>
+	
+	
+</body>
+</html>

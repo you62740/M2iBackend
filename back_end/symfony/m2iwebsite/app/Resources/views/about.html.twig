@@ -1,0 +1,41 @@
+<!doctype html>
+<html>
+	<head>
+		<title>Presentation</title>
+		<meta charset="utf-8" />
+	</head>
+	<body>
+		<h1>Ceci est la section présentation</h1>
+		
+		<ul>
+		
+		{% for participant in liste_participants %}
+		
+			<li>
+				<p>
+					{{ participant.firstname }} {{ participant.lastname }}
+					{{ participant.description }}
+					<img src="{{participant.avatar}}"/>
+				</p>
+			</li>
+			
+		{% endfor %}
+		
+		</ul>
+		
+		
+		{% if selected_student != null %}
+			<p>
+				Etudiant sélectionné:
+				{{ selected_student.firstname }} {{ selected_student.lastname }}
+			</p>
+		{% endif %}
+		
+		
+		
+		{{ form_start(cacahuete) }}
+		{{ form_widget(cacahuete) }}
+		{{ form_end(cacahuete) }}
+		
+	</body>
+</html>

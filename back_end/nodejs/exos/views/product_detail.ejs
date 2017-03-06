@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title></title>
+</head>
+<body>
+
+	<h1>Product: <%= product.reference %></h1>
+	<img width="450" height="auto" src="<%= product.img %>" alt="<%= product.img %>" />
+	<div>
+		<%= product.description %>
+	</div>
+	
+	
+	<%
+		if( hasForm == true )
+		{
+	%>
+		<form method="post" action="/products/add">
+			<input type="hidden" name="reference" value="<%= product.reference %>" />
+			<input type="submit" value="Ajouter au panier"/>
+		</form>
+	<%
+		}
+	%>
+</body>
+</html>

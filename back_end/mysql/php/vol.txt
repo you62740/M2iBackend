@@ -1,0 +1,1 @@
+user_password=royal; user_pseudo=richard; PHPSESSID=fdv6a0js7dfumeut3i7a25iav3

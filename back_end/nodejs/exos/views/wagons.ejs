@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title></title>
+</head>
+<body>
+
+	<h1>Wagons</h1>
+	<table>
+	<% 	for(var i=0; i < wagons.length; i++) 
+		{
+	%>
+			<tr>
+				<td><%= wagons[i].id %></td>
+				<td><%= wagons[i].numero %></td>
+				<td><%= wagons[i].type %></td>
+			</tr>
+	<% 	} %>
+	</table>
+	
+</body>
+</html>

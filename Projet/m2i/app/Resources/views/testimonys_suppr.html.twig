@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>Suppr Articles</title>
+	<link href="{{ asset('./css/main.css') }}" type="text/css" rel="stylesheet" />
+</head>
+<body>
+	<div align="right"><a href="{{ path('m2iprojet_admin_testimony_route')}}" title="retour">
+	<img src="{{ asset('./images/retour.jpg') }}" width="40px" height="40px" style="border-radius:20px;border: black solid 1px"></a></div> 
+	<h3>Supprimer ce message : </h3>
+	<br/>
+	<b>{{ selected_testimony.context }}</b>
+	<br/>
+	{{ selected_testimony.msg }}
+	<br/>
+	<label><b>Date de création : </b>{{ selected_testimony.creationDate|date("d/m/Y h:m") }}</label>
+	<label><b>Date de Modification : </b>{{ selected_testimony.modificationDate|date("d/m/Y h:m") }}</label>
+	<br/>
+		
+	{{ form_start(form) }}
+	{{ form_widget(form) }}
+	{{ form_end(form) }}
+	
+	
+	<a href="{{ path('m2iprojet_admin_testimony_route') }}"><button>Annuler</button>
+	
+	
+</body>
+</html>

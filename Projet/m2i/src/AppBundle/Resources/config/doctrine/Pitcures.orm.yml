@@ -1,0 +1,16 @@
+AppBundle\Entity\Pitcures:
+    type: entity
+    table: null
+    repositoryClass: AppBundle\Repository\PitcuresRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        img:
+            type: text
+        idArticle:
+            type: integer
+    lifecycleCallbacks: {  }

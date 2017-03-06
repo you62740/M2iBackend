@@ -1,0 +1,11 @@
+#header {
+  background-image: url(entete-small.jpg);
+}
+
+#menu.floatingMenu
+{
+	position: absolute;
+	top: 10px;
+	float: none;
+	z-index: 20;
+}

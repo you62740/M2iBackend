@@ -1,0 +1,164 @@
+/*grilles*/
+
+body {
+	 
+	margin: 0px;
+	padding: 0px;
+
+}
+
+#conteneur {
+
+	background-color: #9B8571;
+    height: 500px;
+
+}
+
+header {
+
+    height: 10%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    background-color: #BBE0E8;
+
+}
+
+.vie_mana {
+	
+    /*background-color: white;*/
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 60%;
+    font-size: 9px;
+    color: white;
+
+}
+
+.vie, .mana {
+	
+    height: 40%;
+    padding-left: 2px;
+    padding-top: 1px;
+}
+
+.vie {
+	
+    background-color: #F0663A;
+}
+
+.mana {
+
+	background-color: #2093B0;
+}
+
+.vie h6, .mana h6 {
+
+    margin: 1px;
+    color: #f2f2f2;
+    line-height: 10px;
+    font-family: Arial, helvetica, sans-serif;
+
+}
+
+.blue {
+
+	background-color: #5C909B;
+    height: 60%;
+
+}
+
+.blue h6 {
+
+	margin: 1px;
+	font-size: 9px;
+	text-align: center;
+    color: #f2f2f2;
+    font-family: Arial, helvetica, sans-serif;
+    line-height: 30px;
+
+}
+
+
+.row {
+
+	width : 100%;
+    
+}
+
+.col { 
+	
+	box-sizing: border-box;
+    
+}
+
+section {
+
+    height: 80%;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: flex-end;
+    background-color: #FFF5ED;
+
+}
+
+.fleche {
+
+    background-color: #E8D3C0;
+    height: 20%;
+}
+
+@media only screen and (max-width: 480px)
+{
+	.mob-0 { display: none;}
+	.mob-1 { width : 8.33%; }
+	.mob-2 { width : 16.66%; }
+	.mob-3 { width : 24.99%; }
+	.mob-4 { width : 33.33%; }
+	.mob-5 { width : 41.66%; }
+	.mob-6 { width : 49.99%; }
+	.mob-7 { width : 58.33%; }
+	.mob-8 { width : 66.66%; }
+	.mob-9 { width : 74.99%; }
+	.mob-10 { width : 83.33%; }
+	.mob-11 { width : 91.66%; }
+	.mob-12 { width : 100%; }
+}
+
+@media only screen and (min-width: 481px) and (max-width: 800px)
+{
+
+	.tab-0 { display: none;}
+	.tab-1 { width : 8.33%; }
+	.tab-2 { width : 16.66%; }
+	.tab-3 { width : 24.99%; }
+	.tab-4 { width : 33.33%; }
+	.tab-5 { width : 41.66%; }
+	.tab-6 { width : 49.99%; }
+	.tab-7 { width : 58.33%; }
+	.tab-8 { width : 66.66%; }
+	.tab-9 { width : 74.99%; }
+	.tab-10 { width : 83.33%; }
+	.tab-11 { width : 91.66%; }
+	.tab-12 { width : 100%; }
+}
+
+@media only screen and (min-width: 801px)
+{
+	.dsk-0 { display: none;}
+	.dsk-1 { width : 8.33%; }
+	.dsk-2 { width : 16.66%; }
+	.dsk-3 { width : 24.99%; }
+	.dsk-4 { width : 33.33%; }
+	.dsk-5 { width : 41.66%; }
+	.dsk-6 { width : 49.99%; }
+	.dsk-7 { width : 58.33%; }
+	.dsk-8 { width : 66.66%; }
+	.dsk-9 { width : 74.99%; }
+	.dsk-10 { width : 83.33%; }
+	.dsk-11 { width : 91.66%; }
+	.dsk-12 { width : 100%; }
+}

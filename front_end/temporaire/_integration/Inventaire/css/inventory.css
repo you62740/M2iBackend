@@ -1,0 +1,149 @@
+body {
+	margin: 0;
+	padding: 0;
+	background-color: #EDE4D3;
+}
+
+.row {
+	width : 100%;
+}
+
+.col { 
+	box-sizing: border-box;
+}
+
+header {
+	background-color: #70553F;
+}
+
+.title {
+	padding: 12px;
+
+}
+
+.title h1 {
+	font-family: perrygothicregular, serif;
+	font-size : 1.5em;
+	text-align: center;
+	color: #FFF5ED;
+	background-color: #87664C;
+	min-width: 200px;
+	width: 20%;
+	padding: 18px;
+	margin: auto;
+	text-shadow: 2px 1px 2px rgba(74,57,41,1);
+	border: 6px double rgba(255,245,237,0.5);
+}
+
+section {
+   	display: flex;
+   	max-width: 800px;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: auto;
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+
+.objects {
+	padding: 2px;
+	border: 4px solid #FFF5ED;
+	/*Bordures arrondies*/
+	-webkit-border-radius: 15px;
+    -moz-border-radius: 15px;
+    border-radius: 15px;
+    -webkit-box-shadow: inset -8px -7px 0px -4px rgba(107,79,48,0.4);
+    -moz-box-shadow: inset -8px -7px 0px -4px rgba(107,79,48,0.4);
+    box-shadow: inset -8px -7px 0px -4px rgba(107,79,48,0.4);
+	/*Dégradé*/
+	background: -moz-radial-gradient(center, ellipse cover, #FCF5F0 0%, #FCF5F0 6%, #A17F54 100%); /* ff3.6+ */
+	background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%, #FCF5F0), color-stop(6%, #FCF5F0), color-stop(100%, #A17F54)); /* safari4+,chrome */
+	background: -webkit-radial-gradient(center, ellipse cover, #FCF5F0 0%, #FCF5F0 6%, #A17F54 100%); /* safari5.1+,chrome10+ */
+	background: -o-radial-gradient(center, ellipse cover, #FCF5F0 0%, #FCF5F0 6%, #A17F54 100%); /* opera 11.10+ */
+	background: -ms-radial-gradient(center, ellipse cover, #FCF5F0 0%, #FCF5F0 6%, #A17F54 100%); /* ie10+ */
+	background: radial-gradient(ellipse at center, #FCF5F0 0%, #FCF5F0 6%, #A17F54 100%); /* w3c */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#FCF5F0', endColorstr='#A17F54',GradientType=0 ); /* ie6-9 */
+}
+
+.objects:hover, .objects:focus {
+	-webkit-box-shadow: inset -8px -7px 0px -4px rgba(155,133,113,0.6);
+    -moz-box-shadow: inset -8px -7px 0px -4px rgba(155,133,113,0.6);
+    box-shadow: inset -8px -7px 0px -4px rgba(155,133,113,0.6);
+
+	background: -moz-radial-gradient(center, ellipse cover, #FCF9F2 0%, #FCF9F2 35%, #C4AC8B 100%); /* ff3.6+ */
+	background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%, #FCF9F2), color-stop(35%, #FCF9F2), color-stop(100%, #C4AC8B)); /* safari4+,chrome */
+	background: -webkit-radial-gradient(center, ellipse cover, #FCF9F2 0%, #FCF9F2 35%, #C4AC8B 100%); /* safari5.1+,chrome10+ */
+	background: -o-radial-gradient(center, ellipse cover, #FCF9F2 0%, #FCF9F2 35%, #C4AC8B 100%); /* opera 11.10+ */
+	background: -ms-radial-gradient(center, ellipse cover, #FCF9F2 0%, #FCF9F2 35%, #C4AC8B 100%); /* ie10+ */
+	background: radial-gradient(ellipse at center, #FCF9F2 0%, #FCF9F2 35%, #C4AC8B 100%); /* w3c */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#FCF9F2', endColorstr='#C4AC8B',GradientType=0 ); /* ie6-9 */
+}
+
+.objects img {
+	width: 100%;
+}
+
+/*footer {
+	background-color: rgba(155,133,113,0.8);
+	height: 40px;
+}*/
+
+
+
+
+
+
+
+
+@media only screen and (max-width: 480px)
+{
+	.mob-0 { display: none;}
+	.mob-1 { width : 8.33%; }
+	.mob-2 { width : 16.66%; }
+	.mob-3 { width : 24.99%; }
+	.mob-4 { width : 33.33%; }
+	.mob-5 { width : 41.66%; }
+	.mob-6 { width : 49.99%; }
+	.mob-7 { width : 58.33%; }
+	.mob-8 { width : 66.66%; }
+	.mob-9 { width : 74.99%; }
+	.mob-10 { width : 83.33%; }
+	.mob-11 { width : 91.66%; }
+	.mob-12 { width : 100%; }
+}
+
+@media only screen and (min-width: 481px) and (max-width: 800px)
+{
+
+	.tab-0 { display: none;}
+	.tab-1 { width : 8.33%; }
+	.tab-2 { width : 16.66%; }
+	.tab-3 { width : 24.99%; }
+	.tab-4 { width : 33.33%; }
+	.tab-5 { width : 41.66%; }
+	.tab-6 { width : 49.99%; }
+	.tab-7 { width : 58.33%; }
+	.tab-8 { width : 66.66%; }
+	.tab-9 { width : 74.99%; }
+	.tab-10 { width : 83.33%; }
+	.tab-11 { width : 91.66%; }
+	.tab-12 { width : 100%; }
+}
+
+@media only screen and (min-width: 801px)
+{
+	.dsk-0 { display: none;}
+	.dsk-1 { width : 8.33%; }
+	.dsk-2 { width : 16.66%; }
+	.dsk-3 { width : 24.99%; }
+	.dsk-4 { width : 33.33%; }
+	.dsk-5 { width : 41.66%; }
+	.dsk-6 { width : 49.99%; }
+	.dsk-7 { width : 58.33%; }
+	.dsk-8 { width : 66.66%; }
+	.dsk-9 { width : 74.99%; }
+	.dsk-10 { width : 83.33%; }
+	.dsk-11 { width : 91.66%; }
+	.dsk-12 { width : 100%; }
+}

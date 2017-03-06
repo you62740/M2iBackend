@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>forum</title>
+	<link href="{{ asset('./css/main.css') }}" type="text/css" rel="stylesheet" />
+	<link href="{{ asset('./css/forum.css') }}" type="text/css" rel="stylesheet" />
+	
+</head>
+<body>
+
+	<div align="right"><a href="{{ path('m2iprojet_admin_route')}}" title="retour" style="background-color: #e5e5e5;">
+	<img src="{{ asset('./images/retour.jpg') }}" width="40px" height="40px" style="border-radius:20px;border: black solid 1px"></a></div> 
+	{% set i = 0 %}
+	{% for current_testimony in testimonys_list %}
+		{% if i%2 == 0 %}
+		<p class="triangle-right">
+		{% else %}
+		<p class="triangle-left">
+		{% endif %}
+			<label style="color:gray"><b>{{ current_testimony['firstname'] }} {{ current_testimony['lastname'] }}</b></label>
+			<br/>
+			 <a href="#">{{ current_testimony['msg'] | raw }}
+				  <span>( {{ current_testimony['creationDate']|date("d/m/Y h:m") }} )</span>
+			 </a>
+		</p>
+		{% set i = i + 1 %}
+	{% endfor %}
+
+	<br/>
+
+
+	{{ form_start(form) }}
+	{{ form_widget(form) }}
+	{{ form_end(form) }}	
+</body>
+</html>

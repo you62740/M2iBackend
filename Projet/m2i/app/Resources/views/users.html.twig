@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>Users</title>
+	<link href="{{ asset('./css/main.css') }}" type="text/css" rel="stylesheet" />
+</head>
+<body>
+	<ul>
+	<div align="right"><a href="{{ path('m2iprojet_admin_route')}}" title="retour">
+	<img src="{{ asset('./images/retour.jpg') }}" width="40px" height="40px" style="border-radius:20px;border: black solid 1px"></a></div> 
+	<h3>Liste des utilisateurs : </h3>
+	
+	{% for current_user in users_list %}
+		<li>
+		<a href="{{ path('m2iprojet_admin_user_modif_route', { 'user_id': current_user['id'] })}}" title="Modifier">
+		<img src="{{ asset(current_user['avatar']) }}" width="40px" height="40px" style="border-radius:20px;border: black solid 1px"></a> 
+		
+		<a href="{{ path('m2iprojet_admin_user_suppr_route', { 'user_id': current_user['id'] })}}" title="Supprimer">
+		<img src="{{ asset('./images/trash.jpg') }}" width="40px" height="40px" style="border-radius:20px;border: black solid 1px"></a> 
+		<b>{{ current_user['firstname'] }} {{ current_user['lastname'] }}</b>
+		<br/>
+		<label style="color:blue">Age : </label>{{ current_user['age'] }} ans -  
+		{% if  current_user['sex'] == 'm' %}
+			<label><span style="color:blue">Sexe : </span>Masculin</label>
+		{% else %}
+			<label><span style="color:blue">Sexe : </span>Feminin</label>
+		{%endif%}
+		<br/>
+		<label style="color:blue">Mail : </label>{{ current_user['mail'] }}
+		<br/>
+		<label style="color:blue">Login : </label>{{ current_user['login'] }}  <label style="color:blue">password : </label>{{ current_user['password'] }} 
+		{% if  current_user['status'] == 'E' %}
+			<label><span style="color:blue">Statut : </span>élève</label>
+		{% else %}
+			<label><span style="color:blue">Statut : </span><span style="color:red">Formateur</span></label>
+		{%endif%}
+		<a href="{{ asset(current_user['cv']) }}">CV</a>
+		</li>
+		<br/>
+	{% endfor %}
+	</ul>	
+	<h3>Ajouter un utilisateur : </h3>
+	
+	{{ form_start(form) }}
+	{{ form_widget(form) }}
+	{{ form_end(form) }}
+</body>
+</html>

@@ -1,0 +1,7 @@
+{
+	"books":
+	[
+		{"titre": "le seigneur des anneaux", "prix":5},
+		{"titre": "dictionnaire hiéroglyhpique", "prix":50}
+	]
+}

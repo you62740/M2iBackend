@@ -1,0 +1,174 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>m2i formation</title>
+	<style type="text/css">
+	.square
+	{
+		height: 100px;
+		width: 100px;
+		background-color: red;
+	}
+	</style>
+</head>
+<body>
+
+	<h1>Mon super site m2i</h1>
+	<h2>Mon super site m2i</h2>
+	<h3>Mon super site m2i</h3>
+	<h4>Mon super site m2i</h4>
+	<h5>Mon super site m2i</h5>
+	<h6>Mon super site m2i</h6>
+	
+	<nav>
+		<ul>
+			<li>Home</li>
+			<li>Produits</li>
+			<li>Contact</li>
+			<li>Mentions légales</li>
+		</ul>
+	</nav>
+	
+	<table>
+		<tr>
+			<th>Nom</th>
+			<th>Prenom</th>
+			<th>Age</th>
+			<th>Sexe</th>
+		</tr>
+		<tr>
+			<td>Carton</td>
+			<td>Rudy</td>
+			<td>29</td>
+			<td>Enorme</td>
+		</tr>
+		<tr>
+			<td>Frédéric</td>
+			<td>Leclercq</td>
+			<td>26</td>
+			<td>Proportion Biblique</td>
+		</tr>
+	</table>
+	
+	<br/>
+	<br/>
+	<br/>
+	
+	<form method="GET" action="index.html">
+		<label>Êtes vous majeur ? </label>
+		<input type="checkbox" name="majeur" />
+		<br/>
+		
+		<label>Êtes vous :</label>
+		
+		<label>un homme ?</label>
+		<input type="radio" name="sex" value="M" />
+		<label>une femme ?</label>
+		<input type="radio" name="sex" value="F" checked="checked" />
+		<br/>
+		
+		<label>Sélectionnez votre navigateur préféré</label>
+		<select name="browser_choice">
+			<option value="super_top">Google Chrome</option>
+			<option value="top">Firefox</option>
+			<option value="nul">Internet explorer</option>
+			<option value="not_bad" selected="selected">Edge</option>
+			<option value="pompeux">Safari Windows</option>
+		</select>
+		<br/>
+		
+		<label>Tapez un texte au hasard </label>
+		<textarea name="free_text"></textarea>
+		<br/>
+		
+		<label>Quel est votre prénom ? </label>
+		<input type="text" value="" name="prenom" />
+		<br/>
+		
+		<input type="submit" value="OK" name="validBtn" />
+	</form>
+		
+	<br/>
+	<br/>
+	<br/>
+	<br/>
+	
+	<form method="GET" action="index.html">
+		
+		<table>
+			<tr>
+				<td>
+					<label>Êtes vous majeur ? </label>
+				</td>
+				<td>
+					<input type="checkbox" name="majeur" />
+				</td>
+			</tr>
+			
+			<tr>
+				<td>
+					<label>Êtes vous :</label>
+				</td>
+				<td>
+					<label>un homme ?</label>
+					<input type="radio" name="sex" value="M" />
+					<label>une femme ?</label>
+					<input type="radio" name="sex" value="F" checked="checked" />
+				</td>
+			</tr>
+			
+			<tr>
+				<td>
+					<label>Sélectionnez votre navigateur préféré</label>
+				</td>
+				<td>
+					<select name="browser_choice">
+						<option value="super_top">Google Chrome</option>
+						<option value="top">Firefox</option>
+						<option value="nul">Internet explorer</option>
+						<option value="not_bad" selected="selected">Edge</option>
+						<option value="pompeux">Safari Windows</option>
+					</select>
+				</td>
+			</tr>
+			
+			<tr>
+				<td>
+					<label>Tapez un texte au hasard </label>
+				</td>
+				<td>
+					<textarea name="free_text"></textarea>
+				</td>
+			</tr>
+			
+			
+
+			<tr>
+				<td>
+					<label>Quel est votre prénom ? </label>
+				</td>
+				<td>
+					<input type="text" value="" name="prenom" />
+				</td>
+			</tr>
+			
+			<tr>
+				<td colspan="2">
+					<input type="submit" value="OK" name="validBtn" />
+				</td>
+			</tr>
+			
+			
+			
+			
+			
+			
+			
+		
+		</table>
+	</form>
+	
+	
+</body>
+</html>

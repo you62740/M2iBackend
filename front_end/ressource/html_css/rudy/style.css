@@ -1,0 +1,219 @@
+/* 0 - Common */
+
+html,body
+{
+	background-color: white;
+	font-family: "Roboto", "Arial";
+}
+
+
+
+
+.banner
+{
+	background-color: #bc152f;
+	color: white;
+	display: flex;
+	flex-wrap: wrap;
+	flex-direction: row;
+}
+
+.banner h1
+{
+	text-align: center;
+}
+
+.banner h1 img
+{
+	height: 50px;
+	width: auto;
+	flex-shrink: 0;
+	flex-grow: 1;
+}
+
+
+
+
+.toogle_menu
+{
+	width: 50px;
+	height: 50px;
+	background-color: red;
+	cursor: pointer;
+}
+
+.toogle_menu .fa
+{
+	font-size: 30px;
+	text-align: center;
+	line-height: 50px;
+}
+
+
+
+/* 3 - Navigation bar */
+
+.main_menu
+{
+	background-color: black;
+	height: 40px;
+	color: white;
+	text-align: center;
+}
+
+
+.main_menu ul
+{
+	display: flex;
+	flex-flow: row;
+	align-items: stretch;
+}
+
+.main_menu ul li{
+	
+	height: 40px;
+
+	line-height: 40px;
+	color: white;
+	font-style: italic;
+	font-size: 18px;
+
+	padding: 0 15px 0 15px;
+
+	cursor: pointer;
+	flex-grow: 3;
+
+	-webkit-transition: background-color 0.4s ease; /* Safari */
+}
+
+.main_menu ul li:hover{
+	background-color: #d61c1d;
+
+	-webkit-transition: background-color 0.4s ease; /* Safari */
+}
+
+
+
+
+/* 4 - MAIN-CONTENT */
+
+.container
+{
+	margin-top: 20px;
+	display: flex;
+	flex-direction: column;
+}
+
+
+
+
+
+
+/* 4.2 - Articles a la une */
+
+.spotlight
+{
+	display: flex;
+	flex-direction: column;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	
+	margin-bottom: 20px;
+	background-color: black;
+	background-size: 100% 100%;
+	background-image: url( 'http://www.jvfrance.com/wp-content/uploads/2016/06/Spiderman-PS4.jpg' );
+	height: 300px;
+	
+}
+
+.spotlight_title
+{
+	font-size: 3rem;
+	font-family: 'Anton', sans-serif;
+	text-align: center;
+	text-shadow: 2px 2px 10px black;
+	color: white;
+	text-transform: uppercase;
+	display: block;
+}
+
+.spotlight_subtitle
+{
+	font-size: 20px;
+	color: white;
+	padding: 20px;
+	text-transform: uppercase;
+	font-weight: bold;
+
+	background-color: black;
+}
+
+
+/* 4.1 - ARTICLES */
+
+.articles-list
+{
+	display: flex;
+	flex-wrap: wrap;
+	flex-direction: row;
+}
+
+article
+{
+	font-size: 16px;
+	line-height: 26px;
+	padding: 15px;
+	display: flex;
+	box-sizing: border-box;
+}
+
+.thumbnail img
+{
+	width: 100%;
+	height: auto;
+}
+
+.article-content
+{
+    background-color: #f3f3f3;
+    border: solid 1px #d6d6d6;
+	-webkit-transition: box-shadow 0.2s ease; /* Safari */
+}
+
+.article-content:hover
+{
+	box-shadow: 1px 1px 5px #888888;
+	-webkit-transition: box-shadow 0.2s ease; /* Safari */
+}
+
+.article-content h2
+{
+	width: 100%;
+	margin: 0px;
+	padding: 15px;
+	text-transform: uppercase;
+	font-weight: bold;
+}
+
+.article-content p
+{
+	padding: 0px 15px 0px 15px;
+}
+
+
+/* ASIDE */
+.aside{
+	background-color: grey;
+	padding-top: 15px;
+	padding-bottom: 15px;
+}
+
+
+
+
+/* FOOTER */
+
+footer{
+	width: 100%;
+	background-color: #2f2f2f;s
+}

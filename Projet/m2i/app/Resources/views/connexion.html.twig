@@ -1,0 +1,21 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>connexion</title>
+	<link href="{{ asset('./css/main.css') }}" type="text/css" rel="stylesheet" />
+</head>
+<body>
+	<label>connecté avec le pseudo : </label>
+	<span>{{ login }}</span>
+	<ul>
+	{% for current_msg in messages_list %}
+		<li>{{ current_msg['firstname'] }} : {{ current_msg['msg'] }}</li>
+	{% endfor %}
+	</ul>
+	
+	{{ form_start(form) }}
+	{{ form_widget(form) }}
+	{{ form_end(form) }}
+</body>
+</html>

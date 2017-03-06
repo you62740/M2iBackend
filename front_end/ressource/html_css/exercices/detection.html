@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title></title>
+	<script type="text/javascript">
+	
+		function isMobile()
+		{
+		   var uagent = navigator.userAgent.toLowerCase();
+		   var agents = [	"Android",
+					"webOS",
+					"iPhone",
+					"iPad",
+					"iPod",
+					"BlackBerry",
+					"BB",
+					"PlayBook",
+					"IEMobile",
+					"Windows Phone",
+					"Kindle",
+					"Silk",
+					"Opera Mini"
+			];
+			
+		   var mobile = false;
+		   var i = agents.length;
+		   
+		   while( --i > -1 )
+		   {
+			   if( uagent.search(agents[i]) > -1 )
+					mobile = true;
+		   }
+		   
+		   return mobile;
+		}
+		
+	</script>
+</head>
+<body>
+</body>
+</html>

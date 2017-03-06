@@ -1,0 +1,215 @@
+/* --- GAME ELEMENT -- */
+
+#gameContainer
+{
+	background-color: white;
+	width: 100%;
+	height:auto;
+}
+
+#playerState
+{	
+    background-color: white;
+    display:-webkit-box;
+    display:-ms-flexbox;
+    display:flex;
+    -webkit-box-orient:vertical;
+    -webkit-box-direction:normal;
+        -ms-flex-direction:column;
+            flex-direction:column;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    height: 60%;
+    font-size: 9px;
+    color: white;
+}
+    #playerState > div
+    {
+        height: 40%;
+        padding-left: 2px;
+        padding-top: 1px;
+    }
+        #playerStateVie
+        {
+            background-color: red;
+        }
+
+        #playerStateMana
+        {
+            background-color: blue;
+        }
+
+            #playerState div > p
+            {
+                margin: 1px;
+            }
+
+div.gameNav
+{
+    display:-webkit-box;
+    display:-ms-flexbox;
+    display:flex;
+    -webkit-box-orient:vertical;
+    -webkit-box-direction:normal;
+        -ms-flex-direction:column;
+            flex-direction:column;
+    background-color: red;
+    color: white;
+    height: 70%;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    border-radius: 10px;
+}
+
+    div.gameNav > a
+    {
+        text-decoration: none;
+        color: white;
+        font-size: 15px;
+        font-weight: bolder;
+    }
+
+/*#menu -- eZam : NOT USED
+{
+	list-style-type: none;
+	text-align: center;
+	padding: 10px 0 0 0;
+	background: red;
+	text-align: center;
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+	border-radius: 5px;
+}
+    #menu ul
+    {
+        list-style-type: none;
+        margin: auto;
+        padding: 0 0px 0px 0;
+        display: none;
+        position: absolute;
+        top: 30px;
+        left: 0;
+        z-index: 99999;
+        width: 100%;
+        background-color: red;
+        border-radius: 10px;
+    }
+
+        #menu ul li
+        {
+            margin: 0;
+            width: 100%;
+            padding: 0;
+            display: block;
+            box-shadow: 0 1px 0 #111111, 0 2px 0 #777777;    
+        }
+
+        #menu ul li:last-child
+        {
+            box-shadow: none;
+        }
+
+        #menu ul a
+        {    
+            padding-top: 30px;
+            width: 100%;
+            text-align: center;
+            height: 50px;
+            line-height: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-transform: none;
+        }
+
+        #menu ul a:hover
+        {
+            background:firebrick;      
+        }
+
+            #menu ul li:first-child a{
+                border-radius: 5px 5px 0 0;
+            }
+
+            #menu ul li:first-child a:hover:after
+            {
+                border-bottom-color: red;
+            }
+
+            #menu ul li:last-child a
+            {   
+                border-radius: 0 0 5px 5px;
+            }
+            
+    #menu li
+    {
+        padding: 0 0 10px 0;
+        position: relative;
+        width: 100%;    
+    }
+
+    #menu a
+    {
+        text-align: center;
+        padding: 0 5px;
+        color:white;
+        text-decoration: none;
+        text-shadow: 0 1px 0 #000;
+        font-size: 14px;
+        font-weight: bolder;
+    }
+
+    #menu li:hover > a
+    {
+        color: white;
+    }
+
+    #menu li:hover > ul
+    {
+        display: block;
+    }
+*/
+
+#mapContainer
+{
+	position: relative; 
+	top: 0;
+	left: 0;
+}
+	#map
+	{
+		height: 500px;
+		overflow: auto;
+		position: relative;
+		top: 0;
+		left: 0;
+    }
+        #map > div.tile
+		{
+			position: absolute;
+			width: 48px;
+			height: 48px;
+		}
+
+#arrowContainer
+{
+	width: 100px;
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	z-index: 100;
+}
+
+	#arrowContainer div > img
+	{
+		cursor : pointer;
+		width: 100%;
+		height: auto;
+	} 

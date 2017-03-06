@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>Articles</title>
+	<link href="{{ asset('./css/main.css') }}" type="text/css" rel="stylesheet" />
+</head>
+<body>
+	
+	<div align="right"><a href="{{ path('m2iprojet_admin_route')}}" title="retour">
+	<img src="{{ asset('./images/retour.jpg') }}" width="40px" height="40px" style="border-radius:20px;border: black solid 1px"></a></div> 
+	
+	
+	{% for current_article in articles_list %}
+		<li>
+			<b>{{ current_article['category'] }}</b>
+			
+			<br/>
+			<b>{{ current_article['title'] }}</b>
+			<br/>
+			<article><img src="{{ asset(current_article['img']) }}" width="100px" height="100px" style="border: black solid 1px">
+			{{ current_article['content'] }}</article>
+			<br/>
+			<label><b>Date de création : </b>{{ current_article['creationDate']|date("d/m/Y h:m") }}</label>
+			<label><b>Date de Modification : </b>{{ current_article['modificationDate']|date("d/m/Y h:m") }}</label>
+			<br/>
+			<label><b>Auteur : </b>{{ current_article['firstname'] }} {{ current_article['lastname'] }}
+			<br/>
+			<p align="right"><a href="{{ path('m2iprojet_admin_article_modif_route', { 'article_id': current_article['id'] })}}" title="Modifier">
+			<img src="{{ asset('./images/modifier.jpg') }}" width="40px" height="40px" style="border-radius:20px;border: black solid 1px"></a> 
+			<a href="{{ path('m2iprojet_admin_article_suppr_route', { 'article_id': current_article['id'] })}}" title="Supprimer">
+			<img src="{{ asset('./images/trash.jpg') }}" width="40px" height="40px" style="border-radius:20px;border: black solid 1px"></a></p> 
+			
+		</li>
+		<br/>
+	{% endfor %}
+
+	
+	<h3><u>Ajouter un article : </u></h3>
+	
+	{{ form_start(form) }}
+	{{ form_widget(form) }}
+	{{ form_end(form) }}
+
+</body>
+</html>

@@ -1,0 +1,102 @@
+
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video { margin:0; padding:0; border:0; font-size:100%; font:inherit; vertical-align:baseline; }
+img { border:0 none; }
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section { display: block; }
+body { line-height: 1; }
+ol, ul { list-style: none; }
+blockquote, q { quotes: none; }
+blockquote:before, blockquote:after,
+q:before, q:after { content: ''; content: none; }
+table { border-collapse: collapse; border-spacing: 0; }
+
+
+/*grilles*/
+
+.container
+{
+	width: 100%;
+	margin: auto;
+	box-sizing: border-box;
+}
+
+.row
+{
+	width : 100%;
+	box-sizing: border-box;
+}
+
+.col
+{ 
+	margin: 0;
+	box-sizing: border-box;
+}
+
+@media only screen and (max-width: 480px)
+{
+	
+	.mob-0 { display: none;}
+	.mob-1 { width : 8.33%; }
+	.mob-2 { width : 16.66%; }
+	.mob-3 { width : 24.99%; }
+	.mob-4 { width : 33.33%; }
+	.mob-5 { width : 41.66%; }
+	.mob-6 { width : 49.99%; }
+	.mob-7 { width : 58.33%; }
+	.mob-8 { width : 66.66%; }
+	.mob-9 { width : 74.99%; }
+	.mob-10 { width : 83.33%; }
+	.mob-11 { width : 91.66%; }
+	.mob-12 { width : 100%; }
+}
+
+@media only screen and (min-width: 481px) and (max-width: 768px)
+{
+	.tab-0 { display: none;}
+	.tab-1 { width : 8.33%; }
+	.tab-2 { width : 16.66%; }
+	.tab-3 { width : 24.99%; }
+	.tab-4 { width : 33.33%; }
+	.tab-5 { width : 41.66%; }
+	.tab-6 { width : 49.99%; }
+	.tab-7 { width : 58.33%; }
+	.tab-8 { width : 66.66%; }
+	.tab-9 { width : 74.99%; }
+	.tab-10 { width : 83.33%; }
+	.tab-11 { width : 91.66%; }
+	.tab-12 { width : 100%; }
+}
+
+@media only screen and (min-width: 769px)
+{
+	.dsk-0 { display: none;}
+	.dsk-1 { width : 8.33%; }
+	.dsk-2 { width : 16.66%; }
+	.dsk-3 { width : 24.99%; }
+	.dsk-4 { width : 33.33%; }
+	.dsk-5 { width : 41.66%; }
+	.dsk-6 { width : 49.99%; }
+	.dsk-7 { width : 58.33%; }
+	.dsk-8 { width : 66.66%; }
+	.dsk-9 { width : 74.99%; }
+	.dsk-10 { width : 83.33%; }
+	.dsk-11 { width : 91.66%; }
+	.dsk-12 { width : 100%; }
+}

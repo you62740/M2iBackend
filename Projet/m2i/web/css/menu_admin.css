@@ -1,0 +1,33 @@
+body {
+  padding: 4em;
+  background: #e5e5e5;
+  font: 13px/1.4 Geneva, 'Lucida Sans', 'Lucida Grande', 'Lucida Sans Unicode', Verdana, sans-serif;
+}
+ul#menu_horizontal li { 
+	display : inline;
+	padding : 0 0.5em; 
+}
+ul#menu_horizontal {
+	list-style-type : none; 
+}
+li {
+	display: inline-block;
+	  border-radius: 10px;
+	  background-color: #316E31;
+	  border: none;
+	  color: white;
+	  text-align: center;
+	  font-size: 20px;
+	  padding: 10px;
+	  width: 150px;
+	  transition: all 0.5s;
+	  cursor: pointer;
+	  margin: 1px;
+}
+li:hover {
+  background-color: #83B183;
+}
+li a {
+	color:white;
+	text-decoration:none;
+}

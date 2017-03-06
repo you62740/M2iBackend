@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title></title>
+</head>
+<body>
+
+	<h1>Clients</h1>
+	<table>
+	<% 	for(var i=0; i < clients.length; i++) 
+		{
+	%>
+			<tr>
+				<td><%= clients[i].id %></td>
+				<td><%= clients[i].reference %></td>
+				<td><%= clients[i].raison %></td>
+				<td><%= clients[i].passwd %></td>
+				<td><%= clients[i].login %></td>
+			</tr>
+	<% 	} %>
+	</table>
+	
+</body>
+</html>

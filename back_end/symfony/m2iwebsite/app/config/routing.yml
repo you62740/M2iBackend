@@ -1,0 +1,8 @@
+app:
+    resource: "@AppBundle/Controller/"
+    type:     annotation
+
+
+presentation_route:
+    path:      /presentation/{etudiant}
+    defaults:  { _controller: AppBundle\Controller\AboutController::display, etudiant: 'unknown' }

@@ -1,0 +1,34 @@
+
+.header
+{
+	background-color: #333333;
+	color: white;
+	text-align: center;
+	padding: 5px;
+	position: static;
+	width: 100%;
+	margin: 0;
+}
+
+.square_blue
+{
+	width: 200px;
+	height: 200px;
+	margin: 1px;
+	background-color: blue;
+	display: inline-block;
+}
+
+.offsetXY
+{
+	position: relative;
+	bottom: 25px;
+	right: 25px;
+	background-color: red;
+}
+
+/*
+?./§!:;,()][}{#&~\*+
+et tout les caractères accentués
+Et il faut absolument commencer par une lettre
+*/
